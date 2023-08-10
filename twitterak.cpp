@@ -276,6 +276,28 @@ void Twitterak::logout()
     cout << "* You successfully logged out.\n" ;
 }
 
+//====================================================================================================================================
+void Twitterak :: qttweet(string tweet)
+{
+    Tweet new1; //new object from Tweet
+
+cout << "first\n";
+    new1.Set_date();
+    check_space(tweet) ;
+    new1.Set_Tweet(tweet);
+    musers[temp]->set_index();
+    new1.set_number(musers[temp]->get_index());
+
+    musers[temp]->push_tweet(new1);
+    string str = new1.get_classtweet();
+
+
+    findhash(str, new1);
+    cout << "last\n";
+
+
+}
+
 //*********************************************************************************************************************************************************
 void Twitterak::choice_login() //Showing diffrent oprtions after login
 {
@@ -325,7 +347,7 @@ void Twitterak::choice_login() //Showing diffrent oprtions after login
         {
             logout();
             flag = false;
-            menu() ;
+
         }
 
         else if(vec[0] == "edit" && vec[1] == "profile")
@@ -346,25 +368,25 @@ void Twitterak::choice_login() //Showing diffrent oprtions after login
                 tweet += vec[i] + " " ;
             }
             cout << "t1\n";
-            Tweet new1; //new object from Tweet
+//            Tweet new1; //new object from Tweet
 
 
-            new1.Set_date();
-            check_space(tweet) ;
-            new1.Set_Tweet(tweet);
-            musers[temp]->set_index();
-            new1.set_number(musers[temp]->get_index());
-cout << "t2\n";
+//            new1.Set_date();
+//            check_space(tweet) ;
+//            new1.Set_Tweet(tweet);
+//            musers[temp]->set_index();
+//            new1.set_number(musers[temp]->get_index());
+//cout << "t2\n";
 
-            musers[temp]->push_tweet(new1);
-            string str = new1.get_classtweet();
+//            musers[temp]->push_tweet(new1);
+//            string str = new1.get_classtweet();
 
-           cout << "t3\n";
+//           cout << "t3\n";
 
-            findhash(str, new1);
+//            findhash(str, new1);
 
-            cout << "t4\n";
-            choice_login() ;
+//            cout << "t4\n";
+//            choice_login() ;
 
 
         }
@@ -627,7 +649,7 @@ cout << "t2\n";
         {
             delete_account();
              flag = false;
-             menu() ;
+
         }
 
         else if(vec[0] == "exit" || vec[0]=="q" || vec[0]=="quit")

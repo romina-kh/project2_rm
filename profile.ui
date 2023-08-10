@@ -205,66 +205,6 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
     <string>Setting</string>
    </property>
   </widget>
-  <widget class="QGroupBox" name="groupBox_searchhash_pro">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>460</y>
-     <width>261</width>
-     <height>151</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 210, 253);</string>
-   </property>
-   <property name="title">
-    <string>search #</string>
-   </property>
-   <widget class="QLabel" name="lbl_searchid_pro_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>30</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Enter hashtag</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="ln_searchhash_pro">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>221</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_searchhash_pro">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>100</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>search</string>
-    </property>
-   </widget>
-  </widget>
   <widget class="QGroupBox" name="groupBox_follow_pro">
    <property name="geometry">
     <rect>
@@ -385,22 +325,32 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
     </property>
    </widget>
   </widget>
-  <widget class="QGroupBox" name="groupBox_searchid_pro">
+  <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>470</y>
-     <width>251</width>
-     <height>141</height>
+     <x>740</x>
+     <y>270</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_tweet_pro">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>450</y>
+     <width>261</width>
+     <height>151</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 204, 179);</string>
+    <string notr="true">background-color: rgb(213, 255, 181);</string>
    </property>
    <property name="title">
-    <string>other profile</string>
+    <string>tweet</string>
    </property>
-   <widget class="QLabel" name="lbl_searchid_pro">
+   <widget class="QLabel" name="lbl_tweet_pro">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -415,13 +365,10 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
      </font>
     </property>
     <property name="text">
-     <string>Enter Username</string>
-    </property>
-    <property name="buddy">
-     <cstring>ln_searchid_pro</cstring>
+     <string>Enter your tweet</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="ln_searchid_pro">
+   <widget class="QLineEdit" name="ln_tweet_pro">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -434,7 +381,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_searchid_pro">
+   <widget class="QPushButton" name="btn_tweet_pro">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -444,28 +391,11 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
      </rect>
     </property>
     <property name="text">
-     <string>search</string>
+     <string>tweet</string>
     </property>
    </widget>
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>btn_searchid_pro</sender>
-   <signal>clicked()</signal>
-   <receiver>ln_searchid_pro</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>789</x>
-     <y>584</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>790</x>
-     <y>560</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

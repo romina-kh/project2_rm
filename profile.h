@@ -17,6 +17,9 @@ public:
     void set_pro(Common* user);
     ~profile();
 
+private slots:
+    void on_btn_tweet_pro_clicked();
+
 private:
     Ui::profile *ui;
 };

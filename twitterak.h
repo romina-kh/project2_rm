@@ -28,7 +28,7 @@ class Twitterak
     void ckeck_id(string &id);
     void logout();
     void choice_login();
-    void menu();
+    //void menu();
     void show(string);
     //void help();
     void edit_profile(string , string);
@@ -45,6 +45,7 @@ class Twitterak
     void in_follow();
     void in_hashtag();
     void push_hashtag(string, Tweet);
+    void qttweet(string);
 
 
 };

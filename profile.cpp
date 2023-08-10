@@ -48,13 +48,21 @@ void profile::on_btn_tweet_pro_clicked()
     t.Set_Tweet(tweet);
     t.Set_date();
     User->push_tweet(t);
-    cout << User->mtweet.size();
-    //ptweet();
+    ptweet();
 
 
 
 
 
 
+}
+
+
+void profile::on_btn_like_pro_clicked()
+{
+//    string username , indx;
+//    username = ui->ln_like_pro->text().toStdString();
+//    indx = ui->ln_likenum_pro->text().toInt();
+//    User->li
 }
 

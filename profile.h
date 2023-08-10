@@ -22,6 +22,8 @@ public:
 private slots:
     void on_btn_tweet_pro_clicked();
 
+    void on_btn_like_pro_clicked();
+
 private:
     Ui::profile *ui;
     Common* User;

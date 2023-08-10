@@ -102,68 +102,6 @@ void seperator(string original , string& characters , string& numbers) //This fu
 
 //********************************************************************************************************************************************
 
-//void Twitterak::menu()
-//{
-
-//    string choice , r;//string that we use to separate words from each other(words between space)
-//    vector <string> vec1;
-//    bool flag1 = true;
-
-//    while(flag1==true)
-//    {
-
-//        cout << "> ";
-//        getline(cin ,choice);
-//        for (int i = 0 ; i < choice.size() ; i++)
-//        {
-//            choice[i] = tolower(choice[i]);
-//        }
-//        vec1.clear();
-//        stringstream word1(choice);
-
-//        while (getline(word1 , r , ' '))
-//        {
-//            vec1.push_back(r);
-//        }
-
-//        // if(vec1[0] == "help")
-//        // {
-//        //     help();
-//        // }
-//        if(vec1[0] == "signup" )
-//        {
-//            //signup(vec1);
-//        }
-//        else if(vec1[0] == "login")
-//        {
-//            //login(vec1);
-//        }
-//        else if(vec1[0] == "exit" || vec1[0]=="q" || vec1[0]=="quit")
-//        {
-//            string ask;
-//            cout << "? Are you sure?(y/n) : ";
-//            getline( cin , ask);
-//            if (ask[0] == 'y')
-//            {
-//                cout << "* Good Bye.";
-//                put_user();
-//                ptweet();
-//                pfollow();
-//                put_hashtag();
-//                exit(0);
-//            }
-//            else
-//            {
-//                menu() ;
-
-//            }
-//        }
-//        else
-//        {
-//            cout << "! Undefined command.\n";
-//        }
-//    }
-//}
 
 //****************************************************************************************************************************************
 

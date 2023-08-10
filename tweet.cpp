@@ -3,6 +3,7 @@
 #include "tweet.h"
 #include "user.h"
 #include <ctime>
+#include <qmessagebox.h>
 
 
 
@@ -37,6 +38,8 @@ void Tweet::Set_User(string userName)
 
 void Tweet::likes(Common* user ,Common* purpose, int index) //liking tweet
 {
+   QMessageBox q;
+
     bool flag = false;
     if(purpose->mtweet[index].likers.size() != 0)
     {
@@ -50,6 +53,8 @@ void Tweet::likes(Common* user ,Common* purpose, int index) //liking tweet
         if (flag == false)
         {
             purpose->mtweet[index].likers.push_back(user);
+            q.setText("Like!");
+            q.exec();
             cout << "* liked.\n" ;
         }
         else

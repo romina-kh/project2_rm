@@ -48,6 +48,7 @@ void profile::on_btn_tweet_pro_clicked()
     t.Set_date();
     t.Set_Tweet(tweet);
     t.Set_date();
+    User->set_index();
     User->push_tweet(t);
     ptweet();
 
@@ -64,9 +65,16 @@ void profile::on_btn_setting_clicked()
 
 void profile::on_btn_like_pro_clicked()
 {
-//    string username , indx;
-//    username = ui->ln_like_pro->text().toStdString();
-//    indx = ui->ln_likenum_pro->text().toInt();
-//    User->li
+    Tweet t;
+    string username ;
+    int index;
+    username = ui->ln_like_pro->text().toStdString();
+    index = ui->ln_likenum_pro->text().toInt();
+
+    musers[username]->indx(index).likes(User , musers[username] , index);
+//    musers[username]->indx(index).show_likers(musers[username], index);
+//    musers[username]->indx(index).show_numberlikes( musers[username], index);
+    ///musers[username]->flike(musers[username] , index);
+
 }
 

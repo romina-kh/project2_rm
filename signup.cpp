@@ -22,7 +22,7 @@ void signup::on_btn_done_signup_clicked()
 
     Twitterak app;
     app.in_user();
-//    app.in_tweet();
+    app.in_tweet();
 //    app.in_follow();
 //    app.in_hashtag();
 
@@ -106,6 +106,7 @@ void signup::on_pushButton_clicked()
 {
     Twitterak t;
     t.in_user();
+    t.in_tweet();
     string username , pass;
     username = ui->ln_username_s->text().toStdString();
     pass = ui->ln_password_s->text().toStdString();

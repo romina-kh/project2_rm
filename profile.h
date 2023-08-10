@@ -22,7 +22,11 @@ public:
 private slots:
     void on_btn_tweet_pro_clicked();
 
+<<<<<<< HEAD
     void on_btn_like_pro_clicked();
+=======
+     void on_btn_setting_clicked();
+>>>>>>> f45c8f3b6d1e19b9ad3e154ab31490fb3c418928
 
 private:
     Ui::profile *ui;

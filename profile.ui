@@ -167,7 +167,7 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_setting">
    <property name="geometry">
     <rect>
      <x>60</x>

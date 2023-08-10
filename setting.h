@@ -18,6 +18,10 @@ public:
 private slots:
     void on_btn_exit_setting_clicked();
 
+    void on_btn_logout_setting_clicked();
+
+    void on_btn_delete_setting_clicked();
+
 private:
     Ui::setting *ui;
 };

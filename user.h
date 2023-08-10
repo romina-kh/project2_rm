@@ -17,7 +17,7 @@ class Common //parent
     friend void Tweet:: dislike(Common* currentuser ,Common* target, int index);
     friend void Tweet::show_numberlike_m( Common *purpose, int index ,int indexm);//friend for liking mention
     protected:
-        map<int ,Tweet> mtweet;// map<string , vector<Tweet*>>
+        // map<string , vector<Tweet*>>
         vector<string> vecfollowing ;
         string Name;
         string User_Name;
@@ -36,7 +36,7 @@ class Common //parent
         int index = 0 ;
 
     public:
-
+map<int ,Tweet> mtweet;
         virtual int Set_Name(string Name);
         virtual string Get_Name();
 
@@ -104,6 +104,7 @@ class Common //parent
             // cout << this->mtweet[x].get_classtweet();
             return this->mtweet[x];
         }
+
 };
 
 

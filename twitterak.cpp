@@ -227,28 +227,31 @@ void Twitterak::signup_org(string User , string Name ,string Phone_Number, strin
 
     musers[user->Get_User()] = user;
 
+    temp = user->Get_User() ;
+
     put_user();
     q.exec();
     exit(0);
 }
 
 //****************************************************************************************************************************
-void Twitterak::login(string user , string pass)//using hash for safety
+void Twitterak::login(string usern , string pass)//using hash for safety
 {
 
     QMessageBox q;
     q.setText("login!");
 
-        ckeck_id(user);
+        ckeck_id(usern);
 
-        if(musers.count(user) == 1)//login
+        if(musers.count(usern) == 1)//login
         {
-            if(musers[user]->Get_Password() ==  pass)
+            if(musers[usern]->Get_Password() ==  pass)
             {
-                temp = user ;
+                user = musers[usern] ;
+                temp = usern;
                 checkin = 1 ;
                 q.exec();
-                exit(0);
+                show(usern);
 
                 //choice_login();
             }
@@ -777,8 +780,9 @@ void Twitterak:: edit_profile(string edit ,string changable)
 void Twitterak::show(string account)
     {
 
-        profile* pro = new profile;
+        profile* pro = new profile(musers , musers[account]);
         pro->set_pro(musers[account]);
+
         pro->show();
 //        ckeck_id(profile);
 

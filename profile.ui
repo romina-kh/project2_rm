@@ -302,8 +302,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>70</y>
-      <width>221</width>
+      <y>60</y>
+      <width>121</width>
       <height>22</height>
      </rect>
     </property>
@@ -322,6 +322,32 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
     </property>
     <property name="text">
      <string>follow</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ln_likenum_pro">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>60</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_likenum_Pro">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>like num</string>
     </property>
    </widget>
   </widget>

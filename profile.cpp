@@ -2,12 +2,15 @@
 #include "ui_profile.h"
 #include "user.h"
 #include "twitterak.h"
+#include "tweet.h"
 
-profile::profile(QWidget *parent) :
+profile::profile(unordered_map<string , Common*>& users,Common* cuser,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::profile)
 {
     ui->setupUi(this);
+    User = cuser;
+    musers = users;
 }
 
 profile::~profile()
@@ -15,6 +18,15 @@ profile::~profile()
     delete ui;
 }
 
+
+void profile :: ptweet()
+{
+    remove("tweet.txt");
+    for ( auto i : musers)
+    {
+        i.second->put_tweet();
+    }
+}
 void profile :: set_pro(Common* user)
 {
     ui->lbl_name_pro->setText(QString ::fromStdString(user->Get_Name()));
@@ -26,17 +38,22 @@ void profile :: set_pro(Common* user)
     ui->textBrowser_bio_pro->setText(QString ::fromStdString(user->Get_Bio()));
 }
 
+
 void profile::on_btn_tweet_pro_clicked()
 {
-    cout << "4";
-    Twitterak t;
-    string tweet;
+   Tweet t;
+    string tweet , date;
     tweet = ui->ln_tweet_pro->text().toStdString();
-    cout << "1";
-    t.qttweet(tweet);
-    cout << "2";
-    t.ptweet();
-    cout << "3";
+    t.Set_date();
+    t.Set_Tweet(tweet);
+    t.Set_date();
+    User->push_tweet(t);
+    cout << User->mtweet.size();
+    //ptweet();
+
+
+
+
 
 
 }

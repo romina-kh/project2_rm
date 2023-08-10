@@ -106,8 +106,9 @@ void signup::on_pushButton_clicked()
 {
     Twitterak t;
     t.in_user();
-    string username;
+    string username , pass;
     username = ui->ln_username_s->text().toStdString();
-    t.show(username);
+    pass = ui->ln_password_s->text().toStdString();
+    t.login(username , pass);
 }
 

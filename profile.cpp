@@ -3,6 +3,7 @@
 #include "user.h"
 #include "twitterak.h"
 #include "tweet.h"
+#include "setting.h"
 
 profile::profile(unordered_map<string , Common*>& users,Common* cuser,QWidget *parent) :
     QWidget(parent),
@@ -51,10 +52,13 @@ void profile::on_btn_tweet_pro_clicked()
     cout << User->mtweet.size();
     //ptweet();
 
+}
 
-
-
-
+void profile::on_btn_setting_clicked()
+{
+    setting * setting_obj = nullptr;
+    setting_obj = new setting;
+    setting_obj->show();
 
 }
 

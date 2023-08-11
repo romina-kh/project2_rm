@@ -23,7 +23,7 @@ void signup::on_btn_done_signup_clicked()
     Twitterak app;
     app.in_user();
     app.in_tweet();
-//    app.in_follow();
+    app.in_follow();
 //    app.in_hashtag();
 
     string username , password , name , phone , country , link , bio , age;
@@ -52,6 +52,7 @@ void signup::on_btn_done_signup_clicked()
     }
 
 
+    app.login(username , password);
 
 
 
@@ -102,15 +103,15 @@ void signup::on_rbtn_ano_s_clicked()
 }
 
 
-void signup::on_pushButton_clicked()
-{
-    Twitterak t;
-    t.in_user();
-    t.in_tweet();
-    t.in_follow();
-    string username , pass;
-    username = ui->ln_username_s->text().toStdString();
-    pass = ui->ln_password_s->text().toStdString();
-    t.login(username , pass);
-}
+//void signup::on_pushButton_clicked()
+//{
+//    Twitterak t;
+//    t.in_user();
+//    t.in_tweet();
+//    t.in_follow();
+//    string username , pass;
+//    username = ui->ln_username_s->text().toStdString();
+//    pass = ui->ln_password_s->text().toStdString();
+//    t.login(username , pass);
+//}
 

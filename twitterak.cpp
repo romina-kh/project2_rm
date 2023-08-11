@@ -1077,7 +1077,7 @@ void Twitterak :: in_tweet()
                 date+= '\n';
                 t.Set_date(date);
                 musers[username]->set_index();
-                musers[username]->push_tweet(t);
+                musers[username]->push_tweet2(t);
 
                 in_tweet >> like ;
 
@@ -1137,7 +1137,7 @@ void Twitterak :: in_follow()
                         //in_follow.ignore(1);
                         break;
                     }
-                    musers[username]->add_following(following);
+                    musers[username]->add_following2(following);
                     musers[following]->increase_follower();
 
                 }

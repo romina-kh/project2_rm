@@ -68,6 +68,7 @@ map<int ,Tweet> mtweet;
 
         // virtual void push_tweet(string t);
         virtual void push_tweet(Tweet t);
+        virtual void push_tweet2(Tweet t);
         virtual void get_tweet();
         virtual void get_tweet1(int index);
         virtual void delete_tweet(int number);
@@ -84,6 +85,7 @@ map<int ,Tweet> mtweet;
         virtual int Get_followers() ;
 
         virtual void add_following(string) ;
+        virtual void add_following2(string) ;
         virtual void show_following() ;
         virtual void increase_follower();
 

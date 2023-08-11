@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "user.h"
 #include <unordered_map>
+#include "edit_profile.h"
 
 namespace Ui {
 class setting;
@@ -23,6 +24,8 @@ private slots:
     void on_btn_logout_setting_clicked();
 
     void on_btn_delete_setting_clicked();
+
+    void on_btn_edit_setting_clicked();
 
 private:
 

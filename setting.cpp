@@ -4,8 +4,7 @@
 #include "profile.h"
 #include "twitterak.h"
 #include "user.h"
-
-
+#include "edit_profile.h"
 
 
 setting::setting(QWidget *parent) :
@@ -45,6 +44,15 @@ void setting::on_btn_delete_setting_clicked()
     logout_btn  = new MainWindow ;
     logout_btn->show() ;
 
+
+}
+
+
+void setting::on_btn_edit_setting_clicked()
+{
+    edit_profile * edit_btn = nullptr ;
+    edit_btn = new edit_profile ;
+    edit_btn->show() ;
 
 }
 

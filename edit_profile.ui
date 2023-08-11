@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>edit_profile</class>
+ <widget class="QWidget" name="edit_profile">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>961</width>
+    <height>625</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="box_total_edit">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>30</y>
+     <width>771</width>
+     <height>561</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: #4D6D9A;
+color:#00007f ;</string>
+   </property>
+   <property name="title">
+    <string>Edit profile</string>
+   </property>
+   <widget class="QGroupBox" name="box_edit_phone">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>230</y>
+      <width>151</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 72, 106) ;</string>
+    </property>
+    <property name="title">
+     <string>edit phone number</string>
+    </property>
+    <widget class="QLineEdit" name="ln_edit_phone">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102)  ;
+color:rgb(255, 225, 245) ;</string>
+     </property>
+     <property name="placeholderText">
+      <string>enter new</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_phone">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(192, 229, 235);</string>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_edit_user">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>230</y>
+      <width>151</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 72, 106) ;</string>
+    </property>
+    <property name="title">
+     <string>edit user name</string>
+    </property>
+    <widget class="QLineEdit" name="ln_edit_user">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102)  ;
+color:rgb(255, 225, 245) ;</string>
+     </property>
+     <property name="placeholderText">
+      <string>enter new</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_user">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(192, 229, 235);</string>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_edit_age">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>230</y>
+      <width>151</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 72, 106) ;</string>
+    </property>
+    <property name="title">
+     <string>edit birthday</string>
+    </property>
+    <widget class="QLineEdit" name="ln_edit_age">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102) ;
+color:rgb(255, 225, 245) ;</string>
+     </property>
+     <property name="placeholderText">
+      <string>enter new</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_age">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(192, 229, 235);</string>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_edit_pass">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>230</y>
+      <width>151</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 72, 106) ;</string>
+    </property>
+    <property name="title">
+     <string>edit password</string>
+    </property>
+    <widget class="QLineEdit" name="ln_edit_pass">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102) ;
+color:rgb(255, 225, 245) ;</string>
+     </property>
+     <property name="placeholderText">
+      <string>enter new</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_pass">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(192, 229, 235);</string>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_edit_name">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>151</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 72, 106) ;</string>
+    </property>
+    <property name="title">
+     <string>edit name</string>
+    </property>
+    <widget class="QLineEdit" name="ln_edit_name">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102) ;
+color:rgb(255, 225, 245) ;</string>
+     </property>
+     <property name="placeholderText">
+      <string>enter new</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_name">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(192, 229, 235);</string>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_edit_bio">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>390</y>
+      <width>151</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 72, 106) ;</string>
+    </property>
+    <property name="title">
+     <string>edit bio</string>
+    </property>
+    <widget class="QLineEdit" name="ln_edit_bio">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102)  ;
+color:rgb(255, 225, 245) ;</string>
+     </property>
+     <property name="placeholderText">
+      <string>enter new</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_bio">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(192, 229, 235);</string>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_edit_link">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>390</y>
+      <width>151</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 72, 106) ;</string>
+    </property>
+    <property name="title">
+     <string>edit link</string>
+    </property>
+    <widget class="QLineEdit" name="ln_edit_link">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102)  ;
+color:rgb(255, 225, 245) ;</string>
+     </property>
+     <property name="placeholderText">
+      <string>enter new</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_link">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(192, 229, 235);</string>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_edit_country">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>390</y>
+      <width>151</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 72, 106) ;</string>
+    </property>
+    <property name="title">
+     <string>edit country</string>
+    </property>
+    <widget class="QLineEdit" name="ln_edit_country">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102)  ;
+color:rgb(255, 225, 245) ;</string>
+     </property>
+     <property name="placeholderText">
+      <string>enter new</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_country">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(192, 229, 235);</string>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>271</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color : #aaffff ;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_save_edit">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>90</y>
+      <width>151</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 20px;
+border-style: outset;
+background:  #EDB5BF;
+padding: 5px;
+}
+
+QPushButton:hover {
+background:   #ffdcee;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>save </string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

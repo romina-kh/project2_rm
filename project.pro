@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     anonymous.cpp \
     company.cpp \
+    edit_profile.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 HEADERS += \
     anonymous.h \
     company.h \
+    edit_profile.h \
     login.h \
     mainwindow.h \
     personal.h \
@@ -36,6 +38,7 @@ HEADERS += \
     user.h
 
 FORMS += \
+    edit_profile.ui \
     login.ui \
     mainwindow.ui \
     profile.ui \

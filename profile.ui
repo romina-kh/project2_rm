@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1050</width>
+    <width>1337</width>
     <height>652</height>
    </rect>
   </property>
@@ -357,8 +357,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>10</y>
+     <x>970</x>
+     <y>20</y>
      <width>331</width>
      <height>321</height>
     </rect>
@@ -526,8 +526,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>810</x>
-     <y>380</y>
+     <x>1120</x>
+     <y>360</y>
      <width>181</width>
      <height>21</height>
     </rect>
@@ -536,8 +536,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>710</x>
-     <y>380</y>
+     <x>1020</x>
+     <y>360</y>
      <width>91</width>
      <height>20</height>
     </rect>
@@ -548,6 +548,92 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
    <property name="text">
     <string>   search :</string>
    </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_dislike_pro">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>10</y>
+     <width>261</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 207, 192);</string>
+   </property>
+   <property name="title">
+    <string>dislike</string>
+   </property>
+   <widget class="QLabel" name="lbl_dislike_pro">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Enter Username</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ln_dislike_pro">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_dislike_pro">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>100</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>dislike</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ln_dislikenum_pro">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>60</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_dislikenum_Pro">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>tweet number</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

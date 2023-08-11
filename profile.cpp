@@ -76,16 +76,17 @@ void profile::on_btn_tweet_pro_clicked()
 
 void profile::on_btn_setting_clicked()
 {
-    setting * setting_obj = nullptr;
-    setting_obj = new setting;
+   setting * setting_obj = new setting(musers,User);
+
     setting_obj->show();
+
 
 }
 
 
 void profile::on_btn_like_pro_clicked()
 {
-    QMessageBox q;
+
     Tweet t;
     string username ;
 
@@ -121,4 +122,25 @@ void profile::on_btn_follow_pro_clicked()
 
     pfollow();
 }
+
+
+void profile::on_btn_dislike_pro_clicked()
+{
+    QMessageBox q;
+    Tweet t;
+    string username ;
+
+    int index;
+    username = ui->ln_dislike_pro->text().toStdString();
+    index = ui->ln_dislikenum_pro->text().toInt();
+
+
+    musers[username]->indx(index).dislike(User , musers[username] , index);
+
+    ptweet();
+    ui->ln_dislike_pro->clear();
+    ui->ln_dislikenum_pro->clear();
+}
+
+
 

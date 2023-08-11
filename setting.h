@@ -15,7 +15,7 @@ class setting : public QWidget
     Q_OBJECT
 
 public:
-    explicit setting(QWidget *parent = nullptr);
+    explicit setting(unordered_map<string , Common*>&,Common*,QWidget *parent = nullptr);
     ~setting();
 
 private slots:
@@ -32,8 +32,9 @@ private slots:
 private:
 
     Ui::setting *ui;
-    //Common* User;
-    //unordered_map<string , Common*> musers;
+   Common* User;
+   unordered_map<string , Common*>musers;
+
 };
 
 #endif // SETTING_H

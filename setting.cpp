@@ -7,13 +7,13 @@
 #include "edit_profile.h"
 
 
-setting::setting(QWidget *parent) :
+setting::setting(unordered_map<string , Common*>& users,Common* user,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::setting)
 {
     ui->setupUi(this);
-    //User = cuser;
-    //musers = users;
+   User = user;
+   musers = users;
 }
 
 setting::~setting()
@@ -29,21 +29,15 @@ void setting::on_btn_exit_setting_clicked()
 
 void setting::on_btn_logout_setting_clicked()
 {
-    MainWindow * logout_btn = nullptr ;
-    logout_btn  = new MainWindow ;
-    logout_btn->show() ;
+    this->close();
 
 }
 
 
 void setting::on_btn_delete_setting_clicked()
 {
-    Twitterak ti ;
-    //ti.delete_account() ;
-    MainWindow * logout_btn = nullptr ;
-    logout_btn  = new MainWindow ;
-    logout_btn->show() ;
 
+    musers.erase(User->Get_User());
 
 }
 
@@ -51,7 +45,7 @@ void setting::on_btn_delete_setting_clicked()
 void setting::on_btn_edit_setting_clicked()
 {
     edit_profile * edit_btn = nullptr ;
-    edit_btn = new edit_profile ;
+    edit_btn = new edit_profile(User) ;
     edit_btn->show() ;
 
 }
@@ -59,8 +53,6 @@ void setting::on_btn_edit_setting_clicked()
 
 void setting::on_btn_back_clicked()
 {
-    Twitterak back_btn ;
-    //back_btn.show();
-
+    this->close();
 }
 

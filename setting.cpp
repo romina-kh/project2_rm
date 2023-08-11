@@ -60,7 +60,7 @@ void setting::on_btn_edit_setting_clicked()
 void setting::on_btn_back_clicked()
 {
     Twitterak back_btn ;
-    back_btn.show();
+    //back_btn.show();
 
 }
 

@@ -16,7 +16,7 @@
   <widget class="QGroupBox" name="box_login">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>150</x>
      <y>70</y>
      <width>461</width>
      <height>411</height>
@@ -30,6 +30,10 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(63, 32, 95);
+color:#8a8a8a ;</string>
+   </property>
    <property name="title">
     <string>login</string>
    </property>
@@ -38,8 +42,8 @@
      <rect>
       <x>60</x>
       <y>110</y>
-      <width>141</width>
-      <height>51</height>
+      <width>171</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -50,14 +54,28 @@
       <bold>false</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: #333;
+border: 2px solid rgb(63, 32, 95 #764dad);
+border-radius: 20px;
+border-style: outset;
+background: rgb(63, 32, 95 #2A1b3D);
+padding: 5px;
+}
+
+QLabel:hover {
+background:  rgb(63, 32, 95 #2A1b3D);
+}</string>
+    </property>
     <property name="text">
-     <string>username</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#c49ed5;&quot;&gt;username :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="ln_username_l">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>250</x>
       <y>130</y>
       <width>161</width>
       <height>31</height>
@@ -71,6 +89,17 @@
       <bold>false</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+color:#333 ;
+border: 2px solid rgb(63, 32, 95);
+background: #4f3aa5;
+}
+
+QLineEdit:hover {
+background:#999cbd;
+}</string>
+    </property>
     <property name="placeholderText">
      <string>pass123</string>
     </property>
@@ -79,8 +108,8 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>210</y>
-      <width>131</width>
+      <y>200</y>
+      <width>171</width>
       <height>61</height>
      </rect>
     </property>
@@ -92,14 +121,28 @@
       <bold>false</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: #333;
+border: 2px solid rgb(63, 32, 95 #764dad);
+border-radius: 20px;
+border-style: outset;
+background: rgb(63, 32, 95 #2A1b3D);
+padding: 5px;
+}
+
+QLabel:hover {
+background:  rgb(63, 32, 95 #2A1b3D);
+}</string>
+    </property>
     <property name="text">
-     <string>password</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#c49ed5;&quot;&gt;password :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="ln_pass_l">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>250</x>
       <y>220</y>
       <width>161</width>
       <height>31</height>
@@ -113,6 +156,17 @@
       <bold>false</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+color:#333 ;
+border: 2px solid rgb(63, 32, 95);
+background: #4f3aa5;
+}
+
+QLineEdit:hover {
+background:#999cbd;
+}</string>
+    </property>
     <property name="placeholderText">
      <string>username</string>
     </property>
@@ -120,8 +174,8 @@
    <widget class="QPushButton" name="btn_done_login">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>300</y>
+      <x>150</x>
+      <y>310</y>
       <width>131</width>
       <height>51</height>
      </rect>
@@ -140,13 +194,14 @@ color: #333;
 border: 2px solid #555;
 border-radius: 20px;
 border-style: outset;
-background: rgb(255, 170, 255);
+background:  #d83F87;
 padding: 5px;
 }
 
 QPushButton:hover {
-background: rgb(170, 255, 0);
-}</string>
+background:  rgb(255, 170, 255 #8a8a8a);
+}
+</string>
     </property>
     <property name="text">
      <string>done</string>

@@ -3,6 +3,8 @@
 #include "mainwindow.h"
 #include "profile.h"
 #include "twitterak.h"
+#include "user.h"
+
 
 
 
@@ -11,6 +13,8 @@ setting::setting(QWidget *parent) :
     ui(new Ui::setting)
 {
     ui->setupUi(this);
+    //User = cuser;
+    //musers = users;
 }
 
 setting::~setting()
@@ -36,7 +40,7 @@ void setting::on_btn_logout_setting_clicked()
 void setting::on_btn_delete_setting_clicked()
 {
     Twitterak ti ;
-    ti.delete_account() ;
+    //ti.delete_account() ;
     MainWindow * logout_btn = nullptr ;
     logout_btn  = new MainWindow ;
     logout_btn->show() ;

@@ -15,6 +15,12 @@ public:
     explicit edit_profile(QWidget *parent = nullptr);
     ~edit_profile();
 
+private slots:
+
+    void on_editprofile_dateEdit_userDateChanged(const QDate &date);
+
+    void on_btn_back_editpro_clicked();
+
 private:
     Ui::edit_profile *ui;
 };

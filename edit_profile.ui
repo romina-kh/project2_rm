@@ -16,7 +16,7 @@
   <widget class="QGroupBox" name="box_total_edit">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>80</x>
      <y>30</y>
      <width>771</width>
      <height>561</height>
@@ -149,23 +149,6 @@ color: rgb(0, 72, 106) ;</string>
     <property name="title">
      <string>edit birthday</string>
     </property>
-    <widget class="QLineEdit" name="ln_edit_age">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>113</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:rgb(95, 99, 102) ;
-color:rgb(255, 225, 245) ;</string>
-     </property>
-     <property name="placeholderText">
-      <string>enter new</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="btn_edit_age">
      <property name="geometry">
       <rect>
@@ -180,6 +163,20 @@ color:rgb(255, 225, 245) ;</string>
      </property>
      <property name="text">
       <string>Edit</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="editprofile_dateEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>110</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102) ;
+color:rgb(255, 225, 245) ;</string>
      </property>
     </widget>
    </widget>
@@ -454,8 +451,8 @@ color:rgb(255, 225, 245) ;</string>
    <widget class="QPushButton" name="btn_save_edit">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>90</y>
+      <x>310</x>
+      <y>50</y>
       <width>151</width>
       <height>61</height>
      </rect>
@@ -477,6 +474,40 @@ background:   #ffdcee;
     </property>
     <property name="text">
      <string>save </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_back_editpro">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>50</y>
+      <width>141</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+color: #333;
+border: 2px solid #333;
+border-radius: 20px;
+border-style: outset;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #9effd2
+);
+padding: 5px;
+}
+
+QPushButton:hover {
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+);
+}</string>
+    </property>
+    <property name="text">
+     <string>   back  --&gt;</string>
     </property>
    </widget>
   </widget>

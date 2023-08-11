@@ -5,6 +5,7 @@
 #include "company.h"
 #include "personal.h"
 #include <fstream>
+#include <QMessageBox>
 
 
 using namespace std;
@@ -221,8 +222,11 @@ string Common::Get_Header()
 
 void Common::push_tweet(Tweet t)
 {
+    QMessageBox q;
+    q.setText("* Your tweet has been successfully registered.");
     mtweet[this->index] = t;
-    cout << "* Your tweet has been successfully registered.\n";
+    q.exec();
+    //cout << "* Your tweet has been successfully registered.\n";
 }
 
 

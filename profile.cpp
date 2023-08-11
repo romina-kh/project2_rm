@@ -71,10 +71,11 @@ void profile::on_btn_like_pro_clicked()
     username = ui->ln_like_pro->text().toStdString();
     index = ui->ln_likenum_pro->text().toInt();
 
+
     musers[username]->indx(index).likes(User , musers[username] , index);
 //    musers[username]->indx(index).show_likers(musers[username], index);
 //    musers[username]->indx(index).show_numberlikes( musers[username], index);
-    ///musers[username]->flike(musers[username] , index);
+    musers[username]->flike(musers[username] , index);
 
 }
 

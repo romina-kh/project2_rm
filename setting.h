@@ -27,6 +27,8 @@ private slots:
 
     void on_btn_edit_setting_clicked();
 
+    void on_btn_back_clicked();
+
 private:
 
     Ui::setting *ui;

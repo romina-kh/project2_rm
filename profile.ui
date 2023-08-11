@@ -342,12 +342,12 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
      <rect>
       <x>150</x>
       <y>40</y>
-      <width>55</width>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>like num</string>
+     <string>tweet number</string>
     </property>
    </widget>
   </widget>

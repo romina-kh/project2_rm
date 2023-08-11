@@ -10,30 +10,49 @@
     <height>582</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="btn_edit_setting">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>70</y>
-     <width>141</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Edit profile</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true">background: #93d3b5</string>
+  </property>
   <widget class="QPushButton" name="btn_logout_setting">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>290</y>
-     <width>141</width>
-     <height>61</height>
+     <x>270</x>
+     <y>300</y>
+     <width>161</width>
+     <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	font: 18pt &quot;MS Gothic&quot;;
+	font: 9pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
+color: #333;
+border: 2px solid #333;
+border-radius: 20px;
+border-style: outset;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #84CEEB
+);
+padding: 5px;
+}
+
+QPushButton:hover {
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+);
+}</string>
    </property>
    <property name="text">
     <string>Logout</string>
@@ -42,24 +61,100 @@
   <widget class="QPushButton" name="btn_delete_setting">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>180</y>
-     <width>141</width>
-     <height>61</height>
+     <x>270</x>
+     <y>210</y>
+     <width>161</width>
+     <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+color: #333;
+border: 2px solid #333;
+border-radius: 20px;
+border-style: outset;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #5AB9EA
+);
+padding: 5px;
+}
+
+QPushButton:hover {
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+);
+}</string>
    </property>
    <property name="text">
     <string>Delete account</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="btn_edit_setting">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>120</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+color: #333;
+border: 2px solid #333;
+border-radius: 20px;
+border-style: outset;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #2f6aa1
+);
+padding: 5px;
+}
+
+QPushButton:hover {
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+);
+}</string>
+   </property>
+   <property name="text">
+    <string>Edit profile</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="btn_exit_setting">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>400</y>
-     <width>141</width>
-     <height>61</height>
+     <x>270</x>
+     <y>390</y>
+     <width>161</width>
+     <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+color: #333;
+border: 2px solid #333;
+border-radius: 20px;
+border-style: outset;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #C1C8E4
+);
+padding: 5px;
+}
+
+QPushButton:hover {
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+);
+}</string>
    </property>
    <property name="text">
     <string>Exit</string>

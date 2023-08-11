@@ -4,6 +4,7 @@
 #include "twitterak.h"
 #include "tweet.h"
 #include "setting.h"
+#include <QMessageBox>
 
 profile::profile(unordered_map<string , Common*>& users,Common* cuser,QWidget *parent) :
     QWidget(parent),
@@ -17,6 +18,16 @@ profile::profile(unordered_map<string , Common*>& users,Common* cuser,QWidget *p
 profile::~profile()
 {
     delete ui;
+}
+
+
+void profile :: pfollow()
+{
+    remove("follow.txt");
+    for ( auto i : musers)
+    {
+        i.second->put_follow();
+    }
 }
 
 
@@ -73,9 +84,30 @@ void profile::on_btn_like_pro_clicked()
 
 
     musers[username]->indx(index).likes(User , musers[username] , index);
-//    musers[username]->indx(index).show_likers(musers[username], index);
-//    musers[username]->indx(index).show_numberlikes( musers[username], index);
-    musers[username]->flike(musers[username] , index);
 
+    ptweet();
+    ui->ln_like_pro->clear();
+    ui->ln_likenum_pro->clear();
+
+}
+
+
+void profile::on_btn_follow_pro_clicked()
+{
+    QMessageBox q;
+    string username ;
+    username = ui->ln_follow_pro->text().toStdString();
+    if (User == musers[username])
+    {
+        q.setText("! You can not follow yourself.");
+        q.exec();
+    }
+    else
+    {
+        User->add_following(username) ;
+        musers[username]->increase_follower() ;
+    }
+
+    pfollow();
 }
 

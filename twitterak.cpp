@@ -301,36 +301,7 @@ void Twitterak::choice_login() //Showing diffrent oprtions after login
             edit_profile(str_edit1 ,str_edit2);
         }
 
-        else if(vec[0] == "tweet")
-        {
 
-            for (int i = 1; i < vec.size() ; i++)
-            {
-                tweet += vec[i] + " " ;
-            }
-            cout << "t1\n";
-//            Tweet new1; //new object from Tweet
-
-
-//            new1.Set_date();
-//            check_space(tweet) ;
-//            new1.Set_Tweet(tweet);
-//            musers[temp]->set_index();
-//            new1.set_number(musers[temp]->get_index());
-//cout << "t2\n";
-
-//            musers[temp]->push_tweet(new1);
-//            string str = new1.get_classtweet();
-
-//           cout << "t3\n";
-
-//            findhash(str, new1);
-
-//            cout << "t4\n";
-//            choice_login() ;
-
-
-        }
         else if (vec[0][0] == '#' )
         {
             string key = vec[0];

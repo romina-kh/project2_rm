@@ -2,6 +2,8 @@
 #define SETTING_H
 
 #include <QWidget>
+#include "user.h"
+#include <unordered_map>
 
 namespace Ui {
 class setting;
@@ -18,8 +20,15 @@ public:
 private slots:
     void on_btn_exit_setting_clicked();
 
+    void on_btn_logout_setting_clicked();
+
+    void on_btn_delete_setting_clicked();
+
 private:
+
     Ui::setting *ui;
+    //Common* User;
+    //unordered_map<string , Common*> musers;
 };
 
 #endif // SETTING_H

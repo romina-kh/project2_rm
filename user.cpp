@@ -338,6 +338,11 @@ int Common::Get_followers()//
 
 void Common::add_following(string addfollow)
 {
+    QMessageBox q , q2;
+    q.setText("* followed.");
+    q2.setText("! You have already follow this account.");
+
+
     bool flag = 0 ;
     for(auto i : vecfollowing)
     {
@@ -349,11 +354,14 @@ void Common::add_following(string addfollow)
     }
     if(flag == 0)
     {
+        q.exec();
+
         vecfollowing.push_back(addfollow) ;
         cout << "* followed.\n" ;
     }
     else
     {
+        q2.exec();
         cout << "! You have already follow this account.\n" ;
     }
 

@@ -20,8 +20,8 @@ void login::on_btn_done_login_clicked()
 {
     Twitterak app;
     app.in_user();
-//    app.in_tweet();
-//    app.in_follow();
+    app.in_tweet();
+    app.in_follow();
 //    app.in_hashtag();
 
     string username , password;

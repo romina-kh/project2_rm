@@ -41,8 +41,10 @@ void Tweet::likes(Common* user ,Common* purpose, int index) //liking tweet
    QMessageBox q;
 
     bool flag = false;
+    cout << purpose->mtweet[index].likers.size() <<endl;
     if(purpose->mtweet[index].likers.size() != 0)
     {
+        cout << "1234567890\n";
         for (auto i : purpose->mtweet[index].likers )
         {
             if (i == user)
@@ -53,7 +55,7 @@ void Tweet::likes(Common* user ,Common* purpose, int index) //liking tweet
         if (flag == false)
         {
             purpose->mtweet[index].likers.push_back(user);
-            q.setText("Like!");
+            q.setText("* liked.");
             q.exec();
             cout << "* liked.\n" ;
         }
@@ -66,7 +68,7 @@ void Tweet::likes(Common* user ,Common* purpose, int index) //liking tweet
     else
     {
         purpose->mtweet[index].likers.push_back(user);
-        cout << "* liked.\n" ;
+        cout << "* liked 3333.\n" ;
     }
 
 }

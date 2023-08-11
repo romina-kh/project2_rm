@@ -230,6 +230,14 @@ void Common::push_tweet(Tweet t)
 }
 
 
+void Common::push_tweet2(Tweet t)
+{
+
+    mtweet[this->index] = t;
+
+}
+
+
 void Common::get_tweet()
 {
     if(mtweet.size()==0)
@@ -269,6 +277,7 @@ void Common::set_index()
 {
     index++;
 }
+
 void Common::delete_tweet(int Number)
 {
     if(mtweet.find(Number)!=mtweet.end())
@@ -366,6 +375,35 @@ void Common::add_following(string addfollow)
     }
 
 }
+
+
+
+void Common::add_following2(string addfollow)
+{
+
+
+    bool flag = 0 ;
+    for(auto i : vecfollowing)
+    {
+        if(i == addfollow)
+        {
+            flag = 1 ;
+            break ;
+        }
+    }
+    if(flag == 0)
+    {
+
+
+        vecfollowing.push_back(addfollow) ;
+
+    }
+
+}
+
+
+
+
 
 void Common::show_following()
 {

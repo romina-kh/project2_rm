@@ -29,7 +29,7 @@ private slots:
 
     void on_rbtn_ano_s_clicked();
 
-    void on_pushButton_clicked();
+
 
 private:
     Ui::signup *ui;

@@ -53,15 +53,24 @@ void profile :: set_pro(Common* user)
 
 void profile::on_btn_tweet_pro_clicked()
 {
-   Tweet t;
+    QMessageBox q;
+    Tweet t;
     string tweet , date;
-    tweet = ui->ln_tweet_pro->text().toStdString();
-    t.Set_date();
-    t.Set_Tweet(tweet);
-    t.Set_date();
-    User->set_index();
-    User->push_tweet(t);
-    ptweet();
+    if (User->Get_Name() == "Anonymous User")
+    {
+       q.setText( "! This account is not allowed to tweet.");
+       q.exec();
+    }
+    else
+    {
+        tweet = ui->ln_tweet_pro->text().toStdString();
+        t.Set_date();
+        t.Set_Tweet(tweet);
+        t.Set_date();
+        User->set_index();
+        User->push_tweet(t);
+        ptweet();
+     }
 
 }
 
@@ -76,8 +85,10 @@ void profile::on_btn_setting_clicked()
 
 void profile::on_btn_like_pro_clicked()
 {
+    QMessageBox q;
     Tweet t;
     string username ;
+
     int index;
     username = ui->ln_like_pro->text().toStdString();
     index = ui->ln_likenum_pro->text().toInt();

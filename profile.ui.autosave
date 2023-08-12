@@ -607,35 +607,14 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLineEdit" name="ln_search_pro">
    <property name="geometry">
     <rect>
-     <x>1040</x>
+     <x>1050</x>
      <y>60</y>
-     <width>181</width>
-     <x>930</x>
-     <y>340</y>
-     <width>331</width>
+     <width>241</width>
      <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: #ffffff ;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>950</x>
-     <y>60</y>
-     <x>830</x>
-     <y>340</y>
-     <width>91</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
-   </property>
-   <property name="text">
-    <string>   search :</string>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox_dislike_pro">
@@ -727,10 +706,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QPushButton" name="btn_search">
    <property name="geometry">
     <rect>
-     <x>970</x>
-     <y>290</y>
-     <x>1050</x>
-     <y>580</y>
+     <x>950</x>
+     <y>60</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -739,20 +716,6 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
     <string>search</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser_pro">
-   <property name="geometry">
-    <rect>
-     <x>930</x>
-     <y>370</y>
-     <width>331</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
-   </property>
-  </widget>
->>>>>>> 3d7146c08a10854bc69fc7dd8580ea47110bfba3
   <widget class="QGroupBox" name="groupBox_dislike_pro_2">
    <property name="geometry">
     <rect>
@@ -816,10 +779,10 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QListWidget" name="list_pro">
    <property name="geometry">
     <rect>
-     <x>970</x>
+     <x>950</x>
      <y>90</y>
-     <width>256</width>
-     <height>192</height>
+     <width>341</width>
+     <height>231</height>
     </rect>
    </property>
    <property name="styleSheet">

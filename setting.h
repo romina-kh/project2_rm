@@ -15,10 +15,11 @@ class setting : public QWidget
     Q_OBJECT
 
 public:
-    explicit setting(unordered_map<string , Common*>&,Common*,QWidget *parent = nullptr);
+    explicit setting(map <string , vector<Tweet>>& ,unordered_map<string , Common*>&,Common*,QWidget *parent = nullptr);
 
     Common* User;
     unordered_map<string , Common*>musers;
+    map <string , vector<Tweet> > mhashtag;
     void put_user();
 
     ~setting();
@@ -37,6 +38,7 @@ private slots:
 private:
 
     Ui::setting *ui;
+
 
 };
 

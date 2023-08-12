@@ -11,13 +11,14 @@
 #include "edit_profile.h"
 
 
-setting::setting(unordered_map<string , Common*>& users,Common* user,QWidget *parent) :
+setting::setting(map <string , vector<Tweet>>& hashtag,unordered_map<string , Common*>& users,Common* user,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::setting)
 {
     ui->setupUi(this);
    User = user;
    musers = users;
+   mhashtag= hashtag ;
 }
 
 
@@ -77,6 +78,7 @@ void setting::on_btn_logout_setting_clicked()
     MainWindow * log_btn = nullptr ;
     log_btn = new MainWindow ;
     log_btn->show() ;
+    this->close();
 
 }
 
@@ -104,6 +106,16 @@ void setting::on_btn_edit_setting_clicked()
 
 void setting::on_btn_back_clicked()
 {
-    this->close();
+    profile* profile_obj = new profile(mhashtag, musers,User);
+    // put_user();
+    Twitterak * tw= new Twitterak ;
+    //tw = new Twitterak ;
+    //cout << User->Get_User() ;
+    //tw->login(User->Get_User(), User->Get_Password());
+    profile_obj->show();
+    //tw->show(User->Get_User()) ;
+    this->close() ;
+
+
 }
 

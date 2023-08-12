@@ -423,15 +423,15 @@ void Twitterak::choice_login() //Showing diffrent oprtions after login
 
         }
 
-        else if(vec[0] == "edit" && vec[1]== "tweet")
-        {
-            int edit_tw = stoi(vec[2]);
-            musers[temp]->edit_tweet(edit_tw) ;
+//        else if(vec[0] == "edit" && vec[1]== "tweet")
+//        {
+//            int edit_tw = stoi(vec[2]);
+//            musers[temp]->edit_tweet(edit_tw) ;
 
 
-            choice_login() ;
+//            choice_login() ;
 
-        }
+       // }
 
         else if(vec[0] == "delete" && vec[1]== "tweet")
         {
@@ -467,131 +467,8 @@ void Twitterak::choice_login() //Showing diffrent oprtions after login
             }
         }
 
-        else if(vec[0]=="like")
-        {
-            string str = vec[1];
-            ckeck_id(str);
-            string numbers = "";
-            string characters = "";
-
-            seperator(str , characters , numbers);
-
-            int num = stoi(numbers) ;
 
 
-            if(musers.count(characters) == 1)//checking this character exist
-            {
-               tweet_object.likes( user, musers[characters], num);
-
-               choice_login() ;
-            }
-        }
-
-        else if (chec !=string :: npos )
-        {
-            string str_like = vec[0];
-            ckeck_id(str_like);
-            string numbers = "";
-            string characters = "";
-
-            seperator(str_like , characters , numbers);
-
-            int num = stoi(numbers) ;
-
-            if(musers.count(characters) == 1) //checking this character exist
-            {
-               tweet_object.show_likers(musers[characters], num);
-               tweet_object.show_numberlikes( musers[characters], num);
-               choice_login() ;
-
-            }
-        }
-
-        else if(vec[0]=="dislike")
-        {
-            string str_dis = vec[1];
-            ckeck_id(str_dis);
-            string numbers = "";
-            string characters = "";
-
-
-            seperator(str_dis , characters , numbers);
-
-            int num = stoi(numbers) ;
-
-
-            if(musers.count(characters) == 1)
-            {
-               tweet_object.dislike( user, musers[characters], num);
-               tweet_object.show_numberlikes( musers[characters], num);
-               choice_login() ;
-            }
-        }
-
-        else if(vec[0]=="follow")
-        {
-            string strf = vec[1];
-            ckeck_id(strf);
-
-            if(musers.count(strf) == 1 && strf!=temp)//checking this character exist
-            {
-                musers[temp]->add_following(strf) ;
-                musers[strf]->increase_follower() ;
-                choice_login() ;
-            }
-            else if (strf == temp)
-            {
-                cout << "! You can not follow yourself.\n" ;
-                choice_login() ;
-            }
-            else
-            {
-                cout << "! Can not find this account.\n" ;
-                choice_login() ;
-            }
-        }
-
-        else if(vec[0]=="show")
-        {
-            string profile = vec[1] ;
-            show(profile);
-        }
-
-        else if(vec[0]=="delete" && vec[1]=="account")
-        {
-            delete_account();
-             flag = false;
-
-        }
-
-        else if(vec[0] == "exit" || vec[0]=="q" || vec[0]=="quit")
-        {
-            char ask;
-            cout << "? Are you sure?(y/n) : ";
-            cin >> ask;
-            if (ask == 'y')
-            {
-                cout << "* Good Bye.";
-                put_user();
-                ptweet();
-                pfollow();
-                put_hashtag();
-                exit(0);
-            }
-            else
-            {
-                cin.ignore();
-                choice_login();
-
-            }
-        }
-
-        else
-        {
-            cout << "! login Undefined command.\n" ;
-            choice_login() ;
-
-        }
     }
  }
  //********************************************************************************************************************************************************

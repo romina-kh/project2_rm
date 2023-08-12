@@ -31,6 +31,10 @@ private slots:
 
      void on_btn_follow_pro_clicked();
 
+     void on_btn_dislike_pro_clicked();
+
+
+
 private:
 
     Ui::profile *ui;

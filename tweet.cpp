@@ -91,11 +91,14 @@ void Tweet:: show_likers(Common* purpose, int index) //showing users (likes twee
 
 void Tweet::dislike(Common* user ,Common* purpose, int index)
 {
+    QMessageBox q;
     for (int i = 0 ; i < purpose->mtweet[index].likers.size() ; i++ )
     {
         if (purpose->mtweet[index].likers.at(i) == user )
         {
             purpose->mtweet[index].likers.erase(purpose->mtweet[index].likers.begin() + i);
+            q.setText("* disliked.");
+            q.exec();
         }
     }
 }

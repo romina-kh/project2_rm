@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "user.h"
+#include "QMessageBox"
 
 namespace Ui {
 class edit_profile;
@@ -13,7 +14,7 @@ class edit_profile : public QWidget
     Q_OBJECT
 
 public:
-    explicit edit_profile(Common*,QWidget *parent = nullptr);
+    explicit edit_profile(unordered_map<string , Common*>& ,Common*,QWidget *parent = nullptr);
     ~edit_profile();
 
 private slots:
@@ -24,9 +25,28 @@ private slots:
 
     void on_btn_save_edit_clicked();
 
+    void on_box_total_edit_clicked();
+
+    void on_btn_edit_name_clicked();
+
+    void on_btn_edit_user_clicked();
+
+    void on_btn_edit_pass_clicked();
+
+    void on_btn_edit_age_clicked();
+
+    void on_btn_edit_phone_clicked();
+
+    void on_btn_edit_country_clicked();
+
+    void on_btn_edit_link_clicked();
+
+    void on_btn_edit_bio_clicked();
+
 private:
     Ui::edit_profile *ui;
     Common* User;
+    unordered_map<string , Common*>musers;
 
 };
 

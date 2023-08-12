@@ -1,13 +1,16 @@
 #include "edit_profile.h"
 #include "ui_edit_profile.h"
 #include "setting.h"
+#include "twitterak.h"
+#include "QMessageBox"
 
-edit_profile::edit_profile(Common* user,QWidget *parent) :
+edit_profile::edit_profile(unordered_map<string , Common*>& users ,Common* user,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::edit_profile)
 {
     ui->setupUi(this);
     User = user;
+    musers = users ;
 }
 
 edit_profile::~edit_profile()
@@ -29,6 +32,164 @@ void edit_profile::on_btn_back_editpro_clicked()
 
 void edit_profile::on_btn_save_edit_clicked()
 {
+    QMessageBox q;
+    Twitterak app;
+    app.in_user();
+    app.in_tweet();
+    app.in_follow();
+//    app.in_hashtag();
 
+    string username , password , name , phone , country , link , bio , age;
+
+    username = ui->ln_edit_user->text().toStdString();
+    password = ui->ln_edit_pass->text().toStdString();
+    age = ui->editprofile_dateEdit->text().toStdString();
+    name = ui->ln_edit_name->text().toStdString();
+    phone = ui->ln_edit_phone->text().toStdString();
+    country = ui->ln_edit_country->text().toStdString();
+    link = ui->ln_edit_link->text().toStdString();
+    bio = ui->txt_edit_bio->toPlainText().toStdString();
+
+
+
+
+
+    q.setText("!save succsessfully.") ;
+    q.exec();
+
+}
+
+
+
+void edit_profile::on_box_total_edit_clicked()
+{
+    if(User->Get_Name()== "Anonymous User")
+    {
+        ui->editprofile_dateEdit->setEnabled(false);
+        ui->ln_edit_name->setEnabled(false);
+        ui->ln_edit_country->setEnabled(false);
+        ui->ln_edit_link->setEnabled(false);
+        ui->ln_edit_phone->setEnabled(false);
+        ui->txt_edit_bio->setEnabled(false);
+
+    }
+    else if (User->Get_Age()=="")
+    {
+
+         ui->editprofile_dateEdit->setEnabled(false);
+         ui->ln_edit_name->setEnabled(true);
+         ui->ln_edit_country->setEnabled(true);
+         ui->ln_edit_link->setEnabled(true);
+         ui->ln_edit_phone->setEnabled(true);
+         ui->txt_edit_bio->setEnabled(true);
+    }
+    else
+    {
+        ui->editprofile_dateEdit->setEnabled(true);
+        ui->ln_edit_name->setEnabled(true);
+        ui->ln_edit_country->setEnabled(true);
+        ui->ln_edit_link->setEnabled(true);
+        ui->ln_edit_phone->setEnabled(true);
+        ui->txt_edit_bio->setEnabled(true);
+
+    }
+
+
+}
+
+
+void edit_profile::on_btn_edit_name_clicked()
+{
+    string name ;
+    name = ui->ln_edit_name->text().toStdString();
+    User->Set_Name(name) ;
+    QMessageBox qu ;
+    qu.setText("*editted.") ;
+    qu.exec();
+
+
+}
+
+
+void edit_profile::on_btn_edit_user_clicked()
+{
+    string username ;
+    username = ui->ln_edit_user->text().toStdString();
+    User->Set_User(username) ;
+    QMessageBox qu ;
+    qu.setText("*editted.") ;
+    qu.exec();
+
+}
+
+
+void edit_profile::on_btn_edit_pass_clicked()
+{
+    string password ;
+    password = ui->ln_edit_pass->text().toStdString();
+    User->Set_Password_nohash(password) ;
+    QMessageBox qu ;
+    qu.setText("*editted.") ;
+    qu.exec();
+
+}
+
+
+void edit_profile::on_btn_edit_age_clicked()
+{
+    string age ;
+    age = ui->editprofile_dateEdit->text().toStdString();
+    User->Set_Age(age) ;
+    QMessageBox qu ;
+    qu.setText("*editted.") ;
+    qu.exec();
+
+}
+
+
+void edit_profile::on_btn_edit_phone_clicked()
+{
+    Twitterak app;
+    string phone ;
+    phone = ui->ln_edit_phone->text().toStdString();
+    //User->Set_Phone(phone) ;
+    app.edit_profile(User->Get_Phone() , phone) ;
+    QMessageBox qu ;
+    qu.setText("*editted.") ;
+    qu.exec();
+}
+
+
+void edit_profile::on_btn_edit_country_clicked()
+{
+    string country ;
+    country = ui->ln_edit_country->text().toStdString();
+    User->Set_Country(country) ;
+    QMessageBox qu ;
+    qu.setText("*editted.") ;
+    qu.exec();
+}
+
+
+void edit_profile::on_btn_edit_link_clicked()
+{
+    string link ;
+    link = ui->ln_edit_link->text().toStdString();
+    User->Set_Link(link) ;
+    QMessageBox qu ;
+    qu.setText("*editted.") ;
+    qu.exec();
+
+}
+
+
+void edit_profile::on_btn_edit_bio_clicked()
+{
+    string bio ;
+    bio = ui->txt_edit_bio->toPlainText().toStdString();
+    User->Set_Bio(bio) ;
+    QMessageBox qu ;
+    qu.setText("*editted.") ;
+    qu.exec();
 }
 

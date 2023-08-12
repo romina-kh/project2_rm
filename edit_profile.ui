@@ -299,23 +299,6 @@ color: rgb(0, 72, 106) ;</string>
     <property name="title">
      <string>edit bio</string>
     </property>
-    <widget class="QLineEdit" name="ln_edit_bio">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>113</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:rgb(95, 99, 102)  ;
-color:rgb(255, 225, 245) ;</string>
-     </property>
-     <property name="placeholderText">
-      <string>enter new</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="btn_edit_bio">
      <property name="geometry">
       <rect>
@@ -330,6 +313,20 @@ color:rgb(255, 225, 245) ;</string>
      </property>
      <property name="text">
       <string>Edit</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="txt_edit_bio">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(95, 99, 102)  ;
+color:rgb(255, 225, 245) ;</string>
      </property>
     </widget>
    </widget>

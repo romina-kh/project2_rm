@@ -29,7 +29,9 @@ void setting::on_btn_exit_setting_clicked()
 
 void setting::on_btn_logout_setting_clicked()
 {
-    this->close();
+    MainWindow * log_btn = nullptr ;
+    log_btn = new MainWindow ;
+    log_btn->show() ;
 
 }
 
@@ -45,7 +47,7 @@ void setting::on_btn_delete_setting_clicked()
 void setting::on_btn_edit_setting_clicked()
 {
     edit_profile * edit_btn = nullptr ;
-    edit_btn = new edit_profile(User) ;
+    edit_btn = new edit_profile(musers ,User) ;
     edit_btn->show() ;
 
 }

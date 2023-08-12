@@ -77,6 +77,7 @@ void signup::on_rbtn_organ_s_clicked()
     ui->ln_phone_s->setEnabled(true);
     ui->plainTxt_bio_s->setEnabled(true);
 
+
 }
 
 
@@ -88,6 +89,7 @@ void signup::on_rbtn_personal_s_clicked()
     ui->ln_phone_s->setEnabled(true);
     ui->dateEdit_age_s->setEnabled(true);
     ui->plainTxt_bio_s->setEnabled(true);
+
 }
 
 
@@ -102,6 +104,9 @@ void signup::on_rbtn_ano_s_clicked()
     ui->plainTxt_bio_s->setEnabled(false);
 
 }
+
+
+
 
 
 

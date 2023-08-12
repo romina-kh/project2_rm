@@ -288,6 +288,7 @@ void profile::on_btn_search_clicked()
     str = ui->ln_search_pro->text().toStdString();
     if (str[0] == '#')
     {
+       //ui->listWidget->addItem()
 
     }
 

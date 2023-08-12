@@ -39,19 +39,6 @@ void edit_profile::on_btn_save_edit_clicked()
     app.in_follow();
 //    app.in_hashtag();
 
-    string username , password , name , phone , country , link , bio , age;
-
-    username = ui->ln_edit_user->text().toStdString();
-    password = ui->ln_edit_pass->text().toStdString();
-    age = ui->editprofile_dateEdit->text().toStdString();
-    name = ui->ln_edit_name->text().toStdString();
-    phone = ui->ln_edit_phone->text().toStdString();
-    country = ui->ln_edit_country->text().toStdString();
-    link = ui->ln_edit_link->text().toStdString();
-    bio = ui->txt_edit_bio->toPlainText().toStdString();
-
-
-
     q.setText("!save succsessfully.") ;
     q.exec();
 
@@ -150,7 +137,7 @@ void edit_profile::on_btn_edit_phone_clicked()
     string phone ;
     phone = ui->ln_edit_phone->text().toStdString();
     //User->Set_Phone(phone) ;
-    app.edit_profile(User->Get_Phone() , phone) ;
+    app.edit_profile(User->Get_Phone() , phone) ;// different with others.
     QMessageBox qu ;
     qu.setText("*editted.") ;
     qu.exec();

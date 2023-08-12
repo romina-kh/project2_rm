@@ -38,8 +38,10 @@ void setting::on_btn_logout_setting_clicked()
 
 void setting::on_btn_delete_setting_clicked()
 {
-
-    musers.erase(User->Get_User());
+    MainWindow * delete_btn = nullptr ;
+    delete_btn = new MainWindow ;
+    delete_btn->show() ;
+    //musers.erase(User->Get_User());
 
 }
 

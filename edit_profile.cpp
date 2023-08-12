@@ -87,8 +87,9 @@ void edit_profile::on_btn_save_edit_clicked()
 
     q.setText("!save succsessfully.") ;
     q.exec();
+    this->close();
 
-    parentWidget()->hide();
+    //parentWidget()->hide();
 
 
 }
@@ -183,11 +184,9 @@ void edit_profile::on_btn_edit_age_clicked()
 
 void edit_profile::on_btn_edit_phone_clicked()
 {
-    Twitterak app;
     string phone ;
     phone = ui->ln_edit_phone->text().toStdString();
-    //User->Set_Phone(phone) ;
-    app.edit_profile(User->Get_Phone() , phone) ;// different with others.
+    User->Set_Phone(phone) ;
     QMessageBox qu ;
     qu.setText("*editted.") ;
     qu.exec();

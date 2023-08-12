@@ -617,9 +617,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLineEdit" name="ln_search_pro">
    <property name="geometry">
     <rect>
-     <x>1010</x>
+     <x>930</x>
      <y>340</y>
-     <width>181</width>
+     <width>331</width>
      <height>21</height>
     </rect>
    </property>
@@ -630,7 +630,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>830</x>
      <y>340</y>
      <width>91</width>
      <height>20</height>
@@ -732,8 +732,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QPushButton" name="btn_search">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>340</y>
+     <x>1050</x>
+     <y>580</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -745,10 +745,10 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QTextBrowser" name="textBrowser_pro">
    <property name="geometry">
     <rect>
-     <x>950</x>
+     <x>930</x>
      <y>370</y>
-     <width>256</width>
-     <height>192</height>
+     <width>331</width>
+     <height>191</height>
     </rect>
    </property>
    <property name="styleSheet">

@@ -212,12 +212,13 @@ void profile::on_btn_tweet_pro_clicked()
 
 void profile::on_btn_setting_clicked()
 {
-   setting * setting_obj = new setting(musers,User);
+   setting * setting_obj = new setting(mhashtag, musers,User);
 
    setting_obj->show();
 
+   set_pro(User);
 
-    set_pro(User);
+   this->close();
 
 
 }

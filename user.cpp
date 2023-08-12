@@ -431,6 +431,7 @@ void Common::create_mention(int number ,string USER)//%%%%
         cout << "* Enter your mention:\n" ;
 
         getline(cin , MENTION) ;
+        mention.set_number(mtweet[number].Get_mention().size()+1) ;
         mention.Set_Tweet(MENTION) ;
         mention.Set_date() ;
         mtweet[number].push_mention(mention) ;
@@ -502,6 +503,17 @@ void Common :: put_tweet()
             }
             mytweet << endl << "------------------------------------------\n";
 
+            for(auto j: i.second.Get_mention())
+            {
+                mytweet <<j.get_number()<< ": " << j.get_classtweet() << endl << j.get_Date() << endl << "likes: " ;
+
+                for(int k = 0 ; k < j.liker_size() ; k++)
+                {
+                   mytweet << j.show_likers(k) << " ";
+                }
+               mytweet << "^^^^^" << endl ;
+            }
+            mytweet << endl << "&&&" << endl ;
         }
         mytweet << "****************************************\n";
 
@@ -511,7 +523,6 @@ void Common :: put_tweet()
 
     mytweet.close();
 }
-//=============================================================================================================
 
 //==============================================================================================================
 

@@ -929,7 +929,10 @@ void Twitterak :: in_tweet()
                 string liker;
                 string tweet;
                 string numb;
-
+                string nummen ;
+                string men ;
+                string datemen ;
+                string likemen ;
 
                 in_tweet >> numb ;
                 if (numb == "****************************************")
@@ -949,7 +952,7 @@ void Twitterak :: in_tweet()
                 date+= '\n';
                 t.Set_date(date);
                 musers[username]->set_index();
-                musers[username]->push_tweet2(t);
+                musers[username]->push_tweet(t);
 
                 in_tweet >> like ;
 
@@ -962,16 +965,50 @@ void Twitterak :: in_tweet()
                         break;
                     }
 
+
                     musers[username]->flike(musers[liker] , index);
                 }
+                in_tweet >> nummen ;
+
+                while(nummen!= "&&&")
+                {
+                    nummen.pop_back() ;
+                    Tweet tmen ;
+                    tmen.set_number(stoi(nummen));
+
+                    getline(in_tweet ,men) ;
+                    tmen.Set_Tweet(men) ;
+
+                    getline(in_tweet ,datemen) ;
+                    tmen.Set_date(datemen) ;
+
+                    in_tweet >> like ;
+
+                    while(1)
+                    {
+                        in_tweet >> likemen;
+
+                        if (likemen == "^^^^^")
+                        {
+                            break;
+                        }
+
+                        tmen.likes(musers[likemen]) ;
+                    }
+                   t.push_mention(tmen) ;
+                   in_tweet >> nummen ;
+                }
+
+                musers[username]->push_tweet(t);
             }
+
         }
 
     }
 
+
     in_tweet.close();
 }
-
 //======================================================================================================
 void Twitterak :: in_follow()
 {

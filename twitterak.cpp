@@ -107,6 +107,7 @@ void seperator(string original , string& characters , string& numbers) //This fu
 
 void Twitterak::signup(string User , string Name, string Age ,string Phone_Number, string Country , string Link , string Bio , string Password)
 {
+    cout << "signup func\n";
     QMessageBox q;
     q.setText("signup!");
 
@@ -566,7 +567,7 @@ void Twitterak:: edit_profile(string edit ,string changable)
 void Twitterak::show(string account)
     {
 
-        profile* pro = new profile(musers , musers[account]);
+        profile* pro = new profile(mhashtag,musers , musers[account]);
         pro->set_pro(musers[account]);
 
         pro->show();
@@ -604,7 +605,7 @@ void Twitterak::show(string account)
 void Twitterak :: findhash(string str, Tweet tobj)
 {
     string key;
-
+    cout << "fiiiiiiiiiind hasssssshhh \n";
     // string str = musers[temp]->indx(musers[temp]->get_index()).get_classtweet();
     size_t found = str.find('#');
     int index = musers[temp]->get_index();
@@ -628,15 +629,12 @@ void Twitterak :: findhash(string str, Tweet tobj)
                         break;
                     }
                 }
-        cout << "3\n";
                 for ( int i = 0 ; i < key.size() ; i++)
                 {
                     key[i] = tolower(key[i]);
                 }
-cout << "4\n";
                 mhashtag[key].push_back(tobj);
                 key = "";
-cout << "5\n";
             }
        }
 
@@ -655,11 +653,8 @@ void Twitterak :: showhash(string look)
     {
         for (auto i : mhashtag[look])
         {
-            cout << "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n";
-            cout << i.get_number() << ": " << i.get_classtweet() << endl ;
-            cout << i.get_Date();
+
         }
-        cout << "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n";
     }
     else
     {

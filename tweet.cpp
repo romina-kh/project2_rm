@@ -3,7 +3,9 @@
 #include "tweet.h"
 #include "user.h"
 #include <ctime>
+#include "QMessageBox"
 #include <qmessagebox.h>
+
 
 
 
@@ -38,13 +40,12 @@ void Tweet::Set_User(string userName)
 
 void Tweet::likes(Common* user ,Common* purpose, int index) //liking tweet
 {
-   QMessageBox q;
+
 
     bool flag = false;
-    cout << purpose->mtweet[index].likers.size() <<endl;
+
     if(purpose->mtweet[index].likers.size() != 0)
     {
-        cout << "1234567890\n";
         for (auto i : purpose->mtweet[index].likers )
         {
             if (i == user)
@@ -55,9 +56,7 @@ void Tweet::likes(Common* user ,Common* purpose, int index) //liking tweet
         if (flag == false)
         {
             purpose->mtweet[index].likers.push_back(user);
-            q.setText("* liked.");
-            q.exec();
-            cout << "* liked.\n" ;
+
         }
         else
         {
@@ -91,14 +90,13 @@ void Tweet:: show_likers(Common* purpose, int index) //showing users (likes twee
 
 void Tweet::dislike(Common* user ,Common* purpose, int index)
 {
-    QMessageBox q;
+
     for (int i = 0 ; i < purpose->mtweet[index].likers.size() ; i++ )
     {
         if (purpose->mtweet[index].likers.at(i) == user )
         {
             purpose->mtweet[index].likers.erase(purpose->mtweet[index].likers.begin() + i);
-            q.setText("* disliked.");
-            q.exec();
+
         }
     }
 }

@@ -739,19 +739,6 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
     <string>search</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser_pro">
-   <property name="geometry">
-    <rect>
-     <x>950</x>
-     <y>370</y>
-     <width>256</width>
-     <height>192</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>

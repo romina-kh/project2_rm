@@ -32,8 +32,8 @@ private slots:
 private:
 
     Ui::setting *ui;
-   Common* User;
-   unordered_map<string , Common*>musers;
+    Common* User;
+    unordered_map<string , Common*>musers;
 
 };
 

@@ -445,16 +445,6 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
     </property>
    </widget>
   </widget>
-  <widget class="QListWidget" name="listWidget">
-   <property name="geometry">
-    <rect>
-     <x>930</x>
-     <y>10</y>
-     <width>331</width>
-     <height>321</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QGroupBox" name="groupBox_tweet_pro">
    <property name="geometry">
     <rect>
@@ -617,8 +607,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLineEdit" name="ln_search_pro">
    <property name="geometry">
     <rect>
-     <x>1010</x>
-     <y>340</y>
+     <x>1040</x>
+     <y>60</y>
      <width>181</width>
      <height>21</height>
     </rect>
@@ -630,8 +620,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>910</x>
-     <y>340</y>
+     <x>950</x>
+     <y>60</y>
      <width>91</width>
      <height>20</height>
     </rect>
@@ -732,27 +722,14 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QPushButton" name="btn_search">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>340</y>
+     <x>970</x>
+     <y>290</y>
      <width>93</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
     <string>search</string>
-   </property>
-  </widget>
-  <widget class="QTextBrowser" name="textBrowser_pro">
-   <property name="geometry">
-    <rect>
-     <x>950</x>
-     <y>370</y>
-     <width>256</width>
-     <height>192</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox_dislike_pro_2">
@@ -770,7 +747,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
    <property name="title">
     <string>delete tweet</string>
    </property>
-   <widget class="QPushButton" name="btn_dislike_pro_2">
+   <widget class="QPushButton" name="btn_deletetw_pro">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -814,6 +791,19 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QListWidget" name="list_pro">
+   <property name="geometry">
+    <rect>
+     <x>970</x>
+     <y>90</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
   </widget>
  </widget>
  <resources/>

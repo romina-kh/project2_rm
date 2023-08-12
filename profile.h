@@ -22,6 +22,7 @@ public:
     void findhash(string, Tweet);
     void put_hashtag();
     void in_hashtag();
+
     ~profile();
 
 private slots:
@@ -40,7 +41,8 @@ private slots:
 
      void on_btn_search_clicked();
 
-     void on_btn_dislike_pro_2_clicked();
+
+     void on_btn_deletetw_pro_clicked();
 
 private:
 

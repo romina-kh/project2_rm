@@ -38,11 +38,13 @@ void profile :: put_hashtag()
 {
     ofstream myhashtag;
     myhashtag.open("hashtag.txt", ios::out);
-        for (auto i : mhashtag)
+
+    for (auto i : mhashtag)
         {
             if(i.second.size() != 0)
             {
                 myhashtag << i.first <<endl;
+
 
                 for (auto j : i.second)
                 {
@@ -50,6 +52,7 @@ void profile :: put_hashtag()
                     myhashtag << "----------------------------------------\n";
                 }
                 myhashtag << "****************************************\n";
+
             }
         }
     myhashtag.close();
@@ -63,7 +66,7 @@ void profile :: in_hashtag()
 
     if (!in_hash)
     {
-        cout << "Error !\n";
+        cout << "Error hash !\n";
     }
     else
     {
@@ -198,14 +201,19 @@ void profile::on_btn_tweet_pro_clicked()
     else
     {
         tweet = ui->ln_tweet_pro->text().toStdString();
+        //t.Set_date();
+
         t.Set_date();
         t.Set_Tweet(tweet);
-        t.Set_date();
         User->set_index();
+        t.set_number(User->get_index());
         User->push_tweet(t);
         string str = t.get_classtweet();
         findhash(str,t);
+        put_hashtag();
         ptweet();
+
+
      }
 
 }
@@ -288,13 +296,27 @@ void profile::on_btn_dislike_pro_clicked()
 
 void profile::on_btn_search_clicked()
 {
-    string str , key;
+    cout << mhashtag.size() << endl;
+    string str , key , tweet;
+    QString qtweet;
     str = ui->ln_search_pro->text().toStdString();
     if (str[0] == '#')
     {
-       //ui->listWidget->addItem()
-
+        key = str.erase(0,1);
     }
+        cout << "key : " << key << endl;
+    if (mhashtag.count(key) == 1)
+    {
+        for (auto i : mhashtag[str])
+        {
+            tweet = i.get_classtweet();
+            QString qstr = QString::fromStdString(tweet);
+            ui->list_pro->addItem(qstr);
+        }
+     }
+
+
+
     else
     {
 
@@ -304,8 +326,15 @@ void profile::on_btn_search_clicked()
 }
 
 
-void profile::on_btn_dislike_pro_2_clicked()
+
+
+void profile::on_btn_deletetw_pro_clicked()
 {
+    int index;
+    index = ui->ln_delete_pro->text().toInt();
+    User->delete_tweet(index) ;
+    QMessageBox::information(this,tr(""), tr("Your tweet has successfully deleted."));
+    ptweet();
 
 }
 

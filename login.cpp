@@ -22,7 +22,7 @@ void login::on_btn_done_login_clicked()
     app.in_user();
     app.in_tweet();
     app.in_follow();
-//    app.in_hashtag();
+    app.in_hashtag();
 
     string username , password;
     username = ui->ln_username_l->text().toStdString();

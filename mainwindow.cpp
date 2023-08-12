@@ -33,7 +33,7 @@ void MainWindow::on_btn_login_m_clicked()
 void MainWindow::on_btn_signup_m_clicked()
 {
     signup* signup_obj = nullptr;
-    signup_obj = new signup(this);
+    signup_obj = new signup();
 
     signup_obj->show();
 

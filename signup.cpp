@@ -24,7 +24,7 @@ void signup::on_btn_done_signup_clicked()
     app.in_user();
     app.in_tweet();
     app.in_follow();
-//    app.in_hashtag();
+    app.in_hashtag();
 
     string username , password , name , phone , country , link , bio , age;
     username = ui->ln_username_s->text().toStdString();

@@ -226,7 +226,7 @@ void Common::push_tweet(Tweet t)
     q.setText("* Your tweet has been successfully registered.");
     mtweet[this->index] = t;
     q.exec();
-    //cout << "* Your tweet has been successfully registered.\n";
+
 }
 
 
@@ -273,6 +273,20 @@ void Common::get_tweet1(int index)
 }
 
 
+
+
+string Common::get_tweet_hash()
+{
+    string twt;
+    for(auto i: mtweet)
+    {
+        twt = i.second.get_classtweet() + " ";
+    }
+    return twt;
+
+}
+
+
 void Common::set_index()
 {
     index++;
@@ -280,15 +294,15 @@ void Common::set_index()
 
 void Common::delete_tweet(int Number)
 {
+    QMessageBox q;
+    q.setText("We can not find this tweet.");
     if(mtweet.find(Number)!=mtweet.end())
     {
         mtweet.erase(Number) ;
-        cout << "* Your tweet has successfully deleted.\n" ;
-
     }
     else
     {
-        cout << "! We can not find this tweet.\n" ;
+        q.exec();
     }
 }
 

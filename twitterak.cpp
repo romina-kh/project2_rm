@@ -126,7 +126,7 @@ void Twitterak::signup(string User , string Name, string Age ,string Phone_Numbe
 
     put_user();
     q.exec();
-    exit(0);
+
 }
 //----------------------------------------------------------------------------------------------------------------------------
 
@@ -144,7 +144,7 @@ void Twitterak::signup_ano(string User, string Password)
 
     put_user();
     q.exec();
-    exit(0);
+
 
 }
 //---------------------------------------------------------------------------------------------------------------------------
@@ -170,7 +170,7 @@ void Twitterak::signup_org(string User , string Name ,string Phone_Number, strin
 
     put_user();
     q.exec();
-    exit(0);
+
 }
 
 //****************************************************************************************************************************
@@ -731,7 +731,7 @@ void Twitterak :: in_hashtag()
 
     if (!in_hash)
     {
-        cout << "Error !\n";
+        cout << "Error hashtag !\n";
     }
     else
     {
@@ -907,7 +907,7 @@ void Twitterak :: in_tweet()
 
     if(!in_tweet)
     {
-        cout << "Error !\n";
+        cout << "Error tweet !\n";
     }
     else
     {
@@ -982,7 +982,7 @@ void Twitterak :: in_follow()
 
     if(!in_follow)
     {
-        cout << "Error !\n";
+        cout << "Error follow !\n";
     }
 
     else

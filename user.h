@@ -72,6 +72,7 @@ class Common //parent
         virtual void push_tweet(Tweet t);
         virtual void push_tweet2(Tweet t);
         virtual void get_tweet();
+        virtual string get_tweet_hash();
         virtual void get_tweet1(int index);
         virtual void delete_tweet(int number);
         virtual void edit_tweet(int nUmber) ;
@@ -105,7 +106,6 @@ class Common //parent
         void follow_f(string purpose);
         Tweet &indx(int x)
         {
-            // cout << this->mtweet[x].get_classtweet();
             return this->mtweet[x];
         }
 

@@ -532,6 +532,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ffffff ;</string>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">

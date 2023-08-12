@@ -14,7 +14,8 @@ class edit_profile : public QWidget
     Q_OBJECT
 
 public:
-    explicit edit_profile(unordered_map<string , Common*>& ,Common*,QWidget *parent = nullptr);
+    explicit edit_profile(unordered_map<string , Common*>& ,Common*,QWidget *parent = nullptr);//
+    void put_user();
     ~edit_profile();
 
 private slots:

@@ -4,6 +4,10 @@
 #include "profile.h"
 #include "twitterak.h"
 #include "user.h"
+#include "personal.h"
+#include "anonymous.h"
+#include "company.h"
+#include <fstream>
 #include "edit_profile.h"
 
 
@@ -15,6 +19,47 @@ setting::setting(unordered_map<string , Common*>& users,Common* user,QWidget *pa
    User = user;
    musers = users;
 }
+
+
+void setting :: put_user()
+{
+    ofstream outuser;
+    outuser.open("user.txt", ios::out);
+
+    Personal* per;
+    Anonymous* ano;
+    Company* org;
+
+    for (auto i : musers)
+    {
+        per = dynamic_cast<Personal*>(i.second);
+        ano = dynamic_cast<Anonymous*>(i.second);
+        org = dynamic_cast<Company*>(i.second);
+
+        if (per != NULL)
+        {
+            outuser << i.second->Get_User() << "p" ;
+        }
+        if (ano != NULL)
+        {
+            outuser << i.second->Get_User() << "a" ;
+        }
+        if (org != NULL)
+        {
+            outuser << i.second->Get_User() << "o" ;
+        }
+        outuser << endl << i.second->Get_Name() << endl << i.second->Get_Age() << endl
+        << i.second->Get_Phone() << endl << i.second->Get_Country() << endl << i.second->Get_Link() << endl <<
+        i.second->Get_Bio() << endl << i.second->Get_Password() << endl
+        << "************************************************\n";
+        //header
+    }
+
+    outuser.close();
+}
+
+
+
 
 setting::~setting()
 {
@@ -38,8 +83,12 @@ void setting::on_btn_logout_setting_clicked()
 
 void setting::on_btn_delete_setting_clicked()
 {
-
+    MainWindow * delete_btn = nullptr ;
+    delete_btn = new MainWindow ;
+    delete_btn->show() ;
     musers.erase(User->Get_User());
+    put_user();
+
 
 }
 
@@ -47,7 +96,7 @@ void setting::on_btn_delete_setting_clicked()
 void setting::on_btn_edit_setting_clicked()
 {
     edit_profile * edit_btn = nullptr ;
-    edit_btn = new edit_profile(musers ,User) ;
+    edit_btn = new edit_profile(musers , User) ;
     edit_btn->show() ;
 
 }

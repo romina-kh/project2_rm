@@ -40,6 +40,8 @@ private slots:
 
      void on_btn_search_clicked();
 
+     void on_btn_dislike_pro_2_clicked();
+
 private:
 
     Ui::profile *ui;

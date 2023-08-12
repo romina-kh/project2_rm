@@ -2,8 +2,13 @@
 #include "ui_edit_profile.h"
 #include "setting.h"
 #include "twitterak.h"
+#include "user.h"
+#include "personal.h"
+#include "company.h"
+#include "anonymous.h"
 #include "QMessageBox"
-
+#include <fstream>
+#include "profile.h"
 edit_profile::edit_profile(unordered_map<string , Common*>& users ,Common* user,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::edit_profile)
@@ -12,6 +17,49 @@ edit_profile::edit_profile(unordered_map<string , Common*>& users ,Common* user,
     User = user;
     musers = users ;
 }
+
+
+
+void edit_profile :: put_user()
+{
+    ofstream outuser;
+    outuser.open("user.txt", ios::out);
+
+    Personal* per;
+    Anonymous* ano;
+    Company* org;
+
+    for (auto i : musers)
+    {
+        per = dynamic_cast<Personal*>(i.second);
+        ano = dynamic_cast<Anonymous*>(i.second);
+        org = dynamic_cast<Company*>(i.second);
+
+        if (per != NULL)
+        {
+            outuser << i.second->Get_User() << "p" ;
+        }
+        if (ano != NULL)
+        {
+            outuser << i.second->Get_User() << "a" ;
+        }
+        if (org != NULL)
+        {
+            outuser << i.second->Get_User() << "o" ;
+        }
+        outuser << endl << i.second->Get_Name() << endl << i.second->Get_Age() << endl
+        << i.second->Get_Phone() << endl << i.second->Get_Country() << endl << i.second->Get_Link() << endl <<
+        i.second->Get_Bio() << endl << i.second->Get_Password() << endl
+        << "************************************************\n";
+        //header
+    }
+
+    outuser.close();
+}
+
+
+
+
 
 edit_profile::~edit_profile()
 {
@@ -33,29 +81,15 @@ void edit_profile::on_btn_back_editpro_clicked()
 void edit_profile::on_btn_save_edit_clicked()
 {
     QMessageBox q;
-    Twitterak app;
-    app.in_user();
-    app.in_tweet();
-    app.in_follow();
-//    app.in_hashtag();
 
-    string username , password , name , phone , country , link , bio , age;
-
-    username = ui->ln_edit_user->text().toStdString();
-    password = ui->ln_edit_pass->text().toStdString();
-    age = ui->editprofile_dateEdit->text().toStdString();
-    name = ui->ln_edit_name->text().toStdString();
-    phone = ui->ln_edit_phone->text().toStdString();
-    country = ui->ln_edit_country->text().toStdString();
-    link = ui->ln_edit_link->text().toStdString();
-    bio = ui->txt_edit_bio->toPlainText().toStdString();
-
-
-
+    put_user();
 
 
     q.setText("!save succsessfully.") ;
     q.exec();
+
+    parentWidget()->hide();
+
 
 }
 
@@ -153,7 +187,7 @@ void edit_profile::on_btn_edit_phone_clicked()
     string phone ;
     phone = ui->ln_edit_phone->text().toStdString();
     //User->Set_Phone(phone) ;
-    app.edit_profile(User->Get_Phone() , phone) ;
+    app.edit_profile(User->Get_Phone() , phone) ;// different with others.
     QMessageBox qu ;
     qu.setText("*editted.") ;
     qu.exec();

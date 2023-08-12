@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <fstream>
 
+
 profile::profile(map <string , vector<Tweet>>& hashtag,unordered_map<string , Common*>& users,Common* cuser,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::profile)
@@ -213,7 +214,10 @@ void profile::on_btn_setting_clicked()
 {
    setting * setting_obj = new setting(musers,User);
 
-    setting_obj->show();
+   setting_obj->show();
+
+
+    set_pro(User);
 
 
 }
@@ -291,7 +295,17 @@ void profile::on_btn_search_clicked()
        //ui->listWidget->addItem()
 
     }
+    else
+    {
 
+    }
+
+
+}
+
+
+void profile::on_btn_dislike_pro_2_clicked()
+{
 
 }
 

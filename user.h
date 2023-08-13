@@ -47,8 +47,6 @@ class Common //parent
 
         virtual int Set_Password(string Password);
         virtual string Get_Password();//string / size_t
-        virtual int Set_Password_nohash(string Password);
-        virtual string Get_Password_nonhash();
 
         virtual int Set_Bio(string Bio){};
         virtual string Get_Bio(){return "______";};
@@ -83,6 +81,7 @@ class Common //parent
 
         //virtual void Set_following(int following);
         virtual int Get_following() ;
+        virtual string Get_indx_following(int);
 
         virtual void Set_followers(int followers);
         virtual int Get_followers() ;

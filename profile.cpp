@@ -14,8 +14,21 @@ profile::profile(map <string , vector<Tweet>>& hashtag,unordered_map<string , Co
 {
     ui->setupUi(this);
     User = cuser;
+    set_pro(User);
     musers = users;
     mhashtag = hashtag;
+
+    string following ;
+    QString qstr = QString::fromStdString(following);
+
+    for (int i = 0 ; i < User->Get_following() ; i++)
+    {
+        following = User->Get_indx_following(i);
+        qstr = QString::fromStdString(following);
+        ui->listWidget_following->addItem(qstr);
+
+    }
+    ui->lbl_follower_pro->setText(QString ::number(User->Get_followers()));
 }
 
 profile::~profile()
@@ -256,6 +269,8 @@ void profile::on_btn_like_pro_clicked()
 
 void profile::on_btn_follow_pro_clicked()
 {
+    string following ;
+    QString qstr = QString::fromStdString(following);
 
     string username ;
     username = ui->ln_follow_pro->text().toStdString();
@@ -267,6 +282,16 @@ void profile::on_btn_follow_pro_clicked()
     {
         User->add_following(username) ;
         musers[username]->increase_follower() ;
+        ui->listWidget_following->clear();
+        for (int i = 0 ; i < User->Get_following() ; i++)
+        {
+            following = User->Get_indx_following(i);
+            qstr = QString::fromStdString(following);
+            ui->listWidget_following->addItem(qstr);
+
+        }
+        ui->lbl_follower_pro->setText(QString ::number(User->Get_followers()));
+
     }
 
     pfollow();
@@ -297,7 +322,7 @@ void profile::on_btn_dislike_pro_clicked()
 
 void profile::on_btn_search_clicked()
 {
-    cout << mhashtag.size() << endl;
+
     string str , key , tweet;
     QString qtweet;
     str = ui->ln_search_pro->text().toStdString();
@@ -327,8 +352,6 @@ void profile::on_btn_search_clicked()
 }
 
 
-
-
 void profile::on_btn_deletetw_pro_clicked()
 {
     int index;
@@ -338,4 +361,7 @@ void profile::on_btn_deletetw_pro_clicked()
     ptweet();
 
 }
+
+
+
 

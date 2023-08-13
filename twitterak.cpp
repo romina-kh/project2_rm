@@ -771,7 +771,7 @@ void Twitterak :: in_hashtag()
                 // getline (in_hash , date);
                 // date+= '\n';
                 // tt.Set_date(date);
-                push_hashtag(hashtag, tt);
+                 mhashtag[hashtag].push_back(tt);
 
                 while(1)
                 {
@@ -1059,7 +1059,3 @@ in_follow.close();
 
 }
 
-void Twitterak::push_hashtag( string hash, Tweet t)
-{
-    mhashtag[hash].push_back(t);
-}

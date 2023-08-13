@@ -101,7 +101,7 @@ background:#999cbd;
 }</string>
     </property>
     <property name="placeholderText">
-     <string>pass123</string>
+     <string>username</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_pass_l">
@@ -168,7 +168,7 @@ background:#999cbd;
 }</string>
     </property>
     <property name="placeholderText">
-     <string>username</string>
+     <string>password123</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_done_login">

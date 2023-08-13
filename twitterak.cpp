@@ -952,7 +952,7 @@ void Twitterak :: in_tweet()
                 date+= '\n';
                 t.Set_date(date);
                 musers[username]->set_index();
-                musers[username]->push_tweet(t);
+                musers[username]->push_tweet2(t);
 
                 in_tweet >> like ;
 
@@ -999,7 +999,7 @@ void Twitterak :: in_tweet()
                    in_tweet >> nummen ;
                 }
 
-                musers[username]->push_tweet(t);
+                musers[username]->push_tweet2(t);
             }
 
         }

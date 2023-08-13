@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1337</width>
-    <height>652</height>
+    <width>1447</width>
+    <height>699</height>
    </rect>
   </property>
   <property name="font">
@@ -25,7 +25,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>90</y>
+     <y>110</y>
      <width>371</width>
      <height>531</height>
     </rect>
@@ -264,8 +264,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="btn_setting">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>20</y>
+     <x>30</x>
+     <y>40</y>
      <width>301</width>
      <height>51</height>
     </rect>
@@ -607,7 +607,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLineEdit" name="ln_search_pro">
    <property name="geometry">
     <rect>
-     <x>1060</x>
+     <x>1180</x>
      <y>60</y>
      <width>231</width>
      <height>21</height>
@@ -706,7 +706,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QPushButton" name="btn_search">
    <property name="geometry">
     <rect>
-     <x>960</x>
+     <x>1080</x>
      <y>60</y>
      <width>93</width>
      <height>28</height>
@@ -779,8 +779,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QListWidget" name="list_pro">
    <property name="geometry">
     <rect>
-     <x>960</x>
-     <y>100</y>
+     <x>1080</x>
+     <y>90</y>
      <width>331</width>
      <height>221</height>
     </rect>
@@ -792,8 +792,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLabel" name="lbl_following">
    <property name="geometry">
     <rect>
-     <x>960</x>
-     <y>340</y>
+     <x>1090</x>
+     <y>320</y>
      <width>91</width>
      <height>41</height>
     </rect>
@@ -810,8 +810,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QListWidget" name="listWidget_following">
    <property name="geometry">
     <rect>
-     <x>960</x>
-     <y>390</y>
+     <x>1090</x>
+     <y>360</y>
      <width>261</width>
      <height>151</height>
     </rect>
@@ -823,8 +823,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>1230</x>
-     <y>350</y>
+     <x>1350</x>
+     <y>330</y>
      <width>111</width>
      <height>21</height>
     </rect>
@@ -841,8 +841,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLabel" name="lbl_follower_pro">
    <property name="geometry">
     <rect>
-     <x>1240</x>
-     <y>390</y>
+     <x>1360</x>
+     <y>360</y>
      <width>71</width>
      <height>101</height>
     </rect>
@@ -857,6 +857,19 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
    </property>
    <property name="text">
     <string>0</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>440</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(223, 223, 223);</string>
    </property>
   </widget>
  </widget>

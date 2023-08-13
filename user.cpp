@@ -128,11 +128,6 @@ int Common::Set_Password(string password)
         return ++counter;
     }
 
-    // else
-    // {
-    //     Password = mystdhash(pass);
-    //     return 0;
-    // }
     else
     {
         Password = pass;

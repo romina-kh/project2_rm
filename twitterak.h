@@ -45,7 +45,6 @@ class Twitterak
     void in_tweet();
     void in_follow();
     void in_hashtag();
-    void push_hashtag(string, Tweet);
     void qttweet(string);
 
 

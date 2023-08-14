@@ -106,9 +106,10 @@ void setting::on_btn_edit_setting_clicked()
 
 void setting::on_btn_back_clicked()
 {
+
     profile* profile_obj = new profile(mhashtag, musers,User);
     // put_user();
-    Twitterak * tw= new Twitterak ;
+    //Twitterak * tw= new Twitterak ;
     //tw = new Twitterak ;
     //cout << User->Get_User() ;
     //tw->login(User->Get_User(), User->Get_Password());

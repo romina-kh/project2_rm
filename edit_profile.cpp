@@ -162,7 +162,7 @@ void edit_profile::on_btn_edit_pass_clicked()
 {
     string password ;
     password = ui->ln_edit_pass->text().toStdString();
-    User->Set_Password_nohash(password) ;
+    User->Set_Password(password) ;
     QMessageBox qu ;
     qu.setText("*editted.") ;
     qu.exec();

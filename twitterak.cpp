@@ -780,7 +780,7 @@ void Twitterak :: in_hashtag()
                 // getline (in_hash , date);
                 // date+= '\n';
                 // tt.Set_date(date);
-                push_hashtag(hashtag, tt);
+                 mhashtag[hashtag].push_back(tt);
 
                 while(1)
                 {
@@ -961,7 +961,7 @@ void Twitterak :: in_tweet()
                 date+= '\n';
                 t.Set_date(date);
                 musers[username]->set_index();
-                musers[username]->push_tweet(t);
+                musers[username]->push_tweet2(t);
 
                 in_tweet >> like ;
 
@@ -1008,7 +1008,7 @@ void Twitterak :: in_tweet()
                    in_tweet >> nummen ;
                 }
 
-                musers[username]->push_tweet(t);
+                musers[username]->push_tweet2(t);
             }
 
         }
@@ -1068,7 +1068,3 @@ in_follow.close();
 
 }
 
-void Twitterak::push_hashtag( string hash, Tweet t)
-{
-    mhashtag[hash].push_back(t);
-}

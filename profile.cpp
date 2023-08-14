@@ -14,8 +14,25 @@ profile::profile(map <string , vector<Tweet>>& hashtag,unordered_map<string , Co
 {
     ui->setupUi(this);
     User = cuser;
+    set_pro(User);
     musers = users;
     mhashtag = hashtag;
+//-----------------------------------------------------------
+    {
+        string following ;
+        QString qstr = QString::fromStdString(following);
+
+        for (int i = 0 ; i < User->Get_following() ; i++)
+        {
+            following = User->Get_indx_following(i);
+            qstr = QString::fromStdString(following);
+            ui->listWidget_following->addItem(qstr);
+
+        }
+        ui->lbl_follower_pro->setText(QString ::number(User->Get_followers()));
+    }
+//-----------------------------------------------------------
+
 }
 
 profile::~profile()
@@ -232,7 +249,7 @@ void profile::on_btn_setting_clicked()
 
 void profile::on_btn_like_pro_clicked()
 {
-
+    bool flag = false;
     Tweet t;
     string username ;
 
@@ -240,10 +257,29 @@ void profile::on_btn_like_pro_clicked()
     username = ui->ln_like_pro->text().toStdString();
     index = ui->ln_likenum_pro->text().toInt();
 
+    if (User->Get_Name() == "Anonymous User")
+    {
+
+        for (int i = 0 ; i<User->Get_following() ; i++)
+        {
+            if (musers[username]->Get_User() == User->Get_indx_following(i))
+            {
+                musers[username]->indx(index).likes(User , musers[username] , index);
+                QMessageBox::information(this,tr(""), tr("Liked."));
+                flag = true;
+            }
+        }
+        if (!flag)
+        {
+            QMessageBox::warning(this,"","You must follow this account to like this tweet.");
+        }
+    }
+    else
+    {
 
     musers[username]->indx(index).likes(User , musers[username] , index);
     QMessageBox::information(this,tr(""), tr("Liked."));
-
+    }
 
     ptweet();
     ui->ln_like_pro->clear();
@@ -254,6 +290,8 @@ void profile::on_btn_like_pro_clicked()
 
 void profile::on_btn_follow_pro_clicked()
 {
+    string following ;
+    QString qstr = QString::fromStdString(following);
 
     string username ;
     username = ui->ln_follow_pro->text().toStdString();
@@ -265,14 +303,27 @@ void profile::on_btn_follow_pro_clicked()
     {
         User->add_following(username) ;
         musers[username]->increase_follower() ;
+        ui->listWidget_following->clear();
+        for (int i = 0 ; i < User->Get_following() ; i++)
+        {
+            following = User->Get_indx_following(i);
+            qstr = QString::fromStdString(following);
+            ui->listWidget_following->addItem(qstr);
+
+        }
+        ui->lbl_follower_pro->setText(QString ::number(User->Get_followers()));
+
     }
 
     pfollow();
+    ui->ln_follow_pro->clear();
+
 }
 
 
 void profile::on_btn_dislike_pro_clicked()
 {
+    bool flag = false;
     QMessageBox q;
     Tweet t;
     string username ;
@@ -280,10 +331,31 @@ void profile::on_btn_dislike_pro_clicked()
     int index;
     username = ui->ln_dislike_pro->text().toStdString();
     index = ui->ln_dislikenum_pro->text().toInt();
+    if (User->Get_Name() == "Anonymous User")
+    {
+
+        for (int i = 0 ; i<User->Get_following() ; i++)
+        {
+            if (musers[username]->Get_User() == User->Get_indx_following(i))
+            {
+                musers[username]->indx(index).dislike(User , musers[username] , index);
+                 QMessageBox::information(this,tr(""), tr("Disliked."));
+                flag = true;
+            }
+        }
+        if (!flag)
+        {
+            QMessageBox::warning(this,"","You must follow this account to like this tweet.");
+        }
+    }
+    else
+    {
+
+        musers[username]->indx(index).dislike(User , musers[username] , index);
+        QMessageBox::information(this,tr(""), tr("Disliked."));
+    }
 
 
-    musers[username]->indx(index).dislike(User , musers[username] , index);
-     QMessageBox::information(this,tr(""), tr("Disliked."));
 
     ptweet();
     ui->ln_dislike_pro->clear();
@@ -295,7 +367,7 @@ void profile::on_btn_dislike_pro_clicked()
 
 void profile::on_btn_search_clicked()
 {
-    cout << mhashtag.size() << endl;
+
     string str , key , tweet;
     QString qtweet;
     str = ui->ln_search_pro->text().toStdString();
@@ -322,17 +394,24 @@ void profile::on_btn_search_clicked()
 }
 
 
-
-
 void profile::on_btn_deletetw_pro_clicked()
 {
     int index;
     index = ui->ln_delete_pro->text().toInt();
+    if (User->Get_Name() == "Anonymous User")
+    {
+    QMessageBox::warning(this,"","This account is not allowed to delete tweet.");
+    }
+    else
+    {
     User->delete_tweet(index) ;
     QMessageBox::information(this,tr(""), tr("Your tweet has successfully deleted."));
     ptweet();
+    ui->ln_delete_pro->clear();
+    }
 
 }
+
 
 
 void profile::on_btn_mention_pro_2_clicked()

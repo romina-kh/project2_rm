@@ -128,11 +128,6 @@ int Common::Set_Password(string password)
         return ++counter;
     }
 
-    // else
-    // {
-    //     Password = mystdhash(pass);
-    //     return 0;
-    // }
     else
     {
         Password = pass;
@@ -141,66 +136,9 @@ int Common::Set_Password(string password)
 
 }
 //-------------------------------------------------------------------------------------------------------------
-int Common::Set_Password_nohash(string password)
-{
-    hash<string> mystdhash;
-    int counter = 0;
-    bool ch = false; //character
-    bool num = false; //numbers
-    string pass = "" ;
-    if(password.size()> 4 )
-    {
-         for (char c : password )
-        {
-        int num = c - '0'; // convert character to integer
-        char ascii = static_cast<char>(num + '0'); // convert integer to ASCII
-        pass += ascii;
-        }
 
-        for( int i=0 ;i<pass.size() ;i++)
-        {
-            if(pass[i]>=65 && pass[i]<=90 || pass[i]>=97 && pass[i]<=122 )
-            {
-                ch = true;
-            }
-            else if(pass[i]>=48 && pass[i]<=57 )
-            {
-                num = true;
-            }
-        }
-    }
-    else
-    {
-        cout << "! Your password must be more than 4 characters.\n";
-        return ++counter ;
-    }
-
-    if (ch == false || num == false)
-    {
-        cout << "! Password should contain both character and number.\n" ;
-        return ++counter;
-    }
-    else if ( ch == false && num == true || ch== true && num==false)
-    {
-         cout << "! Password should contain both character and number.\n" ;
-        return ++counter;
-    }
-
-    else
-    {
-        Password_nohash = pass;
-        return 0;
-    }
-        // Password_nohash = passwordd;
-        // return 0;
-
-
-}
 //-------------------------------------------------------------------------------------------------------------
-string Common::Get_Password_nonhash()//size
-{
-    return Password_nohash;
-}
+
 
 string Common::Get_Password()
 {
@@ -346,6 +284,10 @@ string Common::backstring(int number)
     return vecfollowing.size();//
 }
 
+    string Common::Get_indx_following(int i)
+    {
+        return vecfollowing[i];
+    }
 
 void Common::Set_followers(int followers)//
 {
@@ -430,8 +372,7 @@ int Common::get_follow_person(string str)
 
 void Common::show_following()
 {
-    cout << Get_following() << endl ;
-    cout << "name"<<endl;
+
     for(auto i : vecfollowing )
     {
         cout << i << endl ;

@@ -2,6 +2,7 @@
 #include "ui_signup.h"
 #include "twitterak.h"
 #include "QLineEdit"
+#include <QMessageBox>
 
 signup::signup(QWidget *parent) :
     QWidget(parent),
@@ -26,7 +27,7 @@ void signup::on_btn_done_signup_clicked()
     app.in_follow();
     app.in_hashtag();
 
-    string username , password , name , phone , country , link , bio , age;
+    string username , password , name , phone , country , link , bio , age ;
     username = ui->ln_username_s->text().toStdString();
     password = ui->ln_password_s->text().toStdString();
     age = ui->dateEdit_age_s->text().toStdString();
@@ -70,6 +71,12 @@ void signup::on_dateEdit_age_s_userDateChanged(const QDate &date)
 
 void signup::on_rbtn_organ_s_clicked()
 {
+    QMessageBox q;
+    q.setText("By choosing this option, you will be registered as an organization.");
+    q.setWindowTitle("Organisation");
+    q.setDetailedText("You must enter your username and password, date of birth and manager id, but other information is optional.\n"
+                      "You are allowed to use any command in this program");
+    q.exec();
     ui->dateEdit_age_s->setEnabled(false);
     ui->ln_name_s->setEnabled(true);
     ui->ln_country_s->setEnabled(true);
@@ -83,6 +90,12 @@ void signup::on_rbtn_organ_s_clicked()
 
 void signup::on_rbtn_personal_s_clicked()
 {
+    QMessageBox q;
+    q.setText("By choosing this option, you will be registered as an personal user.");
+    q.setWindowTitle("Personal user");
+    q.setDetailedText("You must enter your username and password, date of birth and phone number, but other information is optional.\n"
+                      "You are allowed to use any command in this program");
+    q.exec();
     ui->ln_name_s->setEnabled(true);
     ui->ln_country_s->setEnabled(true);
     ui->ln_link_s->setEnabled(true);
@@ -96,6 +109,13 @@ void signup::on_rbtn_personal_s_clicked()
 
 void signup::on_rbtn_ano_s_clicked()
 {
+    QMessageBox q;
+    q.setText("By choosing this option, you will be registered as an anonymous user.");
+    q.setWindowTitle("Anonymous user");
+    q.setDetailedText("Your name will be saved 'Anonymous user' by default.\nYou can not tweet "
+                      "; so you definitely can not delete a tweet.\nYou don't have any followers either, but you can follow others.");
+    q.exec();
+
     ui->ln_name_s->setEnabled(false);
     ui->ln_country_s->setEnabled(false);
     ui->ln_link_s->setEnabled(false);

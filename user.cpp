@@ -347,7 +347,6 @@ string Common::backstring(int number)
 }
 
 
-
 void Common::Set_followers(int followers)//
 {
     this -> followers = followers;//
@@ -415,9 +414,19 @@ void Common::add_following2(string addfollow)
 
 }
 
+int Common::get_follow_person(string str)
+{
 
-
-
+    for(auto i : vecfollowing )
+    {
+        if( i == str )
+        {
+            return 1 ;
+        }
+        cout << i << endl ;
+    }
+    return 0 ;
+}
 
 void Common::show_following()
 {
@@ -430,31 +439,44 @@ void Common::show_following()
 
 }
 
+
+
 void Common::increase_follower()
 {
    this->followers++ ;
 }
 
-void Common::create_mention(int number ,string USER)//%%%%
+void Common::create_mention(string  MENTION , int number ,string USER)//%%%%
 {
-    if(mtweet.count(number)==1)
+    cout << "0" ;
+    if(mtweet.count(number)== 1)
     {
+        cout << "1" ;
         Tweet mention ;
         mention.Set_User(USER) ;
-        string MENTION ;
-        cout << "* Enter your mention:\n" ;
-
-        getline(cin , MENTION) ;
+        //string MENTION ;
+        //cout << "* Enter your mention:\n" ;
+        //getline(cin , MENTION) ;
+        cout << "2" ;
         mention.set_number(mtweet[number].Get_mention().size()+1) ;
+        cout << "3" ;
         mention.Set_Tweet(MENTION) ;
         mention.Set_date() ;
+        cout << "4" ;
         mtweet[number].push_mention(mention) ;
 
-        cout << "* Mentioned successfully.\n" ;
-    }
+        //cout << "* Mentioned successfully.\n" ;
+        QMessageBox p ;
+        p.setText("* Mentioned successfully.") ;
+        p.exec() ;
+   }
+
     else
     {
-        cout << "! This tweet does not exist.\n" ;
+        QMessageBox p ;
+        p.setText("! This tweet does not exist.") ;
+        p.exec() ;
+        //cout << "! This tweet does not exist.\n" ;
     }
 
 }

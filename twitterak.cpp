@@ -217,6 +217,10 @@ void Twitterak::logout()
     checkin = 0;
     cout << "* You successfully logged out.\n" ;
 }
+void Twitterak::men_check(string mention , int num ,string temp , string person)
+{
+     musers[person]->create_mention( mention , num , temp) ;
+}
 
 //====================================================================================================================================
 void Twitterak :: qttweet(string tweet)
@@ -243,6 +247,7 @@ cout << "first\n";
 //*********************************************************************************************************************************************************
 void Twitterak::choice_login() //Showing diffrent oprtions after login
 {
+
     vector <string> vec;
     string choice2 , tweet;
     string t; //string that we use to separate words from each other(words between space)
@@ -349,11 +354,13 @@ void Twitterak::choice_login() //Showing diffrent oprtions after login
             ckeck_id(str);
             string numbers = "";
             string characters = "";
-
+            //Tweet t ;
+            string mention ;
             seperator(str , characters , numbers) ;
-
+            //cout << "Enter mention:\n";
+            //getline(cin , mention) ;
             int num = stoi(numbers) ;
-            musers[characters]->create_mention(num , temp) ;
+            musers[characters]->create_mention( mention , num , temp) ;
             choice_login() ;
 
         }
@@ -489,6 +496,8 @@ void Twitterak::delete_account()
           choice_login() ;
         }
     }
+
+
 
 //************************************************************************************************************************************************************
 void Twitterak:: edit_profile(string edit ,string changable)

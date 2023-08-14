@@ -44,6 +44,8 @@ private slots:
 
      void on_btn_deletetw_pro_clicked();
 
+     void on_btn_mention_pro_2_clicked();
+
 private:
 
     Ui::profile *ui;

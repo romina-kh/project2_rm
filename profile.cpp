@@ -201,8 +201,6 @@ void profile::on_btn_tweet_pro_clicked()
     else
     {
         tweet = ui->ln_tweet_pro->text().toStdString();
-        //t.Set_date();
-
         t.Set_date();
         t.Set_Tweet(tweet);
         User->set_index();
@@ -315,9 +313,6 @@ void profile::on_btn_search_clicked()
             ui->list_pro->addItem(qstr);
         }
      }
-
-
-
     else
     {
 
@@ -336,6 +331,45 @@ void profile::on_btn_deletetw_pro_clicked()
     User->delete_tweet(index) ;
     QMessageBox::information(this,tr(""), tr("Your tweet has successfully deleted."));
     ptweet();
+
+}
+
+
+void profile::on_btn_mention_pro_2_clicked()
+{
+
+    //Tweet t;
+    Common  U ;
+    Twitterak obj;
+    string person , mention ;
+    int number;
+    int check1 ;
+    person = ui->ln_mention_pro_3->text().toStdString();
+    cout << person ;
+    check1=User->get_follow_person(person) ;
+
+    if ( check1== 0  && User->Get_Name() == "Anonymous User")
+    {
+      QMessageBox::warning(this,"","This account can not mention before follow.");
+    }
+    else
+    {
+        //QMessageBox p ;
+        //p.setText("* mentioned successfully.") ;
+        person = ui->ln_mention_pro_3->text().toStdString();
+        number = ui->ln_mentionnum_pro_2->text().toInt();
+        mention = ui->ln_mention_pro_2->text().toStdString();
+        //t.Set_date();
+        //t.Set_Tweet(tweet);
+        obj.men_check( mention , number ,person , User->Get_Name());
+        //U.create_mention(mention ,number ,person) ;
+        //cout << number << endl ;
+        //p.exec();
+        ptweet();
+
+
+
+    }
 
 }
 

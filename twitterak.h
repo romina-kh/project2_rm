@@ -33,6 +33,7 @@ class Twitterak
     //void help();
     void edit_profile(string , string);
     void delete_account();
+    void men_check(string , int , string , string);
     void check_space(string&) ;
     void findhash(string, Tweet);
     void showhash(string);
@@ -46,6 +47,7 @@ class Twitterak
     void in_hashtag();
     void push_hashtag(string, Tweet);
     void qttweet(string);
+
 
 
 };

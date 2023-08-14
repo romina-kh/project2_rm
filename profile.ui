@@ -538,7 +538,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
      <string>Enter Username</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="ln_like_pro_2">
+   <widget class="QLineEdit" name="ln_mention_pro_3">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -551,7 +551,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="ln_likenum_pro_2">
+   <widget class="QLineEdit" name="ln_mentionnum_pro_2">
     <property name="geometry">
      <rect>
       <x>150</x>
@@ -607,9 +607,6 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLineEdit" name="ln_search_pro">
    <property name="geometry">
     <rect>
-     <x>1040</x>
-     <y>60</y>
-     <width>181</width>
      <x>930</x>
      <y>340</y>
      <width>331</width>
@@ -623,8 +620,6 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>950</x>
-     <y>60</y>
      <x>830</x>
      <y>340</y>
      <width>91</width>
@@ -727,8 +722,6 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QPushButton" name="btn_search">
    <property name="geometry">
     <rect>
-     <x>970</x>
-     <y>290</y>
      <x>1050</x>
      <y>580</y>
      <width>93</width>
@@ -752,7 +745,6 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
->>>>>>> 3d7146c08a10854bc69fc7dd8580ea47110bfba3
   <widget class="QGroupBox" name="groupBox_dislike_pro_2">
    <property name="geometry">
     <rect>

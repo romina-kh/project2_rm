@@ -89,14 +89,15 @@ class Common //parent
 
         virtual void add_following(string) ;
         virtual void add_following2(string) ;
+        virtual int  get_follow_person(string) ;
         virtual void show_following() ;
-        virtual void increase_follower();
+        virtual void increase_follower() ;
 
         virtual void profile_me(){};
         virtual void profile_other(){};
         virtual void edit_pro(string ,string ){};
 
-        virtual void create_mention(int number ,string person) ;//mention func
+        virtual void create_mention(string mentions ,int number ,string person) ;//mention func
         virtual void show_mention(int);//mention func
         virtual void like_mention(Common* mmtn ,int NUMt , int NUMM);//mention func         ****changed Account****
 

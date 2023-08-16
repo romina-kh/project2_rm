@@ -13,13 +13,13 @@ class Common //parent
 {
     friend void Tweet:: likes(Common* currentuser, Common* target, int index);
     friend void Tweet:: likes(Common* target);
-    friend void Tweet:: show_numberlikes( Common *target, int index);
+    friend int Tweet:: show_numberlikes( Common *target, int index);
     friend void Tweet:: show_likers(Common* target, int index);
     friend void Tweet:: dislike(Common* currentuser ,Common* target, int index);
     friend void Tweet::show_numberlike_m( Common *purpose, int index ,int indexm);//friend for liking mention
     protected:
         // map<string , vector<Tweet*>>
-        map<int ,Tweet> mtweet;
+         map<int ,Tweet> mtweet;
         vector<string> vecfollowing ;
         string Name;
         string User_Name;
@@ -43,6 +43,7 @@ class Common //parent
         virtual string Get_Name();
 
         virtual int Set_User(string User_Name);
+        virtual int User_val(string User_name);
         virtual string Get_User();
 
         virtual int Set_Password(string Password);
@@ -90,7 +91,7 @@ class Common //parent
         virtual void add_following2(string) ;
         virtual int  get_follow_person(string) ;
         virtual void show_following() ;
-        virtual void increase_follower() ;
+        virtual void increase_follower();
 
         virtual void profile_me(){};
         virtual void profile_other(){};
@@ -104,11 +105,13 @@ class Common //parent
         void put_follow();
         void flike(Common* , int);
         void follow_f(string purpose);
-        Tweet &indx(int x)
-        {
-            return this->mtweet[x];
-        }
-
+        Tweet &indx(int x);
+        int get_size_mtweet();
+         string get_mention( int numtweet  , int i);
+         int size_mention(int numbtweet);
+         string getdate_mention(int , int);
+         int get_mention_likes( Common *purpose, int index , int indexm);
+         void set_mention(Tweet ,int);
 
 
 

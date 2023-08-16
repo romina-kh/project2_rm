@@ -5,6 +5,7 @@
 #include "user.h"
 #include <unordered_map>
 #include "setting.h"
+#include <QListWidget>
 
 namespace Ui {
 class profile;
@@ -22,6 +23,8 @@ public:
     void findhash(string, Tweet);
     void put_hashtag();
     void in_hashtag();
+    void show_tweet();
+    void show_mention();
 
     ~profile();
 
@@ -45,10 +48,20 @@ private slots:
      void on_btn_deletetw_pro_clicked();
 
 
+
      void on_btn_mention_pro_2_clicked();
 
 
+     void on_btn_mentionlike_pro_3_clicked();
 
+
+
+     void on_list_pro_itemClicked(QListWidgetItem *item);
+
+
+     void on_btn_showmention_clicked();
+
+     void on_btn_retweet_pro_2_clicked();
 
 private:
 

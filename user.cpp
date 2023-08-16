@@ -24,10 +24,11 @@ string Common::Get_Name()//This function set the name
 }
 
 
-int Common::Set_User(string User_name)//This function set the username (validation)
+int Common::User_val(string User_name)//This function set the username (validation)
 {
 
-    int counter = 0 , counter2 = 0;
+     QMessageBox q;
+    int counter = 0 , counter2 = 0 , counter3 = 0;
 
     string User = "" ;
 
@@ -50,33 +51,48 @@ int Common::Set_User(string User_name)//This function set the username (validati
                 }
                 else
                 {
-                    cout << "! Your Username should only contains characters and numbers .\n" ;
-                    return ++counter2;
+
+                    q.setText("! Your Username should only contains characters and numbers .");
+                    q.exec();
+                    //cout << "! Your Username should only contains characters and numbers .\n" ;
+                    //return ++counter2;
                 }
             }
             else
             {
-                cout << "! your Username should not start with numbers.\n" ;
-                return ++counter2;
+
+                q.setText("! your Username should not start with numbers.");
+                q.exec();
+                //cout << "! your Username should not start with numbers.\n" ;
+                //return ++counter2;
             }
         }
     }
     else
     {
-        cout << "! Your Username should be more than 5 characters.\n" ;
-        return ++counter2;
+
+        q.setText("!Your Username should be more than 5 characters.");
+        q.exec();
+        //cout << "! Your Username should be more than 5 characters.\n" ;
+        //return ++counter2;
 
 
     }
-    if(counter == User.size())
-    {
-        User_Name = User;
-        return 0;
-    }
-
+//    if(counter == User.size())
+//    {
+//        User_Name = User;
+//        return 0;
+//    }
+return counter;
 }
 
+int Common::Set_User(string User)
 
+{
+            User_Name = User;
+            return 0;
+
+}
 string Common::Get_User()
 {
     return User_Name;
@@ -289,6 +305,7 @@ string Common::backstring(int number)
         return vecfollowing[i];
     }
 
+
 void Common::Set_followers(int followers)//
 {
     this -> followers = followers;//
@@ -370,6 +387,8 @@ int Common::get_follow_person(string str)
     return 0 ;
 }
 
+
+
 void Common::show_following()
 {
 
@@ -380,33 +399,45 @@ void Common::show_following()
 
 }
 
-
-
 void Common::increase_follower()
 {
    this->followers++ ;
 }
 
-void Common::create_mention(string  MENTION , int number ,string USER)//%%%%
+/*void Common::create_mention(int number ,string USER)//%%%%
 {
-    cout << "0" ;
-    if(mtweet.count(number)== 1)
+    if(mtweet.count(number)==1)
     {
-        cout << "1" ;
         Tweet mention ;
         mention.Set_User(USER) ;
-        //string MENTION ;
-        //cout << "* Enter your mention:\n" ;
-        //getline(cin , MENTION) ;
-        cout << "2" ;
+        string MENTION ;
+        cout << "* Enter your mention:\n" ;
+
+        getline(cin , MENTION) ;
         mention.set_number(mtweet[number].Get_mention().size()+1) ;
-        cout << "3" ;
         mention.Set_Tweet(MENTION) ;
         mention.Set_date() ;
-        cout << "4" ;
         mtweet[number].push_mention(mention) ;
 
-        //cout << "* Mentioned successfully.\n" ;
+        cout << "* Mentioned successfully.\n" ;
+    }
+    else
+    {
+        cout << "! This tweet does not exist.\n" ;
+    }
+
+}*/
+void Common::create_mention(string MENTION , int number ,string USER)//%%%%
+{
+    if(mtweet.count(number)== 1)
+    {
+
+        Tweet mention ;
+        mention.Set_User(USER) ;
+        mention.set_number(mtweet[number].Get_mention().size()+1) ;
+        mention.Set_Tweet(MENTION) ;
+        mention.Set_date() ;
+        mtweet[number].push_mention(mention) ;
         QMessageBox p ;
         p.setText("* Mentioned successfully.") ;
         p.exec() ;
@@ -417,7 +448,7 @@ void Common::create_mention(string  MENTION , int number ,string USER)//%%%%
         QMessageBox p ;
         p.setText("! This tweet does not exist.") ;
         p.exec() ;
-        //cout << "! This tweet does not exist.\n" ;
+
     }
 
 }
@@ -446,17 +477,26 @@ void Common::like_mention(Common* mmtn ,int NUMt , int NUMM)
             if(check_flag== 1)
 
              {
-                cout << "* Liked.\n";
+                //cout << "* Liked.\n";
+                QMessageBox p ;
+                p.setText( "* Liked.");
+                p.exec();
              }
         }
         else
         {
-            cout << "! Can not find the mention with this number.\n";
+            QMessageBox p ;
+            p.setText( "! Can not find the mention with this number.");
+            p.exec();
+            //cout << "! Can not find the mention with this number.\n";
         }
     }
     else
     {
-        cout << "! Can not find the tweet with this number.\n";
+        QMessageBox p ;
+        p.setText( "! Can not find the tweet with this number.");
+        p.exec();
+        //cout << "! Can not find the tweet with this number.\n";
     }
 }
 
@@ -521,10 +561,52 @@ void Common :: put_follow()
 //---------------------------------------------------------------------------------------------------------------
 void Common :: flike(Common* purpose , int index)
 {
-    mtweet[index].likes(purpose);
+         mtweet[index].likes(purpose);
+
 }
 
 void Common :: follow_f(string purpose)
 {
     vecfollowing.push_back(purpose);
+}
+
+//------------------------------------------------------------------------------------------
+Tweet& Common  ::indx(int x)
+{
+    if(mtweet.count(x) == 1)
+    {
+        return this->mtweet[x];
+    }
+
+}
+int Common :: get_size_mtweet()
+{
+     return mtweet.size();
+}
+
+
+ string Common :: get_mention( int numtweet  , int i)
+ {
+     return mtweet[numtweet].Get_mention()[i].get_classtweet();
+ }
+
+ int Common ::size_mention(int numbtweet)
+ {
+       return mtweet[numbtweet].Get_mention().size() ;
+ }
+
+ string Common :: getdate_mention(int numtweet  , int i)
+ {
+     return  mtweet[numtweet].Get_mention()[i].get_Date();
+ }
+
+
+int Common :: get_mention_likes( Common *purpose, int index , int indexm)
+{
+    return purpose->mtweet[index].Get_mention()[indexm].likers.size();
+}
+
+void Common :: set_mention(Tweet t ,int index)
+{
+    this->mtweet[index].push_mention(t) ;
 }

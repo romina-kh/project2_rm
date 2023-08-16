@@ -25,6 +25,7 @@ void MainWindow::on_btn_login_m_clicked()
     login* log_obj = nullptr;
     log_obj = new login;
     log_obj->show();
+    this->close() ;
 
 
 }
@@ -36,6 +37,7 @@ void MainWindow::on_btn_signup_m_clicked()
     signup_obj = new signup();
 
     signup_obj->show();
+    this->close() ;
 
 }
 

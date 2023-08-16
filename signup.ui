@@ -6,26 +6,31 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>912</width>
-    <height>604</height>
+    <width>1570</width>
+    <height>867</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qradialgradient(spread:repeat, cx:0.192, cy:0.801, radius:0.5, fx:0.41, fy:0.596, stop:0.0696517 rgba(190, 217, 225, 255), stop:1 rgba(255, 255, 255, 255));</string>
+  </property>
   <widget class="QGroupBox" name="rbtn_org_p">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>60</y>
-     <width>781</width>
-     <height>531</height>
+     <x>260</x>
+     <y>130</y>
+     <width>1061</width>
+     <height>621</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 12pt &quot;Segoe UI Historic&quot;;
+    <string notr="true">font: italic 13pt &quot;Sitka Display&quot;;
 background-color: #4D6D9A;
-color:#00007f ;</string>
+color:#00007f ;
+border-radius: 20px;
+border-style: outset;</string>
    </property>
    <property name="title">
     <string>signup</string>
@@ -33,8 +38,8 @@ color:#00007f ;</string>
    <widget class="QLabel" name="lbl_">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>140</y>
+      <x>530</x>
+      <y>190</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -46,9 +51,9 @@ color:#00007f ;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>200</y>
-      <width>81</width>
+      <x>530</x>
+      <y>260</y>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
@@ -59,15 +64,17 @@ color:#00007f ;</string>
    <widget class="QLineEdit" name="ln_username_s">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>140</y>
+      <x>650</x>
+      <y>190</y>
       <width>181</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:#99CED3 ;
-color: rgb(0, 72, 106) ;</string>
+color: rgb(0, 72, 106) ;
+border-radius: 20px;
+border-style: outset;</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Normal</enum>
@@ -79,15 +86,17 @@ color: rgb(0, 72, 106) ;</string>
    <widget class="QLineEdit" name="ln_password_s">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>200</y>
+      <x>650</x>
+      <y>260</y>
       <width>181</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:#99CED3 ;
-color: rgb(0, 72, 106) ;</string>
+color: rgb(0, 72, 106) ;
+border-radius: 20px;
+border-style: outset;</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
@@ -96,24 +105,30 @@ color: rgb(0, 72, 106) ;</string>
    <widget class="QPushButton" name="btn_done_signup">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>260</y>
+      <x>760</x>
+      <y>480</y>
       <width>191</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-color: #333;
+color: #6a5156;
 border: 2px solid #555;
 border-radius: 20px;
 border-style: outset;
-background:  #EDB5BF;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #EDB5BF
+);
 padding: 5px;
 }
 
 QPushButton:hover {
-background:   #ffdcee;
+background:  qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #ffdde2
+);
 }</string>
     </property>
     <property name="text">
@@ -134,10 +149,10 @@ background:   #ffdcee;
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI Historic</family>
-      <pointsize>12</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>13</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -156,10 +171,10 @@ background:   #ffdcee;
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI Historic</family>
-      <pointsize>12</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>13</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -178,10 +193,10 @@ background:   #ffdcee;
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI Historic</family>
-      <pointsize>12</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>13</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -192,7 +207,7 @@ background:   #ffdcee;
    <widget class="QLabel" name="lbl_age_s">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>180</y>
       <width>81</width>
       <height>31</height>
@@ -205,7 +220,7 @@ background:   #ffdcee;
    <widget class="QLabel" name="lbl_name_s">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>130</y>
       <width>61</width>
       <height>21</height>
@@ -218,9 +233,9 @@ background:   #ffdcee;
    <widget class="QLineEdit" name="ln_name_s">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>150</x>
       <y>130</y>
-      <width>181</width>
+      <width>211</width>
       <height>31</height>
      </rect>
     </property>
@@ -232,9 +247,9 @@ color: rgb(0, 72, 106) ;</string>
    <widget class="QLabel" name="lbl_phone_s">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>240</y>
-      <width>161</width>
+      <x>30</x>
+      <y>280</y>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
@@ -246,7 +261,7 @@ color: rgb(0, 72, 106) ;</string>
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>250</y>
+      <y>280</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -259,8 +274,8 @@ color: rgb(0, 72, 106) ;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>290</y>
+      <x>30</x>
+      <y>340</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -272,9 +287,9 @@ color: rgb(0, 72, 106) ;</string>
    <widget class="QLineEdit" name="ln_country_s">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>300</y>
-      <width>181</width>
+      <x>150</x>
+      <y>340</y>
+      <width>211</width>
       <height>31</height>
      </rect>
     </property>
@@ -286,8 +301,8 @@ color: rgb(0, 72, 106) ;</string>
    <widget class="QLabel" name="lbl_bio_s">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>350</y>
+      <x>30</x>
+      <y>440</y>
       <width>55</width>
       <height>31</height>
      </rect>
@@ -313,8 +328,8 @@ color: rgb(0, 72, 106) ;</string>
    <widget class="QLabel" name="lbl_link_s">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>430</y>
+      <x>30</x>
+      <y>530</y>
       <width>55</width>
       <height>21</height>
      </rect>
@@ -326,9 +341,9 @@ color: rgb(0, 72, 106) ;</string>
    <widget class="QLineEdit" name="ln_link_s">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>420</y>
-      <width>181</width>
+      <x>140</x>
+      <y>530</y>
+      <width>221</width>
       <height>31</height>
      </rect>
     </property>
@@ -340,9 +355,9 @@ color: rgb(0, 72, 106) ;</string>
    <widget class="QPlainTextEdit" name="plainTxt_bio_s">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>340</y>
-      <width>181</width>
+      <x>140</x>
+      <y>420</y>
+      <width>221</width>
       <height>71</height>
      </rect>
     </property>
@@ -362,10 +377,10 @@ color: rgb(0, 72, 106) ;</string>
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI Historic</family>
-      <pointsize>12</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>13</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -373,6 +388,50 @@ color: rgb(0, 72, 106) ;</string>
      <string>Choose a type:</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="total_exit">
+   <property name="geometry">
+    <rect>
+     <x>1440</x>
+     <y>10</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Script MT Bold</family>
+     <pointsize>11</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	font: 11pt ;
+color: #333;
+border: 2px solid #555;
+border-radius: 20px;
+border-style: outset;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #326264
+);
+padding: 5px;
+}
+
+QPushButton:hover {
+background:  qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #939393
+);
+}
+</string>
+   </property>
+   <property name="text">
+    <string>back  --&gt;</string>
+   </property>
   </widget>
  </widget>
  <resources/>

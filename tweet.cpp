@@ -12,7 +12,6 @@
 void Tweet:: Set_Tweet(string tweet)
 {
     this -> tweet = tweet;
-
 }
 
 
@@ -42,7 +41,8 @@ void Tweet::Set_User(string userName)
 void Tweet::likes(Common* user ,Common* purpose, int index) //liking tweet
 {
 
-
+if(purpose->mtweet.count(index) == 1)
+{
     bool flag = false;
 
     if(purpose->mtweet[index].likers.size() != 0)
@@ -57,26 +57,46 @@ void Tweet::likes(Common* user ,Common* purpose, int index) //liking tweet
         if (flag == false)
         {
             purpose->mtweet[index].likers.push_back(user);
+            QMessageBox q;
+            q.setText("* liked.");
+            q.exec();
 
         }
         else
         {
-            cout << "! you can not like this tweet again.\n";
+            QMessageBox q;
+            q.setText("! you can not like this tweet again.");
+            q.exec();
         }
     }
 
     else
     {
         purpose->mtweet[index].likers.push_back(user);
-        cout << "* liked 3333.\n" ;
+        QMessageBox q;
+        q.setText("* liked.");
+        q.exec();
+
     }
+}
+else
+{
+    QMessageBox q;
+    q.setText("! this tweet does not exist.");
+    q.exec();
+}
 
 }
 
 
-void Tweet:: show_numberlikes( Common *purpose, int index) //number of likes
+//void Tweet:: show_numberlikes( Common *purpose, int index) //number of likes
+//{
+//    cout << "Likes : " << purpose->mtweet[index].likers.size()<< endl ;
+//}
+
+int Tweet:: show_numberlikes( Common *purpose, int index) //number of likes
 {
-    cout << "Likes : " << purpose->mtweet[index].likers.size()<< endl ;
+    return  purpose->mtweet[index].likers.size();
 }
 
 
@@ -185,3 +205,4 @@ void Tweet::likes(Common* purpose) //liking tweet
 likers.push_back(purpose);
 
 }
+

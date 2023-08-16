@@ -19,6 +19,8 @@ private slots:
 
     void on_btn_done_login_clicked();
 
+    void on_total_exit_clicked();
+
 private:
     Ui::login *ui;
 };

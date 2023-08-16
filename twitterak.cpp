@@ -21,6 +21,7 @@ using namespace std ;
 //Common* user = nullptr;
 Common* user = nullptr;
 Tweet tweet_object;
+Twitterak app;
 //********************************************************************************************************************************************
 
 void Twitterak::ckeck_id(string &id) //This function ckeck the reserved word and @
@@ -105,15 +106,20 @@ void seperator(string original , string& characters , string& numbers) //This fu
 
 //****************************************************************************************************************************************
 
-void Twitterak::signup(string User , string Name, string Age ,string Phone_Number, string Country , string Link , string Bio , string Password)
+bool Twitterak::signup(string User , string Name, string Age ,string Phone_Number, string Country , string Link , string Bio , string Password)
 {
-    cout << "signup func\n";
+    bool fuser = false;
+
     QMessageBox q;
     q.setText("signup!");
 
     user = new Personal;
 
-    user->Set_User(User);
+    if(user->User_val(User)==User.size())
+    {
+        user->Set_User(User);
+        fuser = true;
+    }
     user->Set_Name(Name);
     user->Set_Age(Age);
     user->Set_Phone(Phone_Number);
@@ -122,10 +128,21 @@ void Twitterak::signup(string User , string Name, string Age ,string Phone_Numbe
     user->Set_Bio(Bio);
     user->Set_Password(Password);
 
-    musers[user->Get_User()] = user;
+   // musers[user->Get_User()] = user;
 
-    put_user();
-    q.exec();
+    if(fuser==true)
+    {
+         musers[user->Get_User()] = user;
+        put_user();
+        q.exec();
+        return true;
+
+
+    }
+    else
+    {
+        return false;
+    }
 
 }
 //----------------------------------------------------------------------------------------------------------------------------
@@ -217,6 +234,7 @@ void Twitterak::logout()
     checkin = 0;
     cout << "* You successfully logged out.\n" ;
 }
+
 void Twitterak::men_check(string mention , int num ,string temp , string person)
 {
      musers[person]->create_mention( mention , num , temp) ;
@@ -247,7 +265,6 @@ cout << "first\n";
 //*********************************************************************************************************************************************************
 void Twitterak::choice_login() //Showing diffrent oprtions after login
 {
-
     vector <string> vec;
     string choice2 , tweet;
     string t; //string that we use to separate words from each other(words between space)
@@ -350,6 +367,7 @@ void Twitterak::choice_login() //Showing diffrent oprtions after login
         else if(vec[0] == "mention")// mention for tweets.
         {
 
+
             string str = vec[1] ;
             ckeck_id(str);
             string numbers = "";
@@ -362,6 +380,7 @@ void Twitterak::choice_login() //Showing diffrent oprtions after login
             int num = stoi(numbers) ;
             musers[characters]->create_mention( mention , num , temp) ;
             choice_login() ;
+
 
         }
 
@@ -496,8 +515,6 @@ void Twitterak::delete_account()
           choice_login() ;
         }
     }
-
-
 
 //************************************************************************************************************************************************************
 void Twitterak:: edit_profile(string edit ,string changable)
@@ -977,6 +994,8 @@ void Twitterak :: in_tweet()
 
                     musers[username]->flike(musers[liker] , index);
                 }
+
+
                 in_tweet >> nummen ;
 
                 while(nummen!= "&&&")
@@ -1004,11 +1023,12 @@ void Twitterak :: in_tweet()
 
                         tmen.likes(musers[likemen]) ;
                     }
-                   t.push_mention(tmen) ;
+                   //t.push_mention(tmen) ;
+                   in_tweet >> nummen ;
+                   musers[username]->set_mention(tmen , index) ;
                    in_tweet >> nummen ;
                 }
 
-                musers[username]->push_tweet2(t);
             }
 
         }

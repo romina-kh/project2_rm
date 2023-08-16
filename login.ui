@@ -6,20 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>760</width>
-    <height>568</height>
+    <width>1579</width>
+    <height>838</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qradialgradient(spread:repeat, cx:0.192, cy:0.801, radius:0.5, fx:0.41, fy:0.596, stop:0.0696517 rgba(190, 217, 225, 255), stop:1 rgba(255, 255, 255, 255));</string>
+  </property>
   <widget class="QGroupBox" name="box_login">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>70</y>
-     <width>461</width>
-     <height>411</height>
+     <x>280</x>
+     <y>100</y>
+     <width>1041</width>
+     <height>601</height>
     </rect>
    </property>
    <property name="font">
@@ -31,8 +34,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(63, 32, 95);
-color:#8a8a8a ;</string>
+    <string notr="true">background-color: qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:0, stop:0#007070, stop:1 rgba(255, 255, 255, 255));</string>
    </property>
    <property name="title">
     <string>login</string>
@@ -40,8 +42,8 @@ color:#8a8a8a ;</string>
    <widget class="QLabel" name="lbl_usename_l">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>110</y>
+      <x>210</x>
+      <y>140</y>
       <width>171</width>
       <height>61</height>
      </rect>
@@ -57,15 +59,15 @@ color:#8a8a8a ;</string>
     <property name="styleSheet">
      <string notr="true">QLabel {
 color: #333;
-border: 2px solid rgb(63, 32, 95 #764dad);
+border: 2px solid #ffffff;
 border-radius: 20px;
 border-style: outset;
-background: rgb(63, 32, 95 #2A1b3D);
+background:#326264;
 padding: 5px;
 }
 
 QLabel:hover {
-background:  rgb(63, 32, 95 #2A1b3D);
+background:  #326264;
 }</string>
     </property>
     <property name="text">
@@ -75,9 +77,9 @@ background:  rgb(63, 32, 95 #2A1b3D);
    <widget class="QLineEdit" name="ln_username_l">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>130</y>
-      <width>161</width>
+      <x>530</x>
+      <y>160</y>
+      <width>361</width>
       <height>31</height>
      </rect>
     </property>
@@ -93,7 +95,7 @@ background:  rgb(63, 32, 95 #2A1b3D);
      <string notr="true">QLineEdit {
 color:#333 ;
 border: 2px solid rgb(63, 32, 95);
-background: #4f3aa5;
+background: #ffffff;
 }
 
 QLineEdit:hover {
@@ -107,8 +109,8 @@ background:#999cbd;
    <widget class="QLabel" name="lbl_pass_l">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>200</y>
+      <x>210</x>
+      <y>290</y>
       <width>171</width>
       <height>61</height>
      </rect>
@@ -123,16 +125,16 @@ background:#999cbd;
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
-color: #333;
-border: 2px solid rgb(63, 32, 95 #764dad);
+color: #111;
+border: 2px solid #ffffff;
 border-radius: 20px;
 border-style: outset;
-background: rgb(63, 32, 95 #2A1b3D);
+background: #326264;
 padding: 5px;
 }
 
 QLabel:hover {
-background:  rgb(63, 32, 95 #2A1b3D);
+background: #326264;
 }</string>
     </property>
     <property name="text">
@@ -142,9 +144,9 @@ background:  rgb(63, 32, 95 #2A1b3D);
    <widget class="QLineEdit" name="ln_pass_l">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>220</y>
-      <width>161</width>
+      <x>530</x>
+      <y>310</y>
+      <width>361</width>
       <height>31</height>
      </rect>
     </property>
@@ -160,12 +162,15 @@ background:  rgb(63, 32, 95 #2A1b3D);
      <string notr="true">QLineEdit {
 color:#333 ;
 border: 2px solid rgb(63, 32, 95);
-background: #4f3aa5;
+background: #ffffff;
 }
 
 QLineEdit:hover {
 background:#999cbd;
 }</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
     </property>
     <property name="placeholderText">
      <string>password123</string>
@@ -174,9 +179,9 @@ background:#999cbd;
    <widget class="QPushButton" name="btn_done_login">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>310</y>
-      <width>131</width>
+      <x>380</x>
+      <y>450</y>
+      <width>231</width>
       <height>51</height>
      </rect>
     </property>
@@ -194,12 +199,18 @@ color: #333;
 border: 2px solid #555;
 border-radius: 20px;
 border-style: outset;
-background:  #d83F87;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #06948f
+);
 padding: 5px;
 }
 
 QPushButton:hover {
-background:  rgb(255, 170, 255 #8a8a8a);
+background:  qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #939393
+);
 }
 </string>
     </property>
@@ -207,6 +218,50 @@ background:  rgb(255, 170, 255 #8a8a8a);
      <string>done</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="total_exit">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>30</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Script MT Bold</family>
+     <pointsize>11</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	font: 11pt ;
+color: #333;
+border: 2px solid #555;
+border-radius: 20px;
+border-style: outset;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #326264
+);
+padding: 5px;
+}
+
+QPushButton:hover {
+background:  qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #939393
+);
+}
+</string>
+   </property>
+   <property name="text">
+    <string>back  --&gt;</string>
+   </property>
   </widget>
  </widget>
  <resources/>

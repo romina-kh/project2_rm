@@ -21,7 +21,7 @@ class Twitterak
     string color ;
     string temp = "";
     string save = ""; //for checkig our account (personal, company , ....)
-    void signup(string , string , string , string , string , string , string , string);
+    bool signup(string , string , string , string , string , string , string , string);
     void signup_ano(string , string);
     void signup_org(string , string , string , string , string , string , string);
     void login(string , string);
@@ -46,7 +46,6 @@ class Twitterak
     void in_follow();
     void in_hashtag();
     void qttweet(string);
-
 
 
 };

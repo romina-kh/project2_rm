@@ -18,6 +18,7 @@ SOURCES += \
     personal.cpp \
     profile.cpp \
     setting.cpp \
+    show_profile.cpp \
     signup.cpp \
     tweet.cpp \
     twitterak.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     personal.h \
     profile.h \
     setting.h \
+    show_profile.h \
     signup.h \
     tweet.h \
     twitterak.h \
@@ -43,6 +45,7 @@ FORMS += \
     mainwindow.ui \
     profile.ui \
     setting.ui \
+    show_profile.ui \
     signup.ui
 
 # Default rules for deployment.

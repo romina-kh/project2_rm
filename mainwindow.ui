@@ -6,38 +6,71 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1573</width>
+    <height>829</height>
    </rect>
   </property>
   <property name="palette">
    <palette>
     <active>
      <colorrole role="Button">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>61</red>
-        <green>39</green>
-        <blue>89</blue>
-       </color>
+      <brush brushstyle="RadialGradientPattern">
+       <gradient centralx="0.192000000000000" centraly="0.801000000000000" focalx="0.410000000000000" focaly="0.596000000000000" radius="0.500000000000000" type="RadialGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
+        <gradientstop position="0.069651700000000">
+         <color alpha="255">
+          <red>190</red>
+          <green>217</green>
+          <blue>225</blue>
+         </color>
+        </gradientstop>
+        <gradientstop position="1.000000000000000">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </gradientstop>
+       </gradient>
       </brush>
      </colorrole>
      <colorrole role="Base">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>61</red>
-        <green>39</green>
-        <blue>89</blue>
-       </color>
+      <brush brushstyle="RadialGradientPattern">
+       <gradient centralx="0.192000000000000" centraly="0.801000000000000" focalx="0.410000000000000" focaly="0.596000000000000" radius="0.500000000000000" type="RadialGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
+        <gradientstop position="0.069651700000000">
+         <color alpha="255">
+          <red>190</red>
+          <green>217</green>
+          <blue>225</blue>
+         </color>
+        </gradientstop>
+        <gradientstop position="1.000000000000000">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </gradientstop>
+       </gradient>
       </brush>
      </colorrole>
      <colorrole role="Window">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>61</red>
-        <green>39</green>
-        <blue>89</blue>
-       </color>
+      <brush brushstyle="RadialGradientPattern">
+       <gradient centralx="0.192000000000000" centraly="0.801000000000000" focalx="0.410000000000000" focaly="0.596000000000000" radius="0.500000000000000" type="RadialGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
+        <gradientstop position="0.069651700000000">
+         <color alpha="255">
+          <red>190</red>
+          <green>217</green>
+          <blue>225</blue>
+         </color>
+        </gradientstop>
+        <gradientstop position="1.000000000000000">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </gradientstop>
+       </gradient>
       </brush>
      </colorrole>
      <colorrole role="AlternateBase">
@@ -52,30 +85,63 @@
     </active>
     <inactive>
      <colorrole role="Button">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>61</red>
-        <green>39</green>
-        <blue>89</blue>
-       </color>
+      <brush brushstyle="RadialGradientPattern">
+       <gradient centralx="0.192000000000000" centraly="0.801000000000000" focalx="0.410000000000000" focaly="0.596000000000000" radius="0.500000000000000" type="RadialGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
+        <gradientstop position="0.069651700000000">
+         <color alpha="255">
+          <red>190</red>
+          <green>217</green>
+          <blue>225</blue>
+         </color>
+        </gradientstop>
+        <gradientstop position="1.000000000000000">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </gradientstop>
+       </gradient>
       </brush>
      </colorrole>
      <colorrole role="Base">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>61</red>
-        <green>39</green>
-        <blue>89</blue>
-       </color>
+      <brush brushstyle="RadialGradientPattern">
+       <gradient centralx="0.192000000000000" centraly="0.801000000000000" focalx="0.410000000000000" focaly="0.596000000000000" radius="0.500000000000000" type="RadialGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
+        <gradientstop position="0.069651700000000">
+         <color alpha="255">
+          <red>190</red>
+          <green>217</green>
+          <blue>225</blue>
+         </color>
+        </gradientstop>
+        <gradientstop position="1.000000000000000">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </gradientstop>
+       </gradient>
       </brush>
      </colorrole>
      <colorrole role="Window">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>61</red>
-        <green>39</green>
-        <blue>89</blue>
-       </color>
+      <brush brushstyle="RadialGradientPattern">
+       <gradient centralx="0.192000000000000" centraly="0.801000000000000" focalx="0.410000000000000" focaly="0.596000000000000" radius="0.500000000000000" type="RadialGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
+        <gradientstop position="0.069651700000000">
+         <color alpha="255">
+          <red>190</red>
+          <green>217</green>
+          <blue>225</blue>
+         </color>
+        </gradientstop>
+        <gradientstop position="1.000000000000000">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </gradientstop>
+       </gradient>
       </brush>
      </colorrole>
      <colorrole role="AlternateBase">
@@ -90,30 +156,63 @@
     </inactive>
     <disabled>
      <colorrole role="Button">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>61</red>
-        <green>39</green>
-        <blue>89</blue>
-       </color>
+      <brush brushstyle="RadialGradientPattern">
+       <gradient centralx="0.192000000000000" centraly="0.801000000000000" focalx="0.410000000000000" focaly="0.596000000000000" radius="0.500000000000000" type="RadialGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
+        <gradientstop position="0.069651700000000">
+         <color alpha="255">
+          <red>190</red>
+          <green>217</green>
+          <blue>225</blue>
+         </color>
+        </gradientstop>
+        <gradientstop position="1.000000000000000">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </gradientstop>
+       </gradient>
       </brush>
      </colorrole>
      <colorrole role="Base">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>61</red>
-        <green>39</green>
-        <blue>89</blue>
-       </color>
+      <brush brushstyle="RadialGradientPattern">
+       <gradient centralx="0.192000000000000" centraly="0.801000000000000" focalx="0.410000000000000" focaly="0.596000000000000" radius="0.500000000000000" type="RadialGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
+        <gradientstop position="0.069651700000000">
+         <color alpha="255">
+          <red>190</red>
+          <green>217</green>
+          <blue>225</blue>
+         </color>
+        </gradientstop>
+        <gradientstop position="1.000000000000000">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </gradientstop>
+       </gradient>
       </brush>
      </colorrole>
      <colorrole role="Window">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>61</red>
-        <green>39</green>
-        <blue>89</blue>
-       </color>
+      <brush brushstyle="RadialGradientPattern">
+       <gradient centralx="0.192000000000000" centraly="0.801000000000000" focalx="0.410000000000000" focaly="0.596000000000000" radius="0.500000000000000" type="RadialGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
+        <gradientstop position="0.069651700000000">
+         <color alpha="255">
+          <red>190</red>
+          <green>217</green>
+          <blue>225</blue>
+         </color>
+        </gradientstop>
+        <gradientstop position="1.000000000000000">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </gradientstop>
+       </gradient>
       </brush>
      </colorrole>
      <colorrole role="AlternateBase">
@@ -132,17 +231,16 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(61, 39, 89);
-alternate-background-color: rgb(170, 170, 255);</string>
+   <string notr="true">background-color: qradialgradient(spread:repeat, cx:0.192, cy:0.801, radius:0.5, fx:0.41, fy:0.596, stop:0.0696517 rgba(190, 217, 225, 255), stop:1 rgba(255, 255, 255, 255));</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="box_menu">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>60</y>
-      <width>511</width>
-      <height>421</height>
+      <x>290</x>
+      <y>120</y>
+      <width>961</width>
+      <height>531</height>
      </rect>
     </property>
     <property name="palette">
@@ -153,9 +251,9 @@ alternate-background-color: rgb(170, 170, 255);</string>
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>96</red>
-            <green>0</green>
-            <blue>158</blue>
+            <red>0</red>
+            <green>112</green>
+            <blue>112</blue>
            </color>
           </gradientstop>
           <gradientstop position="1.000000000000000">
@@ -182,9 +280,9 @@ alternate-background-color: rgb(170, 170, 255);</string>
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>96</red>
-            <green>0</green>
-            <blue>158</blue>
+            <red>0</red>
+            <green>112</green>
+            <blue>112</blue>
            </color>
           </gradientstop>
           <gradientstop position="1.000000000000000">
@@ -202,9 +300,9 @@ alternate-background-color: rgb(170, 170, 255);</string>
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>96</red>
-            <green>0</green>
-            <blue>158</blue>
+            <red>0</red>
+            <green>112</green>
+            <blue>112</blue>
            </color>
           </gradientstop>
           <gradientstop position="1.000000000000000">
@@ -251,9 +349,9 @@ alternate-background-color: rgb(170, 170, 255);</string>
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>96</red>
-            <green>0</green>
-            <blue>158</blue>
+            <red>0</red>
+            <green>112</green>
+            <blue>112</blue>
            </color>
           </gradientstop>
           <gradientstop position="1.000000000000000">
@@ -280,9 +378,9 @@ alternate-background-color: rgb(170, 170, 255);</string>
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>96</red>
-            <green>0</green>
-            <blue>158</blue>
+            <red>0</red>
+            <green>112</green>
+            <blue>112</blue>
            </color>
           </gradientstop>
           <gradientstop position="1.000000000000000">
@@ -300,9 +398,9 @@ alternate-background-color: rgb(170, 170, 255);</string>
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>96</red>
-            <green>0</green>
-            <blue>158</blue>
+            <red>0</red>
+            <green>112</green>
+            <blue>112</blue>
            </color>
           </gradientstop>
           <gradientstop position="1.000000000000000">
@@ -349,9 +447,9 @@ alternate-background-color: rgb(170, 170, 255);</string>
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>96</red>
-            <green>0</green>
-            <blue>158</blue>
+            <red>0</red>
+            <green>112</green>
+            <blue>112</blue>
            </color>
           </gradientstop>
           <gradientstop position="1.000000000000000">
@@ -378,9 +476,9 @@ alternate-background-color: rgb(170, 170, 255);</string>
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>96</red>
-            <green>0</green>
-            <blue>158</blue>
+            <red>0</red>
+            <green>112</green>
+            <blue>112</blue>
            </color>
           </gradientstop>
           <gradientstop position="1.000000000000000">
@@ -398,9 +496,9 @@ alternate-background-color: rgb(170, 170, 255);</string>
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="RepeatSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>96</red>
-            <green>0</green>
-            <blue>158</blue>
+            <red>0</red>
+            <green>112</green>
+            <blue>112</blue>
            </color>
           </gradientstop>
           <gradientstop position="1.000000000000000">
@@ -455,7 +553,7 @@ alternate-background-color: rgb(170, 170, 255);</string>
      <cursorShape>OpenHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(96, 0, 158, 255), stop:1 rgba(255, 255, 255, 255));</string>
+     <string notr="true">background-color: qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:0, stop:0#007070, stop:1 rgba(255, 255, 255, 255));</string>
     </property>
     <property name="title">
      <string>menu</string>
@@ -488,7 +586,7 @@ border-radius: 20px;
 border-style: outset;
 background: qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #b1117e
+radius: 1.35, stop: 0 #fff, stop: 1 #acffe6
 );
 padding: 5px;
 }
@@ -496,7 +594,7 @@ padding: 5px;
 QPushButton:hover {
 background:  qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #ffa9cb
+radius: 1.35, stop: 0 #fff, stop: 1 #939393
 );
 }
 </string>
@@ -508,8 +606,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ffa9cb
     <widget class="QPushButton" name="btn_login_m">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>210</y>
+       <x>410</x>
+       <y>230</y>
        <width>141</width>
        <height>61</height>
       </rect>
@@ -530,7 +628,7 @@ border-radius: 20px;
 border-style: outset;
 background: qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #D83F87
+radius: 1.35, stop: 0 #fff, stop: 1 #06948f
 );
 padding: 5px;
 }
@@ -538,7 +636,7 @@ padding: 5px;
 QPushButton:hover {
 background:  qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #ffa9cb
+radius: 1.35, stop: 0 #fff, stop: 1 #939393
 );
 }
 </string>
@@ -550,8 +648,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ffa9cb
     <widget class="QPushButton" name="btn_exit_m">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>300</y>
+       <x>700</x>
+       <y>340</y>
        <width>141</width>
        <height>61</height>
       </rect>
@@ -572,7 +670,7 @@ border-radius: 20px;
 border-style: outset;
 background: qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 rgb(255, 174, 220)
+radius: 1.35, stop: 0 #fff, stop: 1 #326264
 );
 padding: 5px;
 }
@@ -580,7 +678,7 @@ padding: 5px;
 QPushButton:hover {
 background:  qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #ffffff
+radius: 1.35, stop: 0 #fff, stop: 1 #939393
 );
 }
 </string>
@@ -597,7 +695,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ffffff
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1573</width>
      <height>25</height>
     </rect>
    </property>

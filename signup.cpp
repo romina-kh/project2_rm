@@ -3,6 +3,7 @@
 #include "twitterak.h"
 #include "QLineEdit"
 #include <QMessageBox>
+#include "mainwindow.h"
 
 signup::signup(QWidget *parent) :
     QWidget(parent),
@@ -21,6 +22,7 @@ signup::~signup()
 void signup::on_btn_done_signup_clicked()
 {
 
+    bool per = false;
     Twitterak app;
     app.in_user();
     app.in_tweet();
@@ -40,6 +42,7 @@ void signup::on_btn_done_signup_clicked()
     if (ui->rbtn_personal_s->isChecked())
     {
         app.signup(username ,name ,age ,phone, country, link , bio , password);
+        per =  app.signup(username ,name ,age ,phone, country, link , bio , password);
     }
 
     if (ui->rbtn_organ_s->isChecked())
@@ -54,7 +57,11 @@ void signup::on_btn_done_signup_clicked()
     }
 
 
-    app.login(username , password);
+    if(per == true)
+    {
+        app.login(username , password);
+        this->close() ;
+    }
 
 
 
@@ -126,8 +133,11 @@ void signup::on_rbtn_ano_s_clicked()
 }
 
 
-
-
-
-
+void signup::on_total_exit_clicked()
+{
+    MainWindow * main_btn=nullptr ;
+    main_btn = new MainWindow ;
+    main_btn->show();
+    this->close();
+}
 

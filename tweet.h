@@ -13,7 +13,7 @@ class Tweet
 {
     protected:
 
-        vector<Common*>likers;
+
         vector<Tweet>mentions ;//vec for mention
         string userName ;//added for mention
         string tweet;
@@ -31,7 +31,7 @@ class Tweet
         void likes(Common* ,Common* , int);
         void likes(Common*);
         void dislike(Common* ,Common* , int);
-        void show_numberlikes(Common*, int);
+        int show_numberlikes(Common*, int);
         void show_likers(Common*, int);
         int liker_size();
         void Set_date();
@@ -44,6 +44,11 @@ class Tweet
         void Set_date(string);
 
         void sett();
+
+        //================
+
+        vector<Common*>likers;
+
 
 };
 

@@ -310,21 +310,6 @@ border-style: outset;</string>
     <property name="title">
      <string/>
     </property>
-    <widget class="QListWidget" name="listWidget">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>271</width>
-       <height>192</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(239, 239, 239);
-border-radius: 20px;
-border-style: outset;</string>
-     </property>
-    </widget>
     <widget class="QTextBrowser" name="txtb_bio">
      <property name="geometry">
       <rect>
@@ -361,6 +346,22 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;bio :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_picture">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>40</y>
+       <width>221</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color : #ffffff ;</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>

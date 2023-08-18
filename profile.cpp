@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <fstream>
 #include "show_profile.h"
+#include <QPixmap>
 
 
 profile::profile(map <string , vector<Tweet>>& hashtag,unordered_map<string , Common*>& users,Common* cuser,QWidget *parent) :
@@ -14,10 +15,26 @@ profile::profile(map <string , vector<Tweet>>& hashtag,unordered_map<string , Co
     ui(new Ui::profile)
 {
     ui->setupUi(this);
+
+
     User = cuser;
     set_pro(User);
     musers = users;
     mhashtag = hashtag;
+
+    QPixmap pixmap(QString::fromStdString(User->Get_Pic()));
+    ui->lbl_picture->setPixmap(pixmap);
+    ui->lbl_picture->setSizePolicy(QSizePolicy::Fixed , QSizePolicy::Fixed);
+    ui->lbl_picture->setFixedSize(100,100);
+    QRegion *region = new QRegion(0 , 0 , ui->lbl_picture->width(), ui->lbl_picture->height(),QRegion::Ellipse);
+    ui->lbl_picture->setScaledContents(true);
+    ui->lbl_picture->setMask(*region);
+    QString style = "background-color: " +QString::fromStdString(User->Get_Header()) + ';' ;
+    ui->groupBox_pic->setStyleSheet(style);
+
+
+
+
 //-----------------------------------------------------------
     {
         string following ;
@@ -309,23 +326,36 @@ void profile::on_btn_follow_pro_clicked()
 
     string username ;
     username = ui->ln_follow_pro->text().toStdString();
-    if (User == musers[username])
+
+    if(musers.count(username) == 1 )//=========================================
     {
-        QMessageBox::warning(this,"", "You can not follow yourself.");
+        if (User == musers[username])
+        {
+            QMessageBox::warning(this,"", "You can not follow yourself.");
+        }
+        else if(musers[username]->Get_Name() == "Anonymous User")
+        {
+            QMessageBox::warning(this,"", "You can not follow this account.");
+        }
+        else
+        {
+            User->add_following(username) ;
+            musers[username]->increase_follower() ;
+            ui->listWidget_following->clear();
+            for (int i = 0 ; i < User->Get_following() ; i++)
+            {
+                following = User->Get_indx_following(i);
+                qstr = QString::fromStdString(following);
+                ui->listWidget_following->addItem(qstr);
+
+            }
+            ui->lbl_follower_pro->setText(QString ::number(User->Get_followers()));
+
+        }
     }
     else
     {
-        User->add_following(username) ;
-        musers[username]->increase_follower() ;
-        ui->listWidget_following->clear();
-        for (int i = 0 ; i < User->Get_following() ; i++)
-        {
-            following = User->Get_indx_following(i);
-            qstr = QString::fromStdString(following);
-            ui->listWidget_following->addItem(qstr);
-
-        }
-        ui->lbl_follower_pro->setText(QString ::number(User->Get_followers()));
+         QMessageBox::warning(this,"", "This user does not exist.");
 
     }
 
@@ -428,7 +458,6 @@ void profile::on_btn_deletetw_pro_clicked()
     else
     {
     User->delete_tweet(index) ;
-    QMessageBox::information(this,tr(""), tr("Your tweet has successfully deleted."));
     ptweet();
     ui->ln_delete_pro->clear();
     }
@@ -499,7 +528,7 @@ void profile::on_btn_mentionlike_pro_3_clicked()
     indexmention = ui->ln_nummention_likee->text().toInt();
     indextweet = ui->ln_likenum_pro->text().toInt();
 
-    if(musers.count(username) == 1)//checking this character exist
+    if(musers.count(username) == 1 && musers[username]->check_indx(indextweet , indexmention) == true )//checking this character exist
     {
         musers[username]->like_mention(musers[User->Get_User()] , indextweet , indexmention) ;
     }
@@ -575,6 +604,7 @@ void profile::on_btn_retweet_pro_2_clicked()
         new2.set_number(musers[User->Get_User()]->get_index());
         musers[User->Get_User()]->push_tweet(new2);
         QMessageBox::information(this,tr(""), tr("retweeted."));
+        ui->list_tweet->clear();
         show_tweet();
 
     }

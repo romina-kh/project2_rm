@@ -12,7 +12,12 @@ using namespace std;
 class Company : public Common
 {
     public:
-        int Set_Bio(string Bio)override;
+
+        int Set_Pic(string );
+        string Get_Pic();
+
+        bool Bio_val(string Bio);
+        int Set_Bio(string Bio);
         string Get_Bio();
 
         int Set_Country(string Country);
@@ -21,7 +26,7 @@ class Company : public Common
         int Set_Link(string Link);
         string Get_Link();
 
-        int Set_Phone(string Phone_Number);
+        bool Phone_val(string Phone_Number);
         string Get_Phone();
 
         void profile_me();

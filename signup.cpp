@@ -10,6 +10,9 @@ signup::signup(QWidget *parent) :
     ui(new Ui::signup)
 {
     ui->setupUi(this);
+    ui->lbl_username_maneger->hide();
+    ui->ln_username_manager->hide();
+
 }
 
 signup::~signup()
@@ -23,13 +26,15 @@ void signup::on_btn_done_signup_clicked()
 {
 
     bool per = false;
+    bool ano = false;
+    bool org = false;
     Twitterak app;
     app.in_user();
     app.in_tweet();
     app.in_follow();
     app.in_hashtag();
 
-    string username , password , name , phone , country , link , bio , age ;
+    string username , password , name , phone , country , link , bio , age ,manager_user , pic ,header;
     username = ui->ln_username_s->text().toStdString();
     password = ui->ln_password_s->text().toStdString();
     age = ui->dateEdit_age_s->text().toStdString();
@@ -38,34 +43,43 @@ void signup::on_btn_done_signup_clicked()
     country = ui->ln_country_s->text().toStdString();
     link = ui->ln_link_s->text().toStdString();
     bio = ui->plainTxt_bio_s->toPlainText().toStdString();
+    pic = ui->ln_image->text().toStdString();
+    header = ui->comboBox->currentText().toStdString() ;
+
+    ui->lbl_username_maneger->hide();
+    ui->ln_username_manager->hide();
+
 
     if (ui->rbtn_personal_s->isChecked())
     {
-        app.signup(username ,name ,age ,phone, country, link , bio , password);
-        per =  app.signup(username ,name ,age ,phone, country, link , bio , password);
+        per =  app.signup(username ,name ,age ,phone, country, link , bio , password , pic ,header);
     }
 
     if (ui->rbtn_organ_s->isChecked())
     {
-
-         app.signup_org(username ,name ,phone , country, link , bio , password);
+        manager_user = ui->ln_username_manager->text().toStdString();
+        org = app.signup_org(username ,name ,phone , country, link , bio , password , manager_user , pic ,header);
     }
 
     if(ui->rbtn_ano_s->isChecked())
     {
-        app.signup_ano(username , password);
+        ano = app.signup_ano(username , password ,header);
     }
 
 
-    if(per == true)
+    if(per == true || org == true || ano == true)
     {
-        app.login(username , password);
+        app.show(username);
         this->close() ;
     }
 
 
 
 }
+
+
+
+
 
 
 
@@ -140,4 +154,5 @@ void signup::on_total_exit_clicked()
     main_btn->show();
     this->close();
 }
+
 

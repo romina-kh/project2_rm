@@ -22,7 +22,7 @@
      <x>260</x>
      <y>130</y>
      <width>1061</width>
-     <height>621</height>
+     <height>671</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -39,7 +39,7 @@ border-style: outset;</string>
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>190</y>
+      <y>140</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -52,7 +52,7 @@ border-style: outset;</string>
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>260</y>
+      <y>210</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -65,7 +65,7 @@ border-style: outset;</string>
     <property name="geometry">
      <rect>
       <x>650</x>
-      <y>190</y>
+      <y>140</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -87,7 +87,7 @@ border-style: outset;</string>
     <property name="geometry">
      <rect>
       <x>650</x>
-      <y>260</y>
+      <y>210</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -105,8 +105,8 @@ border-style: outset;</string>
    <widget class="QPushButton" name="btn_done_signup">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>480</y>
+      <x>670</x>
+      <y>510</y>
       <width>191</width>
       <height>71</height>
      </rect>
@@ -388,6 +388,141 @@ color: rgb(0, 72, 106) ;</string>
      <string>Choose a type:</string>
     </property>
    </widget>
+   <widget class="QLabel" name="lbl_username_maneger">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>360</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>username (company manager)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ln_username_manager">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>410</y>
+      <width>321</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+color: rgb(0, 72, 106) ;
+border-radius: 20px;
+border-style: outset;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_image">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>620</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Picture address</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ln_image">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>620</y>
+      <width>381</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;
+color: rgb(0, 72, 106) ;
+border-radius: 20px;
+border-style: outset;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>290</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>header</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>300</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#99CED3 ;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>choose color</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>white</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>red</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>green</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>blue</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>gray</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>purple</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>yellow</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>black</string>
+     </property>
+    </item>
+   </widget>
   </widget>
   <widget class="QPushButton" name="total_exit">
    <property name="geometry">
@@ -426,8 +561,7 @@ background:  qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
 radius: 1.35, stop: 0 #fff, stop: 1 #939393
 );
-}
-</string>
+}</string>
    </property>
    <property name="text">
     <string>back  --&gt;</string>
@@ -435,5 +569,38 @@ radius: 1.35, stop: 0 #fff, stop: 1 #939393
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>rbtn_organ_s</sender>
+   <signal>clicked()</signal>
+   <receiver>lbl_username_maneger</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>689</x>
+     <y>202</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>797</x>
+     <y>485</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtn_organ_s</sender>
+   <signal>clicked()</signal>
+   <receiver>ln_username_manager</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>710</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>798</x>
+     <y>518</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

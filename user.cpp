@@ -11,7 +11,42 @@
 using namespace std;
 
 //---------------------------------------------------------------------------------
-//common
+bool Common::ckeck_id(string &id) //This function ckeck the reserved word and @
+{
+
+    for (int i = 0 ; i < id.size() ; i++)
+    {
+        id[i] = tolower(id[i]);
+    }
+
+    if(id[0]=='@')
+    {
+        id.erase(0 , 1) ;
+    }
+    if(id=="exit"
+    || id=="edit"
+    || id=="login"
+    || id=="signup"
+    || id=="delete"
+    || id=="username"
+    || id=="password"
+    || id=="tweet"
+    || id=="retweet"
+    || id=="tweet"
+    || id=="like"
+    || id=="dislike"
+    || id=="mention"
+    || id=="follow"
+    || id== "help" )
+    {
+
+       return false;
+    }
+
+    return true;
+
+}
+//--------------------------------------------------------------------------------
 int Common::Set_Name(string Name)//This function set the name
 {
     this-> Name = Name;
@@ -24,7 +59,7 @@ string Common::Get_Name()//This function set the name
 }
 
 
-int Common::User_val(string User_name)//This function set the username (validation)
+bool Common::User_val(string User_name)//This function set the username (validation)
 {
 
      QMessageBox q;
@@ -32,58 +67,63 @@ int Common::User_val(string User_name)//This function set the username (validati
 
     string User = "" ;
 
-    if(User_name.size()>=5)
-    {
-        for (char c : User_name)
-        {
-        int num = c - '0'; // convert character to integer
-        char ascii = static_cast<char>(num + '0'); // convert integer to ASCII
-        User += ascii;
-        }
-        for( int i=0 ;i<User.size() ;i++)
-        {
-            if(User[0]>=65 && User[0]<=90 || User[0]>=97 && User[0]<=122 || User[0])// the first char should not be numbers
-            {
 
-                if(User[i]>=65 && User[i]<=90 || User[i]>=97 && User[i]<=122 || User[i]>=48 && User[i]<=57)
+    if(ckeck_id( User_name) == true)
+    {
+        if(User_name.size()>=5)
+        {
+            for (char c : User_name)
+            {
+            int num = c - '0'; // convert character to integer
+            char ascii = static_cast<char>(num + '0'); // convert integer to ASCII
+            User += ascii;
+            }
+            for( int i=0 ;i<User.size() ;i++)
+            {
+                if(User[0]>=65 && User[0]<=90 || User[0]>=97 && User[0]<=122 || User[0])// the first char should not be numbers
                 {
-                    counter++ ;
+
+                    if(User[i]>=65 && User[i]<=90 || User[i]>=97 && User[i]<=122 || User[i]>=48 && User[i]<=57)
+                    {
+                        counter++ ;
+                    }
+                    else
+                    {
+
+                        q.setText("! Your Username should only contains characters and numbers .");
+                        q.exec();
+                        return false;
+                    }
                 }
                 else
                 {
 
-                    q.setText("! Your Username should only contains characters and numbers .");
+                    q.setText("! your Username should not start with numbers.");
                     q.exec();
-                    //cout << "! Your Username should only contains characters and numbers .\n" ;
-                    //return ++counter2;
+                    return false;
                 }
             }
-            else
-            {
+        }
+        else
+        {
 
-                q.setText("! your Username should not start with numbers.");
-                q.exec();
-                //cout << "! your Username should not start with numbers.\n" ;
-                //return ++counter2;
-            }
+            q.setText("!Your Username should be more than 5 characters.");
+            q.exec();
+            return false;
+
+
         }
     }
     else
     {
-
-        q.setText("!Your Username should be more than 5 characters.");
+        q.setText("! This is a reserved keyword. you can not choose it as your username." );
         q.exec();
-        //cout << "! Your Username should be more than 5 characters.\n" ;
-        //return ++counter2;
-
-
+        return false;
     }
-//    if(counter == User.size())
-//    {
-//        User_Name = User;
-//        return 0;
-//    }
-return counter;
+
+
+
+return true;
 }
 
 int Common::Set_User(string User)
@@ -93,14 +133,25 @@ int Common::Set_User(string User)
             return 0;
 
 }
+
+
+int Common::Set_Phone(string Phone_Number)
+{
+     this->Phone_Number = Phone_Number;
+    return 0;
+
+}
+
+
 string Common::Get_User()
 {
     return User_Name;
 }
 
 
-int Common::Set_Password(string password)
+bool Common::Pas_val(string password)
 {
+    QMessageBox q;
     hash<string> mystdhash;
     int counter = 0;
     bool ch = false; //character
@@ -129,29 +180,42 @@ int Common::Set_Password(string password)
     }
     else
     {
-        cout << "! Your password must be more than 4 characters.\n";
-        return ++counter ;
+        q.setText( "! Your password must be more than 4 characters.");
+        q.exec();
+         return false;
     }
 
     if (ch == false || num == false)
     {
-        cout << "! Password should contain both character and number.\n" ;
-        return ++counter;
+
+        q.setText( "! Password should contain both character and number.");
+        q.exec();
+
+
+         return false;
     }
     else if ( ch == false && num == true || ch== true && num==false)
     {
-         cout << "! Password should contain both character and number.\n" ;
-        return ++counter;
+        q.setText( "! Password should contain both character and number.");
+        q.exec();
+
+        return false;
     }
 
     else
     {
-        Password = pass;
-        return 0;
+        //Password = pass;
+        return true;
+        //return 0;
     }
 
 }
 //-------------------------------------------------------------------------------------------------------------
+
+int Common :: Set_pass(string pass)
+{
+    Password = pass;
+}
 
 //-------------------------------------------------------------------------------------------------------------
 
@@ -249,13 +313,17 @@ void Common::set_index()
 void Common::delete_tweet(int Number)
 {
     QMessageBox q;
-    q.setText("We can not find this tweet.");
+    QMessageBox x;
+
     if(mtweet.find(Number)!=mtweet.end())
     {
+        x.setText("* Your tweet has successfully deleted.");
         mtweet.erase(Number) ;
+        x.exec();
     }
     else
     {
+        q.setText("! We can not find this tweet.");
         q.exec();
     }
 }
@@ -292,6 +360,12 @@ string Common::backstring(int number)
     if(mtweet.count(number)==1)
     {
         return mtweet[number].get_classtweet();
+    }
+    else
+    {
+        QMessageBox q ;
+        q.setText(" this tweet does not exist.") ;
+        q.exec() ;
     }
  }
 
@@ -579,6 +653,23 @@ Tweet& Common  ::indx(int x)
     }
 
 }
+
+bool Common :: check_indx(int x , int y)
+{
+    if(mtweet.count(x) == 1 && mtweet[x].size_mention() >= y)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}
+
+
+
+
 int Common :: get_size_mtweet()
 {
      return mtweet.size();

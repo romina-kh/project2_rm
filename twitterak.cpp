@@ -21,7 +21,7 @@ using namespace std ;
 //Common* user = nullptr;
 Common* user = nullptr;
 Tweet tweet_object;
-Twitterak app;
+
 //********************************************************************************************************************************************
 
 void Twitterak::ckeck_id(string &id) //This function ckeck the reserved word and @
@@ -106,34 +106,68 @@ void seperator(string original , string& characters , string& numbers) //This fu
 
 //****************************************************************************************************************************************
 
-bool Twitterak::signup(string User , string Name, string Age ,string Phone_Number, string Country , string Link , string Bio , string Password)
+bool Twitterak::signup(string User , string Name, string Age ,string Phone_Number, string Country , string Link , string Bio , string Password , string img ,string header)
 {
     bool fuser = false;
-
+    bool fpass =false;
+    bool fphone =false;
+    bool fbio = false;
     QMessageBox q;
-    q.setText("signup!");
+
 
     user = new Personal;
 
-    if(user->User_val(User)==User.size())
+    if(!musers.count(User))
     {
-        user->Set_User(User);
-        fuser = true;
+        if(user->User_val(User) == true)
+        {
+            user->Set_User(User);
+            fuser = true;
+        }
+
+    }
+    else
+    {
+        q.setText("! There is a user with this username .");
+        q.exec();
+
+
     }
     user->Set_Name(Name);
     user->Set_Age(Age);
-    user->Set_Phone(Phone_Number);
+
+    if(user->Phone_val(Phone_Number) ==  true)
+    {
+         user->Set_Phone(Phone_Number);
+         fphone = true;
+    }
+
     user->Set_Country(Country);
     user->Set_Link(Link);
+    if(user->Bio_val(Bio)==true)
+    {
+         user->Set_Bio(Bio);
+         fbio = true;
+    }
     user->Set_Bio(Bio);
-    user->Set_Password(Password);
+    if(user->Pas_val(Password)== true)
+    {
+        user->Set_pass(Password);
+        fpass = true;
+    }
+
+    user->Set_Pic(img);
+    user->Set_Header(header) ;
+
+
 
    // musers[user->Get_User()] = user;
 
-    if(fuser==true)
+    if(fuser==true && fpass == true && fphone == true && fbio == true)
     {
          musers[user->Get_User()] = user;
         put_user();
+        q.setText("signup!");
         q.exec();
         return true;
 
@@ -147,55 +181,148 @@ bool Twitterak::signup(string User , string Name, string Age ,string Phone_Numbe
 }
 //----------------------------------------------------------------------------------------------------------------------------
 
-void Twitterak::signup_ano(string User, string Password)
+bool Twitterak::signup_ano(string User, string Password ,string header)
 {
+    bool fuser = false;
+    bool fpass =false;
+
+
     QMessageBox q;
-    q.setText("signup!");
 
     user = new Anonymous;
 
-    user->Set_User(User);
-    user->Set_Name("Anonymous User");
-    user->Set_Password(Password);
-    musers[user->Get_User()] = user;
 
-    put_user();
-    q.exec();
+
+    if(!musers.count(User))
+    {
+        if(user->User_val(User) == true)
+        {
+            user->Set_User(User);
+            fuser = true;
+        }
+
+    }
+    else
+    {
+        q.setText("! There is a user with this username .");
+        q.exec();
+
+
+    }
+
+    user->Set_Header(header) ;
+    user->Set_Name("Anonymous User");
+    if(user->Pas_val(Password)== true)
+    {
+        user->Set_pass(Password);
+        fpass = true;
+    }
+
+
+    if(fuser==true && fpass == true)
+    {
+         musers[user->Get_User()] = user;
+        put_user();
+        q.setText("signup!");
+        q.exec();
+        return true;
+
+
+    }
+    else
+    {
+        return false;
+    }
+
 
 
 }
 //---------------------------------------------------------------------------------------------------------------------------
 
-void Twitterak::signup_org(string User , string Name ,string Phone_Number, string Country , string Link , string Bio , string Password)
+bool Twitterak::signup_org(string User , string Name ,string Phone_Number, string Country , string Link , string Bio , string Password , string manager , string img ,string header)
 {
+    bool fuser = false;
+    bool fpass =false;
+    bool fphone = false;
+    bool fbio = false;
+
     QMessageBox q;
-    q.setText("signup!");
+    if(musers.count(manager) == 1)
+    {
+        user = new Company;
 
-    user = new Company;
+        if(!musers.count(User))
+        {
+            if(user->User_val(User) == true)
+            {
+                user->Set_User(User);
+                fuser = true;
+            }
 
-    user->Set_User(User);
-    user->Set_Name(Name);
-    user->Set_Phone(Phone_Number);
-    user->Set_Country(Country);
-    user->Set_Link(Link);
-    user->Set_Bio(Bio);
-    user->Set_Password(Password);
+        }
+        else
+        {
+            q.setText("! There is a user with this username .");
+            q.exec();
 
-    musers[user->Get_User()] = user;
+        }
 
-    temp = user->Get_User() ;
+        user->Set_Name(Name);
+        user->Set_Header(header) ;
 
-    put_user();
-    q.exec();
+        if(user->Phone_val(Phone_Number) ==  true)
+        {
+             user->Set_Phone(Phone_Number);
+             fphone = true;
+        }
+
+        user->Set_Country(Country);
+        user->Set_Link(Link);
+        if(user->Bio_val(Bio)==true)
+        {
+             user->Set_Bio(Bio);
+             fbio = true;
+        }
+        if(user->Pas_val(Password)== true)
+        {
+            user->Set_pass(Password);
+            fpass = true;
+        }
+        user->Set_Pic(img);
+
+        if(fuser==true && fpass == true && fphone == true &&  fbio == true)
+        {
+            musers[user->Get_User()] = user;
+            temp = user->Get_User() ;
+            put_user();
+            q.setText("signup!");
+            q.exec();
+            return true;
+
+
+        }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+        q.setText("! There is no user with this username.");
+        q.exec();
+        return false;
+    }
+
+
+    //temp
 
 }
 
 //****************************************************************************************************************************
-void Twitterak::login(string usern , string pass)//using hash for safety
+bool Twitterak::login(string usern , string pass)//using hash for safety
 {
 
     QMessageBox q;
-    q.setText("login!");
 
         ckeck_id(usern);
 
@@ -205,27 +332,38 @@ void Twitterak::login(string usern , string pass)//using hash for safety
             {
                 user = musers[usern] ;
                 temp = usern;
-                checkin = 1 ;
+                //checkin = 1 ;
+                q.setText("login!");
+
                 q.exec();
-                show(usern);
+                //show(usern);
+
+
+                return true;
 
                 //choice_login();
             }
             else
             {
-                cout << "! Your password is incorect.\n";
+                q.setText("! Your password is incorect.");
+                q.exec();
+                return false;
 
             }
 
         }
         else
         {
-            cout << "! This Username is not found.\n";
+            q.setText("! This Username is not found.");
+            q.exec();
+           return false;
 
         }
 
 
 }
+
+
 
 //*********************************************************************************************************************************************************
 
@@ -574,7 +712,7 @@ void Twitterak:: edit_profile(string edit ,string changable)
                 }
                 else
                 {
-                    musers[temp]->Set_Password(changable) ;
+                    musers[temp]->Set_pass(changable) ;
                     cout << "* Your password has been successfully changed.\n" ;
 
                 }
@@ -719,8 +857,8 @@ void Twitterak :: put_user()
             outuser << i.second->Get_User() << "o" ;
         }
         outuser << endl << i.second->Get_Name() << endl << i.second->Get_Age() << endl
-        << i.second->Get_Phone() << endl << i.second->Get_Country() << endl << i.second->Get_Link() << endl <<
-        i.second->Get_Bio() << endl << i.second->Get_Password() << endl
+               << i.second->Get_Phone() << endl << i.second->Get_Country() << endl << i.second->Get_Link() << endl <<
+               i.second->Get_Bio() << endl << i.second->Get_Password() << endl << i.second->Get_Pic() <<endl << i.second->Get_Header() << endl
         << "************************************************\n";
         //header
     }
@@ -846,6 +984,7 @@ void Twitterak :: pfollow()
 //----------------------------------------------------------------------------------------------------------------
 void Twitterak :: in_user()
 {
+    QMessageBox q;
     string username;
     string name;
     string age;
@@ -854,6 +993,8 @@ void Twitterak :: in_user()
     string link;
     string bio;
     string password;
+    string picture;
+    string Header ;
 
     stringstream pass ;
     size_t pass_t;
@@ -911,7 +1052,16 @@ void Twitterak :: in_user()
             // pass << password;
             // pass >> pass_t;
 
-            musers[username]->Set_Password(password);//pass_t
+            musers[username]->Set_pass(password);//pass_t
+
+            getline(in_user , picture );
+            musers[username]->Set_Pic(picture);
+
+            getline(in_user ,Header);
+            musers[username]->Set_Header(Header);
+
+
+
 
             in_user.ignore(49);
         }
@@ -959,6 +1109,7 @@ void Twitterak :: in_tweet()
                 string men ;
                 string datemen ;
                 string likemen ;
+                string empty;
 
                 in_tweet >> numb ;
                 if (numb == "****************************************")
@@ -967,6 +1118,9 @@ void Twitterak :: in_tweet()
                     break;
                 }
                 numb.pop_back();
+                QMessageBox q;
+                q.setText(QString::fromStdString("number"+numb));
+                q.exec();
                 int index = stoi(numb);
                 t.set_number(index);
 
@@ -997,19 +1151,35 @@ void Twitterak :: in_tweet()
 
 
                 in_tweet >> nummen ;
+                //in_tweet.ignore();
+                QMessageBox aq;
+                aq.setText(QString::fromStdString( "out while"+nummen));
+                aq.exec();
 
-                while(nummen!= "&&&")
+                while(nummen != "&&&")
                 {
+//                    if(nummen== "&&&")
+//                    {
+//                        break;
+//                    }
                     nummen.pop_back() ;
                     Tweet tmen ;
+                    QMessageBox q;
+                    q.setText(QString::fromStdString("in while"+nummen));
+                    q.exec();
                     tmen.set_number(stoi(nummen));
 
                     getline(in_tweet ,men) ;
+                    men.erase(0,1);
                     tmen.Set_Tweet(men) ;
 
                     getline(in_tweet ,datemen) ;
+                    datemen+='\n';
                     tmen.Set_date(datemen) ;
 
+//                    getline(in_tweet, empty );
+//                    q.setText(QString::fromStdString(empty));
+//                    q.exec();
                     in_tweet >> like ;
 
                     while(1)
@@ -1024,9 +1194,9 @@ void Twitterak :: in_tweet()
                         tmen.likes(musers[likemen]) ;
                     }
                    //t.push_mention(tmen) ;
-                   in_tweet >> nummen ;
+                   //in_tweet >> nummen ;
                    musers[username]->set_mention(tmen , index) ;
-                   in_tweet >> nummen ;
+                  in_tweet >> nummen ;
                 }
 
             }
@@ -1038,6 +1208,7 @@ void Twitterak :: in_tweet()
 
     in_tweet.close();
 }
+//======================================================================================================
 //======================================================================================================
 void Twitterak :: in_follow()
 {

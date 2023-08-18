@@ -9,6 +9,7 @@
 #include "QMessageBox"
 #include <fstream>
 #include "profile.h"
+
 edit_profile::edit_profile(unordered_map<string , Common*>& users ,Common* user,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::edit_profile)
@@ -16,6 +17,40 @@ edit_profile::edit_profile(unordered_map<string , Common*>& users ,Common* user,
     ui->setupUi(this);
     User = user;
     musers = users ;
+
+
+
+
+    if(User->Get_Name()== "Anonymous User")
+    {
+        ui->editprofile_dateEdit->setEnabled(false);
+        ui->ln_edit_name->setEnabled(false);
+        ui->ln_edit_country->setEnabled(false);
+        ui->ln_edit_link->setEnabled(false);
+        ui->ln_edit_phone->setEnabled(false);
+        ui->txt_edit_bio->setEnabled(false);
+
+    }
+    else if (User->Get_Age()=="")
+    {
+
+         ui->editprofile_dateEdit->setEnabled(false);
+         ui->ln_edit_name->setEnabled(true);
+         ui->ln_edit_country->setEnabled(true);
+         ui->ln_edit_link->setEnabled(true);
+         ui->ln_edit_phone->setEnabled(true);
+         ui->txt_edit_bio->setEnabled(true);
+    }
+    else
+    {
+        ui->editprofile_dateEdit->setEnabled(true);
+        ui->ln_edit_name->setEnabled(true);
+        ui->ln_edit_country->setEnabled(true);
+        ui->ln_edit_link->setEnabled(true);
+        ui->ln_edit_phone->setEnabled(true);
+        ui->txt_edit_bio->setEnabled(true);
+
+    }
 }
 
 
@@ -49,7 +84,7 @@ void edit_profile :: put_user()
         }
         outuser << endl << i.second->Get_Name() << endl << i.second->Get_Age() << endl
         << i.second->Get_Phone() << endl << i.second->Get_Country() << endl << i.second->Get_Link() << endl <<
-        i.second->Get_Bio() << endl << i.second->Get_Password() << endl
+        i.second->Get_Bio() << endl << i.second->Get_Password() << endl << i.second->Get_Pic() <<endl
         << "************************************************\n";
         //header
     }
@@ -96,42 +131,6 @@ void edit_profile::on_btn_save_edit_clicked()
 
 
 
-void edit_profile::on_box_total_edit_clicked()
-{
-    if(User->Get_Name()== "Anonymous User")
-    {
-        ui->editprofile_dateEdit->setEnabled(false);
-        ui->ln_edit_name->setEnabled(false);
-        ui->ln_edit_country->setEnabled(false);
-        ui->ln_edit_link->setEnabled(false);
-        ui->ln_edit_phone->setEnabled(false);
-        ui->txt_edit_bio->setEnabled(false);
-
-    }
-    else if (User->Get_Age()=="")
-    {
-
-         ui->editprofile_dateEdit->setEnabled(false);
-         ui->ln_edit_name->setEnabled(true);
-         ui->ln_edit_country->setEnabled(true);
-         ui->ln_edit_link->setEnabled(true);
-         ui->ln_edit_phone->setEnabled(true);
-         ui->txt_edit_bio->setEnabled(true);
-    }
-    else
-    {
-        ui->editprofile_dateEdit->setEnabled(true);
-        ui->ln_edit_name->setEnabled(true);
-        ui->ln_edit_country->setEnabled(true);
-        ui->ln_edit_link->setEnabled(true);
-        ui->ln_edit_phone->setEnabled(true);
-        ui->txt_edit_bio->setEnabled(true);
-
-    }
-
-
-}
-
 
 void edit_profile::on_btn_edit_name_clicked()
 {
@@ -148,24 +147,42 @@ void edit_profile::on_btn_edit_name_clicked()
 
 void edit_profile::on_btn_edit_user_clicked()
 {
+    QMessageBox qu ;
     string username ;
     username = ui->ln_edit_user->text().toStdString();
-    User->Set_User(username) ;
-    QMessageBox qu ;
-    qu.setText("*editted.") ;
-    qu.exec();
+    if(User -> User_val(username)== true)
+    {
+        User->Set_User(username) ;
+        qu.setText("*editted.") ;
+        qu.exec();
+    }
+
 
 }
 
 
 void edit_profile::on_btn_edit_pass_clicked()
 {
+    QMessageBox qu ;
     string password ;
     password = ui->ln_edit_pass->text().toStdString();
-    User->Set_Password(password) ;
-    QMessageBox qu ;
-    qu.setText("*editted.") ;
-    qu.exec();
+    if(User->Get_Password() == password)
+    {
+        qu.setText("! You can not have the same password.");
+        qu.exec();
+    }
+    else
+    {
+        if(User->Pas_val(password)==true)
+        {
+            User->Set_pass(password) ;
+            qu.setText("*editted.") ;
+            qu.exec();
+
+        }
+
+    }
+
 
 }
 
@@ -184,12 +201,16 @@ void edit_profile::on_btn_edit_age_clicked()
 
 void edit_profile::on_btn_edit_phone_clicked()
 {
+    QMessageBox qu ;
     string phone ;
     phone = ui->ln_edit_phone->text().toStdString();
-    User->Set_Phone(phone) ;
-    QMessageBox qu ;
-    qu.setText("*editted.") ;
-    qu.exec();
+    if(User->Phone_val(phone)==true)
+    {
+        User->Set_Phone(phone) ;
+        qu.setText("*editted.") ;
+        qu.exec();
+    }
+
 }
 
 
@@ -218,11 +239,17 @@ void edit_profile::on_btn_edit_link_clicked()
 
 void edit_profile::on_btn_edit_bio_clicked()
 {
+    QMessageBox qu ;
     string bio ;
     bio = ui->txt_edit_bio->toPlainText().toStdString();
-    User->Set_Bio(bio) ;
-    QMessageBox qu ;
-    qu.setText("*editted.") ;
-    qu.exec();
+
+    if(User->Bio_val(bio) == true)
+    {
+        User->Set_Bio(bio) ;
+        qu.setText("*editted.") ;
+        qu.exec();
+
+    }
+
 }
 

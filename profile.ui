@@ -25,9 +25,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>60</y>
+     <y>130</y>
      <width>261</width>
-     <height>651</height>
+     <height>681</height>
     </rect>
    </property>
    <property name="font">
@@ -290,49 +290,11 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="btn_setting">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>261</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-color: #333;
-border: 2px solid #333;
-border-radius: 20px;
-border-style: outset;
-background: qradialgradient(
-cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #ffff7f
-);
-padding: 5px;
-}
-
-QPushButton:hover {
-background: qradialgradient(
-cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #bbb
-);
-}</string>
-   </property>
-   <property name="text">
-    <string>Setting</string>
-   </property>
-  </widget>
   <widget class="QGroupBox" name="groupBox_like_pro">
    <property name="geometry">
     <rect>
-     <x>920</x>
-     <y>60</y>
+     <x>1240</x>
+     <y>20</y>
      <width>321</width>
      <height>361</height>
     </rect>
@@ -475,7 +437,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
    <property name="geometry">
     <rect>
      <x>380</x>
-     <y>60</y>
+     <y>130</y>
      <width>221</width>
      <height>31</height>
     </rect>
@@ -488,7 +450,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
    <property name="geometry">
     <rect>
      <x>280</x>
-     <y>60</y>
+     <y>130</y>
      <width>93</width>
      <height>31</height>
     </rect>
@@ -501,7 +463,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
    <property name="geometry">
     <rect>
      <x>280</x>
-     <y>110</y>
+     <y>180</y>
      <width>321</width>
      <height>231</height>
     </rect>
@@ -513,7 +475,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>1250</x>
+     <x>920</x>
      <y>20</y>
      <width>301</width>
      <height>561</height>
@@ -1098,6 +1060,92 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bbb
      <string>Enter Username</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_pic">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>591</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(85, 85, 255);</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLabel" name="lbl_picture">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>111</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_age_s">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>40</y>
+      <width>311</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;NSimSun&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Welcome to twitterak&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btn_setting">
+   <property name="geometry">
+    <rect>
+     <x>1270</x>
+     <y>430</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #333;
+border-radius: 20px;
+border-style: outset;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #ffff7f
+);
+padding: 5px;
+}
+
+QPushButton:hover {
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+);
+}</string>
+   </property>
+   <property name="text">
+    <string>Setting</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -21,10 +21,10 @@ class Twitterak
     string color ;
     string temp = "";
     string save = ""; //for checkig our account (personal, company , ....)
-    bool signup(string , string , string , string , string , string , string , string);
-    void signup_ano(string , string);
-    void signup_org(string , string , string , string , string , string , string);
-    void login(string , string);
+    bool signup(string , string , string , string , string , string , string , string , string ,string);
+    bool signup_ano(string , string ,string);
+    bool signup_org(string , string , string , string , string , string , string , string, string ,string);
+    bool login(string , string);
     void ckeck_id(string &id);
     void logout();
     void choice_login();

@@ -34,6 +34,7 @@ private slots:
 
     void on_total_exit_clicked();
 
+
 private:
     Ui::signup *ui;
 };

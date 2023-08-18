@@ -26,8 +26,6 @@ private slots:
 
     void on_btn_save_edit_clicked();
 
-    void on_box_total_edit_clicked();
-
     void on_btn_edit_name_clicked();
 
     void on_btn_edit_user_clicked();

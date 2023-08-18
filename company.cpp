@@ -7,23 +7,44 @@
 
 using namespace std;
 
-int Company::Set_Bio(string Bio)
+int Company::Set_Pic(string Picture)//This function set the name
 {
+    this-> Picture = Picture;
+}
 
-    if(Bio.size() < 1101)
+
+
+string Company::Get_Pic()
+{
+    return Picture;
+}
+
+
+bool Company::Bio_val(string Bio)
+{
+    QMessageBox q;
+
+    if(Bio.size() > 1100)
     {
-        this-> Bio = Bio;
-        return 1;
+        q.setText("!Your bio should not be more than 1100 characters.");
+        q.exec();
+        return false ;
     }
     else if (Bio == "")
     {
-        this-> Bio = Bio;
+       return true;
     }
     else
     {
-        cout << "! Error please Enter another Biography.\n";
-        return 0 ;
+        return true;
     }
+}
+
+
+int Company::Set_Bio(string Bio)
+{
+    this-> Bio = Bio;
+    return 0;
 }
 
 
@@ -82,8 +103,10 @@ string Company::Get_Link()
     return Link;
 }
 
-int Company::Set_Phone(string Phone_Number)
+
+bool Company::Phone_val(string Phone_Number)
 {
+    QMessageBox q;
     int counter = 0;
     if(Phone_Number.size()==12)
     {
@@ -97,22 +120,27 @@ int Company::Set_Phone(string Phone_Number)
         }
         if (counter == 12)
         {
-            this->Phone_Number = Phone_Number;
-            return 1 ;
+            return true ;
         }
         else
         {
-            cout << "! You are only allowed to enter numbers in this section.\n";
+            q.setText("! You are only allowed to enter numbers in this section.");
+            q.exec();
         }
     }
     else
     {
-       cout << "! Error please Enter your phone number correctly.\n" ;
-       return 0 ;
+        q.setText("! Error please Enter your phone number correctly." );
+        q.exec();
+
+       return false ;
     }
 
 
 }
+
+
+
 
 string Company::Get_Phone()
 {

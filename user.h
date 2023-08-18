@@ -39,16 +39,25 @@ class Common //parent
 
     public:
 
+        virtual bool ckeck_id(string &id);
         virtual int Set_Name(string Name);
         virtual string Get_Name();
 
+        virtual int Set_Pic(string ){};
+        virtual string Get_Pic(){return "______";};
+
+
+
         virtual int Set_User(string User_Name);
-        virtual int User_val(string User_name);
+        virtual bool User_val(string User_name);
         virtual string Get_User();
 
-        virtual int Set_Password(string Password);
+        virtual bool Pas_val(string Password);
+        virtual int Set_pass(string Password);
         virtual string Get_Password();//string / size_t
 
+       // virtual bool
+        virtual bool Bio_val(string Bio){};
         virtual int Set_Bio(string Bio){};
         virtual string Get_Bio(){return "______";};
 
@@ -61,7 +70,8 @@ class Common //parent
         virtual int Set_Age(string Age){};
         virtual string Get_Age(){return "______";};
 
-        virtual int Set_Phone(string Phone_Number){};
+        virtual bool Phone_val(string Phone_Number){};
+        virtual int Set_Phone(string Phone_Number);
         virtual string Get_Phone(){return "______";};
 
         virtual void Set_Header(string Header);
@@ -112,6 +122,7 @@ class Common //parent
          string getdate_mention(int , int);
          int get_mention_likes( Common *purpose, int index , int indexm);
          void set_mention(Tweet ,int);
+         bool check_indx(int  , int);
 
 
 

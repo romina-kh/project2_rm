@@ -9,26 +9,47 @@
 using namespace std;
 
 
+int Personal::Set_Pic(string Picture)//This function set the name
+{
+    this-> Picture = Picture;
+}
 
+
+
+string Personal::Get_Pic()
+{
+    return Picture;
+}
 //---------------------------------------------------------------------------------
 //personal
-int Personal::Set_Bio(string Bio)//160 char(checked)
+bool Personal::Bio_val(string Bio)//160 char(checked)
 {
+    QMessageBox q;
 
-    if(Bio.size() < 161)
+    if(Bio.size() > 160)
     {
-        this-> Bio = Bio;
-        return 1;
+        q.setText("!Your bio should not be more than 160 characters.");
+        q.exec();
+        return false ;
+
     }
     else if (Bio == "")
     {
-        this-> Bio = Bio;
+
+        return true;
     }
     else
     {
-        cout << "! Error please Enter another Biography.\n";
-        return 0 ;
+
+        return true;
     }
+}
+
+
+int Personal::Set_Bio(string Bio)
+{
+    this-> Bio = Bio;
+    return 0;
 }
 
 
@@ -104,8 +125,9 @@ string Personal::Get_Age()
 }
 
 
-int Personal::Set_Phone(string Phone_Number)
+bool Personal::Phone_val(string Phone_Number)
 {
+    QMessageBox q;
     int counter = 0;
     if(Phone_Number.size()==12)
     {
@@ -119,22 +141,28 @@ int Personal::Set_Phone(string Phone_Number)
         }
         if (counter == 12)
         {
-            this->Phone_Number = Phone_Number;
-            return 1 ;
+            return true ;
         }
         else
         {
-            cout << "! You are only allowed to enter numbers in this section.\n";
+            q.setText("! You are only allowed to enter numbers in this section.");
+            q.exec();
         }
     }
     else
     {
-       cout << "! Error please Enter your phone number correctly.\n" ;
-       return 0 ;
+        q.setText("! Error please Enter your phone number correctly." );
+        q.exec();
+
+       return false ;
     }
 
 
 }
+
+
+
+
 
 string Personal::Get_Phone()
 {

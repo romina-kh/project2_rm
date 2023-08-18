@@ -19,6 +19,7 @@ login::~login()
 
 void login::on_btn_done_login_clicked()
 {
+    bool check =false;
     Twitterak app;
     app.in_user();
     app.in_tweet();
@@ -28,13 +29,19 @@ void login::on_btn_done_login_clicked()
     string username , password;
     username = ui->ln_username_l->text().toStdString();
     password = ui->ln_pass_l->text().toStdString();
-    app.login(username , password);
-    this->close() ;
+    check = app.login(username , password);
+    if(check == true)
+    {
+        app.show(username);
+        this->close() ;
+
+    }
 
 
 
 
 }
+
 
 
 void login::on_total_exit_clicked()

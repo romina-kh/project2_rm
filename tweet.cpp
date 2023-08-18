@@ -177,6 +177,8 @@ int Tweet::like_mntn(Common* Accountm , int index)
 
 }
 
+
+
 void Tweet::show_numberlike_m( Common *purpose, int index , int indexm)
 {
     cout << "Likes : " << purpose->mtweet[index].Get_mention()[indexm].likers.size()<< endl << endl << endl ;
@@ -206,3 +208,9 @@ likers.push_back(purpose);
 
 }
 
+
+
+int Tweet ::size_mention()
+{
+    return mentions.size();
+}

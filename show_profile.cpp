@@ -2,7 +2,6 @@
 #include "ui_show_profile.h"
 #include "user.h"
 #include "profile.h"
-#include "QPixmap"
 
 show_profile::show_profile(Common* User ,QWidget *parent) :
     QWidget(parent),
@@ -12,14 +11,6 @@ show_profile::show_profile(Common* User ,QWidget *parent) :
     ui->setupUi(this);
     show_tweet();
     show_follow();
-
-    QPixmap pixmap(QString::fromStdString(User->Get_Pic()));
-    ui->lbl_picture->setPixmap(pixmap);
-    ui->lbl_picture->setSizePolicy(QSizePolicy::Fixed , QSizePolicy::Fixed);
-    ui->lbl_picture->setFixedSize(150,150);
-    QRegion *region = new QRegion(0 , 0 , ui->lbl_picture->width(), ui->lbl_picture->height(),QRegion::Ellipse);
-    ui->lbl_picture->setScaledContents(true);
-    ui->lbl_picture->setMask(*region);
 }
 
 show_profile::~show_profile()

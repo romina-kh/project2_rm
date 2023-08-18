@@ -124,6 +124,9 @@ class Common //parent
          void set_mention(Tweet ,int);
          bool check_indx(int  , int);
 
+         virtual int vec_follow_size();
+         virtual string fmember(int i);
+
 
 
 

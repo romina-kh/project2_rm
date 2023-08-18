@@ -856,53 +856,35 @@ void Twitterak :: put_user()
         {
             outuser << i.second->Get_User() << "o" ;
         }
-        outuser << endl << i.second->Get_Name() << endl << i.second->Get_Age() << endl
-               << i.second->Get_Phone() << endl << i.second->Get_Country() << endl << i.second->Get_Link() << endl <<
-               i.second->Get_Bio() << endl << i.second->Get_Password() << endl << i.second->Get_Pic() <<endl << i.second->Get_Header() << endl
+        outuser << endl << i.second->Get_Name()
+                << endl << i.second->Get_Age()
+                << endl << i.second->Get_Phone()
+                << endl << i.second->Get_Country()
+                << endl << i.second->Get_Link()
+                << endl << i.second->Get_Bio()
+                << endl << i.second->Get_Password()
+                << endl << i.second->Get_Pic()
+                << endl << i.second->Get_Header()
+                << endl
         << "************************************************\n";
-        //header
+
     }
 
     outuser.close();
 }
 
  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-void Twitterak :: put_hashtag()
-{
-    ofstream myhashtag;
-    myhashtag.open("hashtag.txt", ios::out);
-        for (auto i : mhashtag)
-        {
-            if(i.second.size() != 0)
-            {
-                myhashtag << i.first <<endl;
-
-                for (auto j : i.second)
-                {
-                    myhashtag << j.get_number() << ": " << j.get_classtweet() << endl << j.get_Date();
-                    myhashtag << "----------------------------------------\n";
-                }
-                myhashtag << "****************************************\n";
-            }
-        }
-    myhashtag.close();
-}
 //----------------------------------------------------------------------------------------------------------------
 void Twitterak :: in_hashtag()
 {
     ifstream in_hash;
     in_hash.open("hashtag.txt" , ios::in);
 
-    if (!in_hash)
-    {
-        cout << "Error hashtag !\n";
-    }
-    else
+    if(in_hash.is_open())
     {
         while(!in_hash.eof())
         {
             string hashtag;
-
             in_hash >> hashtag;
 
             if(hashtag == "")
@@ -910,15 +892,16 @@ void Twitterak :: in_hashtag()
                 break;
             }
 
-            while(1)
+            hashtag.pop_back();
+            while(true)
             {
-                Tweet tt;
+                Tweet tweet;
                 string num;
                 string twt;
                 string date;
 
                 in_hash >> num;
-                if (num == "****************************************")
+                if (num == "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
                 {
                     in_hash.ignore(1);
                     break;
@@ -926,40 +909,26 @@ void Twitterak :: in_hashtag()
 
                 num.pop_back();
                 int index = stoi(num);
-                tt.set_number(index);
+                tweet.set_number(index);
 
                 getline(in_hash , twt);
                 twt = twt.substr(1 , twt.size()) ;
-                tt.Set_Tweet(twt);
+                tweet.Set_Tweet(twt);
 
-                // getline (in_hash , date);
-                // date+= '\n';
-                // tt.Set_date(date);
-                 mhashtag[hashtag].push_back(tt);
+                 mhashtag[hashtag].push_back(tweet);
 
-                while(1)
+                while(getline(in_hash , date))
                 {
-                    in_hash >> date;
-
-                    if (date == "----------------------------------------")
+                    if (date == "________________________________________________________________")
                     {
                         break;
                     }
-
-
                 }
             }
-
-
-
         }
-
     }
 
     in_hash.close();
-
-
-
 }
 
 //----------------------------------------------------------------------------------------------------------------
@@ -973,14 +942,7 @@ void Twitterak :: ptweet()
 }
 
 //----------------------------------------------------------------------------------------------------------------
-void Twitterak :: pfollow()
-{
-    remove("follow.txt");
-    for ( auto i : musers)
-    {
-        i.second->put_follow();
-    }
-}
+
 //----------------------------------------------------------------------------------------------------------------
 void Twitterak :: in_user()
 {
@@ -996,17 +958,10 @@ void Twitterak :: in_user()
     string picture;
     string Header ;
 
-    stringstream pass ;
-    size_t pass_t;
-
     ifstream in_user;
     in_user.open("user.txt" , ios::in);
 
-    if (!in_user)
-    {
-        cout << "Error !\n";
-    }
-    else
+    if(in_user.is_open())
     {
         while(!in_user.eof())
         {
@@ -1025,6 +980,7 @@ void Twitterak :: in_user()
             {
                 file_user = new Company;
             }
+
             username.pop_back();
             file_user->Set_User(username);
             musers[username] = file_user;
@@ -1047,12 +1003,8 @@ void Twitterak :: in_user()
             getline (in_user, bio);
             musers[username]->Set_Bio(bio);
 
-
             getline (in_user, password);
-            // pass << password;
-            // pass >> pass_t;
-
-            musers[username]->Set_pass(password);//pass_t
+            musers[username]->Set_pass(password);
 
             getline(in_user , picture );
             musers[username]->Set_Pic(picture);
@@ -1060,44 +1012,31 @@ void Twitterak :: in_user()
             getline(in_user ,Header);
             musers[username]->Set_Header(Header);
 
-
-
-
             in_user.ignore(49);
         }
     }
-
-
     in_user.close();
 }
-
-//-------------------------------------------------------------------------------------------------------------
-
+//======================================================================================================
 void Twitterak :: in_tweet()
 {
 
     ifstream in_tweet;
-
-
     in_tweet.open("tweet.txt" , ios::in);
 
-    if(!in_tweet)
-    {
-        cout << "Error tweet !\n";
-    }
-    else
+
+    if(in_tweet.is_open())
     {
         while(!in_tweet.eof())
         {
             string username;
             in_tweet >> username;
-
             if(username == "")
             {
                 break;
             }
 
-            while(1)
+            while(true)
             {
                 Tweet t;
                 string date;
@@ -1112,91 +1051,70 @@ void Twitterak :: in_tweet()
                 string empty;
 
                 in_tweet >> numb ;
-                if (numb == "****************************************")
+                if (numb == "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
                 {
                     in_tweet.ignore(1);
                     break;
                 }
+                //--------------------------
                 numb.pop_back();
-                QMessageBox q;
-                q.setText(QString::fromStdString("number"+numb));
-                q.exec();
                 int index = stoi(numb);
                 t.set_number(index);
-
+                //--------------------------
                 getline(in_tweet , tweet);
                 tweet = tweet.substr(1 , tweet.size()) ;
                 t.Set_Tweet(tweet);
-
+                //--------------------------
                 getline (in_tweet , date);
-                date+= '\n';
+                date.append("\n");
                 t.Set_date(date);
                 musers[username]->set_index();
                 musers[username]->push_tweet2(t);
+                //--------------------------
+                getline(in_tweet , like);
 
-                in_tweet >> like ;
-
-                while(1)
+                while(getline(in_tweet , liker))
                 {
-                    in_tweet >> liker;
-
                     if (liker == "------------------------------------------")
                     {
                         break;
                     }
-
-
                     musers[username]->flike(musers[liker] , index);
                 }
-
-
+                //--------------------------
                 in_tweet >> nummen ;
-                //in_tweet.ignore();
-                QMessageBox aq;
-                aq.setText(QString::fromStdString( "out while"+nummen));
-                aq.exec();
 
-                while(nummen != "&&&")
+                while(nummen != "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 {
-//                    if(nummen== "&&&")
+                    Tweet tmen ;
+//                    if(nummen== "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 //                    {
 //                        break;
 //                    }
                     nummen.pop_back() ;
-                    Tweet tmen ;
-                    QMessageBox q;
-                    q.setText(QString::fromStdString("in while"+nummen));
-                    q.exec();
                     tmen.set_number(stoi(nummen));
-
+                    //--------------------------
                     getline(in_tweet ,men) ;
                     men.erase(0,1);
                     tmen.Set_Tweet(men) ;
-
+                    //--------------------------
                     getline(in_tweet ,datemen) ;
-                    datemen+='\n';
+                    datemen.append("\n");
                     tmen.Set_date(datemen) ;
+                    //--------------------------
+                    in_tweet.ignore();
+                    getline(in_tweet , like);
 
-//                    getline(in_tweet, empty );
-//                    q.setText(QString::fromStdString(empty));
-//                    q.exec();
-                    in_tweet >> like ;
-
-                    while(1)
+                    while(getline(in_tweet , likemen))
                     {
-                        in_tweet >> likemen;
-
                         if (likemen == "^^^^^")
                         {
                             break;
                         }
-
                         tmen.likes(musers[likemen]) ;
                     }
-                   //t.push_mention(tmen) ;
-                   //in_tweet >> nummen ;
                    musers[username]->set_mention(tmen , index) ;
-                  in_tweet >> nummen ;
+                   in_tweet >> nummen;
                 }
 
             }
@@ -1205,55 +1123,42 @@ void Twitterak :: in_tweet()
 
     }
 
-
     in_tweet.close();
 }
-//======================================================================================================
 //======================================================================================================
 void Twitterak :: in_follow()
 {
     ifstream in_follow;
 
-
+    QMessageBox q;
     in_follow.open("follow.txt" , ios::in);
 
-    if(!in_follow)
-    {
-        cout << "Error follow !\n";
-    }
-
-    else
+    if(in_follow.is_open())
     {
         while(!in_follow.eof())
         {
-                string username;
+            string username;
+            in_follow >> username;
 
-                in_follow >> username;
+            if(username == "")
+            {
+                break;
+            }
+            username.pop_back();
 
-                if(username == "")
+            string following;
+            while(following != "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+            {
+                in_follow >> following;
+                if(following == "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
                 {
                     break;
                 }
-
-
-                while(1)
-                {
-                    string following;
-                    in_follow >> following;
-
-                    if(following == "***************************************")
-                    {
-                        //in_follow.ignore(1);
-                        break;
-                    }
-                    musers[username]->add_following2(following);
-                    musers[following]->increase_follower();
-
-                }
+                musers[username]->add_following2(following);
+                musers[following]->increase_follower();
+            }
         }
-
     }
-
 
 in_follow.close();
 

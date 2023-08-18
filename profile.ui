@@ -953,11 +953,6 @@ p, li { white-space: pre-wrap; }
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
-    <item>
-     <property name="text">
-      <string/>
-     </property>
-    </item>
    </widget>
    <widget class="QLabel" name="lbl_follower_pro">
     <property name="geometry">

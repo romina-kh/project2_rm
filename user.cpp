@@ -587,26 +587,26 @@ void Common :: put_tweet()
         for(auto i : mtweet)
         {
             mytweet << i.first << ": " << i.second.get_classtweet() << endl  <<i.second.get_Date()
-            << "likes: " ;
+            << "likes:\n" ;
             for (int j = 0 ; j < i.second.liker_size() ; j++)
             {
-                mytweet << i.second.show_likers(j) << " ";
+                mytweet << i.second.show_likers(j) << endl;
             }
-            mytweet << endl << "------------------------------------------\n";
+            mytweet << "------------------------------------------\n";
 
             for(auto j: i.second.Get_mention())
             {
-                mytweet <<j.get_number()<< ": " << j.get_classtweet() << endl << j.get_Date() << endl << "likes: " ;
+                mytweet <<j.get_number()<< ": " << j.get_classtweet() << endl << j.get_Date() << endl << "likes:\n" ;
 
                 for(int k = 0 ; k < j.liker_size() ; k++)
                 {
-                   mytweet << j.show_likers(k) << " ";
+                   mytweet << j.show_likers(k) << endl;
                 }
                mytweet << "^^^^^" << endl ;
             }
-            mytweet << endl << "&&&" << endl ;
+            mytweet << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl ;
         }
-        mytweet << "****************************************\n";
+        mytweet << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n";
 
     }
 
@@ -617,19 +617,29 @@ void Common :: put_tweet()
 
 //==============================================================================================================
 
-void Common :: put_follow()
+//void Common :: put_follow()
+//{
+//    ofstream myfollow;
+//    myfollow.open("follow.txt" , ios::app);
+
+//    myfollow << User_Name << endl;
+
+//    for(int i = 0 ; i< vecfollowing.size(); i++)
+//    {
+//        myfollow << vecfollowing[i] << endl;
+//    }
+//    myfollow << "***************************************\n";
+//    myfollow.close();
+//}
+//=======================================================================================
+int Common:: vec_follow_size()
 {
-    ofstream myfollow;
-    myfollow.open("follow.txt" , ios::app);
-
-    myfollow << User_Name << endl;
-
-    for(int i = 0 ; i< vecfollowing.size(); i++)
-    {
-        myfollow << vecfollowing[i] << endl;
-    }
-    myfollow << "***************************************\n";
-    myfollow.close();
+    return vecfollowing.size();
+}
+//========================================================
+string Common :: fmember(int i)
+{
+    return vecfollowing[i] ;
 }
 
 //---------------------------------------------------------------------------------------------------------------

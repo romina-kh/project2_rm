@@ -9,7 +9,6 @@
 #include "QMessageBox"
 #include <fstream>
 #include "profile.h"
-
 edit_profile::edit_profile(unordered_map<string , Common*>& users ,Common* user,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::edit_profile)
@@ -17,8 +16,6 @@ edit_profile::edit_profile(unordered_map<string , Common*>& users ,Common* user,
     ui->setupUi(this);
     User = user;
     musers = users ;
-
-
 
 
     if(User->Get_Name()== "Anonymous User")

@@ -688,50 +688,6 @@ radius: 1.35, stop: 0 #fff, stop: 1 #939393
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="total_exit">
-    <property name="geometry">
-     <rect>
-      <x>1440</x>
-      <y>0</y>
-      <width>121</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Script MT Bold</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-	font: 11pt ;
-color: #333;
-border: 2px solid #555;
-border-radius: 20px;
-border-style: outset;
-background: qradialgradient(
-cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #326264
-);
-padding: 5px;
-}
-
-QPushButton:hover {
-background:  qradialgradient(
-cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #939393
-);
-}
-</string>
-    </property>
-    <property name="text">
-     <string>help</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">

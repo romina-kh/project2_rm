@@ -40,7 +40,6 @@ class Twitterak
     void put_user();
     void put_hashtag();
     void ptweet();
-    void pfollow();
     void in_user();
     void in_tweet();
     void in_follow();

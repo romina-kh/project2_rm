@@ -148,7 +148,7 @@ void Tweet::push_mention(Tweet mention)//%%%%
 }
 
 
-vector<Tweet> Tweet:: Get_mention()
+vector<Tweet>& Tweet:: Get_mention()
 {
     return mentions ;
 }

@@ -48,22 +48,3 @@ void MainWindow::on_btn_exit_m_clicked()
 
 }
 
-
-void MainWindow::on_total_exit_clicked()
-{
-    QMessageBox q;
-    q.setText("in help section you can know more about details and information of the twetterak.");
-    q.setWindowTitle("Help");
-    q.setDetailedText("first of all you should pay attention to the signup part!!"
-                      "For <Phone_Number> enter your phone number with country code\n "
-                      "~ You can have (maximum) 160 characters in your bio or no bio at all\n"
-                      "~ For <birthday> do this to enter your date of birth:year/month/day\n"
-                      "~ Do not forget, you must write your <Name>, <Username>, <Age> and <Password>, but other items are optional\n"
-                      "for login part you only should enter your username and password correctly\n"
-                      "~ If you want to see other profiles type their ID on the search part and for seeing more information just click on the username\n"
-                      "edit profile : You can change your information by click on setting part and go to edit profile botton.\n"
-                      "~ just dont forget to click on <save> for saving your changes\n");
-
-    q.exec();
-}
-

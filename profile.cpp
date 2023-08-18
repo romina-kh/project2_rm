@@ -63,11 +63,20 @@ profile::~profile()
 
 void profile :: pfollow()
 {
-    remove("follow.txt");
+    ofstream myfollow;
+    myfollow.open("follow.txt" , ios::out);
+
     for ( auto i : musers)
     {
-        i.second->put_follow();
+        myfollow << i.second->Get_User() << ":" << endl;
+        for(int j = 0 ; j < i.second->vec_follow_size(); j++)
+        {
+            myfollow << i.second->fmember(j) << endl;
+        }
+        myfollow << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n";
     }
+
+    myfollow.close();
 }
 
 
@@ -75,21 +84,20 @@ void profile :: put_hashtag()
 {
     ofstream myhashtag;
     myhashtag.open("hashtag.txt", ios::out);
-
-    for (auto i : mhashtag)
+        for (auto i : mhashtag)
         {
             if(i.second.size() != 0)
             {
-                myhashtag << i.first <<endl;
-
+                myhashtag << i.first << ":" <<endl;
 
                 for (auto j : i.second)
                 {
-                    myhashtag << j.get_number() << ": " << j.get_classtweet() << endl << j.get_Date();
-                    myhashtag << "----------------------------------------\n";
+                    myhashtag << j.get_number()
+                    << ": " << j.get_classtweet()
+                    << endl << j.get_Date();
+                    myhashtag << "________________________________________________________________\n";
                 }
-                myhashtag << "****************************************\n";
-
+                myhashtag << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n";
             }
         }
     myhashtag.close();
@@ -531,13 +539,14 @@ void profile::on_btn_mentionlike_pro_3_clicked()
     if(musers.count(username) == 1 && musers[username]->check_indx(indextweet , indexmention) == true )//checking this character exist
     {
         musers[username]->like_mention(musers[User->Get_User()] , indextweet , indexmention) ;
+        ptweet();
     }
     else
     {
         QMessageBox::warning(this,"","! this member does not exist.");
     }
 
-    ptweet();
+
     ui->ln_like_pro->clear();
     ui->ln_likenum_pro->clear();
 }
@@ -567,11 +576,11 @@ void profile::show_mention()
     numtwt = ui->ln_men_twt_num_list_pro->text().toInt();
 
 
-    for(int i = 0 ; i < User->size_mention(numtwt); i++)
+    for(int i = 0 ; i < musers[username]->size_mention(numtwt); i++)
     {
-        men = User->get_mention(numtwt , i)  ;
-        total = QString::fromStdString(men) + '\n' +  QString::fromStdString(User->getdate_mention(numtwt,i)) + "like : "
-                +QString::number(User->get_mention_likes(User, numtwt , i));
+        men = musers[username]->get_mention(numtwt , i)  ;
+        total = QString::fromStdString(men) + '\n' +  QString::fromStdString(musers[username]->getdate_mention(numtwt,i)) + "like : "
+                +QString::number(musers[username]->get_mention_likes(User, numtwt , i));
         ui->list_mention->addItem(total);
     }
 

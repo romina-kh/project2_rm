@@ -37,7 +37,7 @@ class Tweet
         void Set_date();
         string get_Date();
         void push_mention(Tweet);//mention func
-        vector<Tweet> Get_mention() ;//mention func
+        vector<Tweet>& Get_mention() ;//mention func
         int size_mention();
         int like_mntn(Common* , int );//mention func
         void show_numberlike_m(Common* , int ,int);//mention func

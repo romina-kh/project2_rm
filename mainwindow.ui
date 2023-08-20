@@ -688,7 +688,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #939393
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="total_exit">
+   <widget class="QPushButton" name="total_help_m">
     <property name="geometry">
      <rect>
       <x>1440</x>
@@ -740,7 +740,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #939393
      <x>0</x>
      <y>0</y>
      <width>1573</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

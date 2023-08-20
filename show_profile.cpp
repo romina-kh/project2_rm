@@ -22,10 +22,14 @@ show_profile::show_profile(Common* User ,QWidget *parent) :
     ui->lbl_picture->setMask(*region);
 }
 
+//-----------------------------------------------------------
+
 show_profile::~show_profile()
 {
     delete ui;
 }
+
+//-----------------------------------------------------------
 
 void show_profile :: set_pro2(Common* user)
 {
@@ -38,6 +42,7 @@ void show_profile :: set_pro2(Common* user)
     ui->txtb_bio->setText(QString ::fromStdString(user->Get_Bio()));
 }
 
+//-----------------------------------------------------------
 
 void show_profile ::show_tweet()
 {
@@ -45,6 +50,7 @@ void show_profile ::show_tweet()
     QString total;
     string tweet;
     Tweet t;
+
     for(int i = 1 ; i <= user->get_size_mtweet(); i++)
     {
        tweet = user->indx(i).get_classtweet()  ;
@@ -56,8 +62,7 @@ void show_profile ::show_tweet()
     }
 }
 
-
-
+//-----------------------------------------------------------
 
 void show_profile ::show_follow()
 {

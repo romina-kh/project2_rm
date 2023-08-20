@@ -10,15 +10,16 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-
 }
+
+//-----------------------------------------------------------------------------------
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+//-----------------------------------------------------------------------------------
 
 void MainWindow::on_btn_login_m_clicked()
 {
@@ -26,30 +27,28 @@ void MainWindow::on_btn_login_m_clicked()
     log_obj = new login;
     log_obj->show();
     this->close() ;
-
-
 }
 
+//-----------------------------------------------------------------------------------
 
 void MainWindow::on_btn_signup_m_clicked()
 {
     signup* signup_obj = nullptr;
     signup_obj = new signup();
-
     signup_obj->show();
     this->close() ;
-
 }
 
+//-----------------------------------------------------------------------------------
 
 void MainWindow::on_btn_exit_m_clicked()
 {
     exit(0);
-
 }
 
+//-----------------------------------------------------------------------------------
 
-void MainWindow::on_total_exit_clicked()
+void MainWindow::on_total_help_m_clicked()
 {
     QMessageBox q;
     q.setText("in help section you can know more about details and information of the twetterak.");
@@ -63,7 +62,6 @@ void MainWindow::on_total_exit_clicked()
                       "~ If you want to see other profiles type their ID on the search part and for seeing more information just click on the username\n"
                       "edit profile : You can change your information by click on setting part and go to edit profile botton.\n"
                       "~ just dont forget to click on <save> for saving your changes\n");
-
     q.exec();
 }
 

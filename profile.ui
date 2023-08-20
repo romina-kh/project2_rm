@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1575</width>
+    <width>1600</width>
     <height>831</height>
    </rect>
   </property>
@@ -19,29 +19,31 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:#dcd7ff ;</string>
+   <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0.0696517 rgba(220, 215, 255, 255), stop:1 rgba(255, 255, 255, 255));</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>130</y>
-     <width>261</width>
+     <width>291</width>
      <height>681</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>MS Shell Dlg 2</family>
-     <pointsize>9</pointsize>
+     <family>Sitka Display</family>
+     <pointsize>11</pointsize>
      <weight>50</weight>
-     <italic>false</italic>
+     <italic>true</italic>
      <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(255, 252, 213);
-font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
+font: italic 11pt &quot;Sitka Display&quot;;
+border-radius: 20px;
+border-style: outset;</string>
    </property>
    <property name="title">
     <string> your profile</string>
@@ -50,17 +52,17 @@ font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>30</y>
+      <y>50</y>
       <width>231</width>
       <height>18</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>9</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>11</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -72,17 +74,17 @@ font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>80</y>
+      <y>100</y>
       <width>221</width>
       <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>9</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>11</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -94,17 +96,17 @@ font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>130</y>
+      <y>150</y>
       <width>191</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>9</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>11</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -116,17 +118,17 @@ font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>180</y>
+      <y>200</y>
       <width>221</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>9</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>11</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -138,17 +140,17 @@ font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>280</y>
+      <y>300</y>
       <width>241</width>
       <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>9</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>11</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -160,17 +162,17 @@ font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>230</y>
-      <width>261</width>
+      <y>250</y>
+      <width>271</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>9</pointsize>
+      <family>Sitka Display</family>
+      <pointsize>11</pointsize>
       <weight>50</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -181,28 +183,31 @@ font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QTextBrowser" name="textBrowser_bio_pro">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>330</y>
-      <width>131</width>
+      <x>20</x>
+      <y>390</y>
+      <width>221</width>
       <height>221</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 235, 156);</string>
+     <string notr="true">background-color: rgb(255, 235, 156);
+border-radius: 20px;
+border-style: outset;
+font: italic 11pt &quot;Sitka Display&quot;;</string>
     </property>
     <property name="html">
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;bio&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sitka Display'; font-size:11pt; font-weight:400; font-style:italic;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-style:normal;&quot;&gt;bio&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_user2_pro">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>50</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -215,7 +220,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
+      <y>100</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -228,9 +233,9 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>140</y>
-      <width>55</width>
-      <height>16</height>
+      <y>150</y>
+      <width>71</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -241,9 +246,9 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>190</y>
-      <width>55</width>
-      <height>16</height>
+      <y>200</y>
+      <width>71</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -254,9 +259,9 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>240</y>
+      <y>250</y>
       <width>81</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -267,7 +272,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>280</y>
+      <y>300</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -280,7 +285,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>330</y>
+      <y>350</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -293,14 +298,16 @@ p, li { white-space: pre-wrap; }
   <widget class="QGroupBox" name="groupBox_like_pro">
    <property name="geometry">
     <rect>
-     <x>1240</x>
-     <y>20</y>
+     <x>310</x>
+     <y>440</y>
      <width>321</width>
-     <height>361</height>
+     <height>371</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(161, 222, 255);</string>
+    <string notr="true">background-color: rgb(161, 222, 255);
+border-radius: 20px;
+border-style: outset;</string>
    </property>
    <property name="title">
     <string>like</string>
@@ -345,6 +352,11 @@ p, li { white-space: pre-wrap; }
       <height>28</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid #333;
+border-radius: 20px;
+border-style: outset;</string>
+    </property>
     <property name="text">
      <string>like</string>
     </property>
@@ -383,6 +395,11 @@ p, li { white-space: pre-wrap; }
       <width>221</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid #333;
+border-radius: 20px;
+border-style: outset;</string>
     </property>
     <property name="text">
      <string>dislike</string>
@@ -428,6 +445,11 @@ p, li { white-space: pre-wrap; }
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid #333;
+border-radius: 20px;
+border-style: outset;</string>
+    </property>
     <property name="text">
      <string>like mention</string>
     </property>
@@ -436,24 +458,31 @@ p, li { white-space: pre-wrap; }
   <widget class="QLineEdit" name="ln_search_pro">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>130</y>
+     <x>730</x>
+     <y>10</y>
      <width>221</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #ffffff ;</string>
+    <string notr="true">background-color: #ffffff ;
+border-radius: 20px;
+border-style: outset;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_search">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>130</y>
-     <width>93</width>
+     <x>640</x>
+     <y>10</y>
+     <width>81</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 20px;
+border-style: outset;
+border: 1px solid #333;</string>
    </property>
    <property name="text">
     <string>search</string>
@@ -462,27 +491,31 @@ p, li { white-space: pre-wrap; }
   <widget class="QListWidget" name="list_pro">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>180</y>
-     <width>321</width>
-     <height>231</height>
+     <x>640</x>
+     <y>50</y>
+     <width>311</width>
+     <height>201</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 20px;
+border-style: outset;</string>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>920</x>
-     <y>20</y>
+     <x>1290</x>
+     <y>10</y>
      <width>301</width>
      <height>561</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 20px;
+border-style: outset;</string>
    </property>
    <property name="title">
     <string/>
@@ -510,7 +543,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #afbbff ;</string>
+     <string notr="true">background-color: #E5F9E1;</string>
     </property>
     <property name="title">
      <string>Show mention</string>
@@ -581,6 +614,11 @@ p, li { white-space: pre-wrap; }
        <height>28</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0.5px solid #333;
+border-radius: 20px;
+border-style: outset;</string>
+     </property>
      <property name="text">
       <string>show mention</string>
      </property>
@@ -596,7 +634,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #ffabba ;</string>
+     <string notr="true">background-color:#C3EBC6 ;</string>
     </property>
     <property name="title">
      <string>mention</string>
@@ -680,6 +718,11 @@ p, li { white-space: pre-wrap; }
        <height>28</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid #333;
+border-radius: 20px;
+border-style: outset;</string>
+     </property>
      <property name="text">
       <string>mention</string>
      </property>
@@ -689,14 +732,16 @@ p, li { white-space: pre-wrap; }
   <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>20</y>
+     <x>970</x>
+     <y>10</y>
      <width>301</width>
      <height>781</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 20px;
+border-style: outset;</string>
    </property>
    <property name="title">
     <string/>
@@ -724,7 +769,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(213, 255, 181);</string>
+     <string notr="true">background-color:#FDE9E9;</string>
     </property>
     <property name="title">
      <string>tweet</string>
@@ -769,6 +814,11 @@ p, li { white-space: pre-wrap; }
        <height>28</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid #333;
+border-radius: 20px;
+border-style: outset;</string>
+     </property>
      <property name="text">
       <string>tweet</string>
      </property>
@@ -784,7 +834,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 184, 227);</string>
+     <string notr="true">background-color: rgb(253, 211, 224);</string>
     </property>
     <property name="title">
      <string>delete tweet</string>
@@ -797,6 +847,11 @@ p, li { white-space: pre-wrap; }
        <width>93</width>
        <height>28</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid #333;
+border-radius: 20px;
+border-style: outset;</string>
      </property>
      <property name="text">
       <string>delete</string>
@@ -844,7 +899,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:#9ddec5;</string>
+     <string notr="true">background-color: rgb(255, 189, 210);</string>
     </property>
     <property name="title">
      <string>retweet</string>
@@ -889,6 +944,11 @@ p, li { white-space: pre-wrap; }
        <height>28</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid #333;
+border-radius: 20px;
+border-style: outset;</string>
+     </property>
      <property name="text">
       <string>retweet</string>
      </property>
@@ -929,14 +989,16 @@ p, li { white-space: pre-wrap; }
   <widget class="QGroupBox" name="groupBox_follow_pro">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>430</y>
+     <x>310</x>
+     <y>130</y>
      <width>321</width>
-     <height>281</height>
+     <height>291</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(206, 253, 255);</string>
+    <string notr="true">border-radius: 20px;
+border-style: outset;
+background-color: rgb(206, 253, 255);</string>
    </property>
    <property name="title">
     <string/>
@@ -1038,6 +1100,12 @@ p, li { white-space: pre-wrap; }
       <height>28</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border-color: rgb(0, 170, 255);
+border: 1px solid #333;
+border-radius: 20px;
+border-style: outset;</string>
+    </property>
     <property name="text">
      <string>follow</string>
     </property>
@@ -1066,12 +1134,12 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>10</x>
      <y>0</y>
-     <width>591</width>
+     <width>621</width>
      <height>121</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(85, 85, 255);</string>
+    <string notr="true">background-color: rgb(230, 245, 255);</string>
    </property>
    <property name="title">
     <string/>
@@ -1112,10 +1180,10 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="btn_setting">
    <property name="geometry">
     <rect>
-     <x>1270</x>
-     <y>430</y>
+     <x>1310</x>
+     <y>590</y>
      <width>261</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -1124,14 +1192,15 @@ p, li { white-space: pre-wrap; }
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-color: #333;
-border: 2px solid #333;
+    <string notr="true">
+QPushButton {
+color: #7b657d;
+border: 2px solid #7b657d;
 border-radius: 20px;
 border-style: outset;
 background: qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #ffff7f
+radius: 1.35, stop: 0 #fff, stop: 1 #C5A2C8
 );
 padding: 5px;
 }
@@ -1139,7 +1208,7 @@ padding: 5px;
 QPushButton:hover {
 background: qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+radius: 1.35, stop: 0 #fff, stop: 1 #eac1ee
 );
 }</string>
    </property>

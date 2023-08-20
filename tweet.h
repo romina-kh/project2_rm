@@ -14,8 +14,8 @@ class Tweet
     protected:
 
 
-        vector<Tweet>mentions ;//vec for mention
-        string userName ;//added for mention
+        vector<Tweet>mentions ;//vector for mentions.
+        string userName ;
         string tweet;
         string Date ;
         int number;
@@ -23,32 +23,35 @@ class Tweet
 
     public:
 
+        vector<Common*>likers;
         void Set_Tweet(string);
         void set_number(int);
-        void Set_User(string);//added for mention
+        void Set_User(string);
+        void Set_date();
+        void Set_date(string);
+
         string get_classtweet();
+        string get_Date();
         int get_number();
+        vector<Tweet> Get_mention() ;
+
         void likes(Common* ,Common* , int);
         void likes(Common*);
         void dislike(Common* ,Common* , int);
         int show_numberlikes(Common*, int);
         void show_likers(Common*, int);
-        int liker_size();
-        void Set_date();
-        string get_Date();
-        void push_mention(Tweet);//mention func
-        vector<Tweet> Get_mention() ;//mention func
-        int size_mention();
-        int like_mntn(Common* , int );//mention func
-        void show_numberlike_m(Common* , int ,int);//mention func
         string show_likers(int );
-        void Set_date(string);
+        int like_mntn(Common* , int);
+        int liker_size();//?????????????
 
-        void sett();
 
-        //================
+        void push_mention(Tweet);
+        int size_mention();
 
-        vector<Common*>likers;
+
+
+
+
 
 
 };

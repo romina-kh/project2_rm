@@ -441,7 +441,7 @@ border-style: outset;</string>
        <x>50</x>
        <y>300</y>
        <width>55</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -454,7 +454,7 @@ border-style: outset;</string>
        <x>230</x>
        <y>300</y>
        <width>55</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">

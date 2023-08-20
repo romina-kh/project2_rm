@@ -21,8 +21,6 @@ public:
     void ptweet();
     void pfollow();
     void findhash(string, Tweet);
-    void put_hashtag();
-    void in_hashtag();
     void show_tweet();
     void show_mention();
 
@@ -35,29 +33,19 @@ private slots:
 
      void on_btn_setting_clicked();
 
-
      void on_btn_follow_pro_clicked();
 
      void on_btn_dislike_pro_clicked();
 
-
-
      void on_btn_search_clicked();
-
 
      void on_btn_deletetw_pro_clicked();
 
-
-
      void on_btn_mention_pro_2_clicked();
-
 
      void on_btn_mentionlike_pro_3_clicked();
 
-
-
      void on_list_pro_itemClicked(QListWidgetItem *item);
-
 
      void on_btn_showmention_clicked();
 

@@ -51,15 +51,13 @@ int Common::Set_Name(string Name)//This function set the name
 {
     this-> Name = Name;
 }
-
-
-string Common::Get_Name()//This function set the name
+//-------------------------------------------------------------------------------------------------------------
+string Common::Get_Name()//This function get the name
 {
     return Name;
 }
-
-
-bool Common::User_val(string User_name)//This function set the username (validation)
+//-------------------------------------------------------------------------------------------------------------
+bool Common::User_val(string User_name)//This function check the username (validation)
 {
 
      QMessageBox q;
@@ -126,38 +124,38 @@ bool Common::User_val(string User_name)//This function set the username (validat
 return true;
 }
 
-int Common::Set_User(string User)
+//-------------------------------------------------------------------------------------------------------------
 
+int Common::Set_User(string User)
 {
-            User_Name = User;
-            return 0;
+    User_Name = User;
+    return 0;
 
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
 int Common::Set_Phone(string Phone_Number)
 {
      this->Phone_Number = Phone_Number;
     return 0;
-
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
 string Common::Get_User()
 {
     return User_Name;
 }
 
-
-bool Common::Pas_val(string password)
+//-------------------------------------------------------------------------------------------------------------
+bool Common::Pas_val(string password) //This function check the password (validation)
 {
-    QMessageBox q;
-    hash<string> mystdhash;
-    int counter = 0;
+    QMessageBox q;// QMessageBox for showing message
     bool ch = false; //character
     bool num = false; //numbers
     string pass = "" ;
-    if(password.size()> 4 )
+    if(password.size()> 4 ) //check size
     {
          for (char c : password )
         {
@@ -166,13 +164,13 @@ bool Common::Pas_val(string password)
         pass += ascii;
         }
 
-        for( int i=0 ;i<pass.size() ;i++)
+        for( int i=0 ;i<pass.size() ;i++) //This function checks that all letters are characters
         {
             if(pass[i]>=65 && pass[i]<=90 || pass[i]>=97 && pass[i]<=122 )
             {
                 ch = true;
             }
-            else if(pass[i]>=48 && pass[i]<=57 )
+            else if(pass[i]>=48 && pass[i]<=57 )//This function checks that all letters are numbers
             {
                 num = true;
             }
@@ -194,7 +192,7 @@ bool Common::Pas_val(string password)
 
          return false;
     }
-    else if ( ch == false && num == true || ch== true && num==false)
+    else if ( ch == false && num == true || ch== true && num==false) //Checking
     {
         q.setText( "! Password should contain both character and number.");
         q.exec();
@@ -204,9 +202,7 @@ bool Common::Pas_val(string password)
 
     else
     {
-        //Password = pass;
         return true;
-        //return 0;
     }
 
 }
@@ -219,26 +215,28 @@ int Common :: Set_pass(string pass)
 
 //-------------------------------------------------------------------------------------------------------------
 
-
 string Common::Get_Password()
 {
     return Password;
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
 void Common::Set_Header(string Header)
 {
     this -> Header = Header;
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
 string Common::Get_Header()
 {
     return Header;
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
-void Common::push_tweet(Tweet t)
+void Common::push_tweet(Tweet t)//For putting tweet in mtweet(map tweet) --with showing message
 {
     QMessageBox q;
     q.setText("* Your tweet has been successfully registered.");
@@ -247,68 +245,21 @@ void Common::push_tweet(Tweet t)
 
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
-void Common::push_tweet2(Tweet t)
+void Common::push_tweet2(Tweet t)//For putting tweet in mtweet(map tweet)--without showing message
 {
-
     mtweet[this->index] = t;
-
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
-void Common::get_tweet()
-{
-    if(mtweet.size()==0)
-    {
-        cout << "! No tweet has been created.\n" ;
-    }
-    else
-    {
-        for(auto i: mtweet)
-        {
-            cout << "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n";
-            cout << i.first << ": " << i.second.get_classtweet() << endl << "likes : " <<  i.second.liker_size() <<endl ;
-            cout << i.second.get_Date();
-
-        }
-            cout << "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n";
-
-    }
-}
-
-
-void Common::get_tweet1(int index)
-{
-    if(mtweet.count(index)==1)
-    {
-        cout << "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n";
-        cout << mtweet[index].get_number() << ":" << mtweet[index].get_classtweet()<< endl << mtweet[index].get_Date() << endl;
-    }
-    else
-    {
-        cout << "! this Tweet does not exist.\n" ;
-    }
-}
-
-
-
-
-string Common::get_tweet_hash()
-{
-    string twt;
-    for(auto i: mtweet)
-    {
-        twt = i.second.get_classtweet() + " ";
-    }
-    return twt;
-
-}
-
-
-void Common::set_index()
+void Common::set_index()//This function increase tweet's number
 {
     index++;
 }
+
+//-------------------------------------------------------------------------------------------------------------
 
 void Common::delete_tweet(int Number)
 {
@@ -328,35 +279,10 @@ void Common::delete_tweet(int Number)
     }
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
-void Common::edit_tweet(int nUmber)
+string Common::backstring(int number)//This function checks that there is a tweet or not (in mtweet)
 {
-
-    if(mtweet.find(nUmber)!= mtweet.end())
-    {
-
-        int totall=stoi(Age.substr(0 ,4)) ;
-        if(totall>2005)
-        {
-            cout << "! cant edit tweet because You are under 18.\n"  ;
-        }
-        else
-        {
-            cout << "* Enter new text for tweet" << nUmber << ": " ;
-            string newtwe ; //new tweet
-            getline(cin , newtwe) ;
-            mtweet[nUmber].Set_Tweet(newtwe) ;
-            cout << "* Your tweet has been edited successfully.\n" ;
-        }
-    }
-    else
-    {
-        cout << "! We can not find this tweet.\n" ;
-    }
-}
-
-string Common::backstring(int number)
- {
     if(mtweet.count(number)==1)
     {
         return mtweet[number].get_classtweet();
@@ -367,37 +293,30 @@ string Common::backstring(int number)
         q.setText(" this tweet does not exist.") ;
         q.exec() ;
     }
- }
-
-    int Common::Get_following()//
-{
-    return vecfollowing.size();//
 }
 
-    string Common::Get_indx_following(int i)
-    {
-        return vecfollowing[i];
-    }
+//-------------------------------------------------------------------------------------------------------------
 
-
-void Common::Set_followers(int followers)//
+void Common::Set_followers(int followers)//This function sets follower(number)
 {
-    this -> followers = followers;//
+    this -> followers = followers;
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
-int Common::Get_followers()//
+int Common::Get_followers()//This function return number of follower
 {
-    return followers;//
+    return followers;
 }
 
-void Common::add_following(string addfollow)
+//-------------------------------------------------------------------------------------------------------------
+
+void Common::add_following(string addfollow)//This function pushback following's name in vector --with showing message
 {
     QMessageBox q , q2;
     q.setText("* followed.");
     q2.setText("! You have already follow this account.");
 
-
     bool flag = 0 ;
     for(auto i : vecfollowing)
     {
@@ -409,25 +328,20 @@ void Common::add_following(string addfollow)
     }
     if(flag == 0)
     {
-        q.exec();
-
         vecfollowing.push_back(addfollow) ;
-        cout << "* followed.\n" ;
+        q.exec();
     }
     else
     {
         q2.exec();
-        cout << "! You have already follow this account.\n" ;
     }
 
 }
 
+//-------------------------------------------------------------------------------------------------------------
 
-
-void Common::add_following2(string addfollow)
+void Common::add_following2(string addfollow)//This function pushback following's name in vector --without showing message
 {
-
-
     bool flag = 0 ;
     for(auto i : vecfollowing)
     {
@@ -439,15 +353,14 @@ void Common::add_following2(string addfollow)
     }
     if(flag == 0)
     {
-
-
         vecfollowing.push_back(addfollow) ;
-
     }
 
 }
 
-int Common::get_follow_person(string str)
+//-------------------------------------------------------------------------------------------------------------
+
+int Common::get_follow_person(string str)//check we have this person in our following or not
 {
 
     for(auto i : vecfollowing )
@@ -456,52 +369,20 @@ int Common::get_follow_person(string str)
         {
             return 1 ;
         }
-        cout << i << endl ;
     }
     return 0 ;
 }
 
-
-
-void Common::show_following()
-{
-
-    for(auto i : vecfollowing )
-    {
-        cout << i << endl ;
-    }
-
-}
+//-------------------------------------------------------------------------------------------------------------
 
 void Common::increase_follower()
 {
    this->followers++ ;
 }
 
-/*void Common::create_mention(int number ,string USER)//%%%%
-{
-    if(mtweet.count(number)==1)
-    {
-        Tweet mention ;
-        mention.Set_User(USER) ;
-        string MENTION ;
-        cout << "* Enter your mention:\n" ;
+//-------------------------------------------------------------------------------------------------------------
 
-        getline(cin , MENTION) ;
-        mention.set_number(mtweet[number].Get_mention().size()+1) ;
-        mention.Set_Tweet(MENTION) ;
-        mention.Set_date() ;
-        mtweet[number].push_mention(mention) ;
-
-        cout << "* Mentioned successfully.\n" ;
-    }
-    else
-    {
-        cout << "! This tweet does not exist.\n" ;
-    }
-
-}*/
-void Common::create_mention(string MENTION , int number ,string USER)//%%%%
+void Common::create_mention(string MENTION , int number ,string USER)//This function make mention
 {
     if(mtweet.count(number)== 1)
     {
@@ -527,18 +408,7 @@ void Common::create_mention(string MENTION , int number ,string USER)//%%%%
 
 }
 
-void Common::show_mention(int numtweet)
-{
-    unsigned int size =mtweet[numtweet].Get_mention().size() ;
-
-    for ( size_t i = 0 ; i<size ; i++ )
-    {
-        cout << i+1 << ":" << mtweet[numtweet].Get_mention()[i].get_classtweet() << endl ;
-        cout << mtweet[numtweet].Get_mention()[i].get_Date() << endl ;
-        mtweet[numtweet].Get_mention()[i].show_numberlike_m(this ,numtweet , i) ;
-
-    }
-}
+//-------------------------------------------------------------------------------------------------------------
 
 void Common::like_mention(Common* mmtn ,int NUMt , int NUMM)
 {
@@ -549,9 +419,7 @@ void Common::like_mention(Common* mmtn ,int NUMt , int NUMM)
             int check_flag = mtweet[NUMt].like_mntn(mmtn, NUMM-1);
 
             if(check_flag== 1)
-
              {
-                //cout << "* Liked.\n";
                 QMessageBox p ;
                 p.setText( "* Liked.");
                 p.exec();
@@ -562,7 +430,6 @@ void Common::like_mention(Common* mmtn ,int NUMt , int NUMM)
             QMessageBox p ;
             p.setText( "! Can not find the mention with this number.");
             p.exec();
-            //cout << "! Can not find the mention with this number.\n";
         }
     }
     else
@@ -570,14 +437,13 @@ void Common::like_mention(Common* mmtn ,int NUMt , int NUMM)
         QMessageBox p ;
         p.setText( "! Can not find the tweet with this number.");
         p.exec();
-        //cout << "! Can not find the tweet with this number.\n";
     }
 }
 
 
-//============================================================================================================
+//-------------------------------------------------------------------------------------------------------------
 
-void Common :: put_tweet()
+void Common :: put_tweet()//We are putting our tweet in a text file with this function
 {
     ofstream mytweet;
     mytweet.open("tweet.txt" , ios::app);
@@ -587,26 +453,26 @@ void Common :: put_tweet()
         for(auto i : mtweet)
         {
             mytweet << i.first << ": " << i.second.get_classtweet() << endl  <<i.second.get_Date()
-            << "likes: " ;
+            << "likes:\n" ;
             for (int j = 0 ; j < i.second.liker_size() ; j++)
             {
-                mytweet << i.second.show_likers(j) << " ";
+                mytweet << i.second.show_likers(j) << endl;
             }
-            mytweet << endl << "------------------------------------------\n";
+            mytweet << "------------------------------------------\n";
 
             for(auto j: i.second.Get_mention())
             {
-                mytweet <<j.get_number()<< ": " << j.get_classtweet() << endl << j.get_Date() << endl << "likes: " ;
+                mytweet <<j.get_number()<< ": " << j.get_classtweet() << endl << j.get_Date() << endl << "likes:\n" ;
 
                 for(int k = 0 ; k < j.liker_size() ; k++)
                 {
-                   mytweet << j.show_likers(k) << " ";
+                   mytweet << j.show_likers(k) << endl;
                 }
                mytweet << "^^^^^" << endl ;
             }
-            mytweet << endl << "&&&" << endl ;
+            mytweet << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl ;
         }
-        mytweet << "****************************************\n";
+        mytweet << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n";
 
     }
 
@@ -615,46 +481,34 @@ void Common :: put_tweet()
     mytweet.close();
 }
 
-//==============================================================================================================
+//-------------------------------------------------------------------------------------------------------------
 
-void Common :: put_follow()
+void Common :: flike(Common* purpose , int index)//This function is used for liking tweets in file
 {
-    ofstream myfollow;
-    myfollow.open("follow.txt" , ios::app);
-
-    myfollow << User_Name << endl;
-
-    for(int i = 0 ; i< vecfollowing.size(); i++)
-    {
-        myfollow << vecfollowing[i] << endl;
-    }
-    myfollow << "***************************************\n";
-    myfollow.close();
-}
-
-//---------------------------------------------------------------------------------------------------------------
-void Common :: flike(Common* purpose , int index)
-{
-         mtweet[index].likes(purpose);
+     mtweet[index].likes(purpose);
 
 }
 
-void Common :: follow_f(string purpose)
+//-------------------------------------------------------------------------------------------------------------
+
+void Common :: follow_f(string purpose)//This function is used in file for add following
 {
     vecfollowing.push_back(purpose);
 }
 
 //------------------------------------------------------------------------------------------
-Tweet& Common  ::indx(int x)
+
+Tweet& Common  ::indx(int x)//This function check if we have one specific tweet or not
 {
     if(mtweet.count(x) == 1)
     {
         return this->mtweet[x];
     }
-
 }
 
-bool Common :: check_indx(int x , int y)
+//------------------------------------------------------------------------------------------
+
+bool Common :: check_indx(int x , int y)//This function check if we have one specific tweet (and mention) or not
 {
     if(mtweet.count(x) == 1 && mtweet[x].size_mention() >= y)
     {
@@ -667,37 +521,60 @@ bool Common :: check_indx(int x , int y)
 
 }
 
+//------------------------------------------------------------------------------------------
 
-
-
-int Common :: get_size_mtweet()
+int Common :: get_size_mtweet()//This function return size of mtweet(map tweet)
 {
      return mtweet.size();
 }
 
+//------------------------------------------------------------------------------------------
 
- string Common :: get_mention( int numtweet  , int i)
- {
+string Common :: get_mention( int numtweet  , int i)
+{
      return mtweet[numtweet].Get_mention()[i].get_classtweet();
- }
+}
 
- int Common ::size_mention(int numbtweet)
- {
-       return mtweet[numbtweet].Get_mention().size() ;
- }
+//------------------------------------------------------------------------------------------
 
- string Common :: getdate_mention(int numtweet  , int i)
- {
+int Common ::size_mention(int numbtweet)
+{
+     return mtweet[numbtweet].Get_mention().size() ;
+}
+
+//------------------------------------------------------------------------------------------
+
+string Common :: getdate_mention(int numtweet  , int i)
+{
      return  mtweet[numtweet].Get_mention()[i].get_Date();
- }
+}
 
+//------------------------------------------------------------------------------------------
 
 int Common :: get_mention_likes( Common *purpose, int index , int indexm)
 {
     return purpose->mtweet[index].Get_mention()[indexm].likers.size();
 }
 
+//------------------------------------------------------------------------------------------
+
 void Common :: set_mention(Tweet t ,int index)
 {
     this->mtweet[index].push_mention(t) ;
 }
+
+//---------------------------------------------------------------------------------------------------------------
+
+int Common::Get_following()//This function return size of vector(following)
+{
+    return vecfollowing.size();
+}
+
+//-------------------------------------------------------------------------------------------------------------
+
+string Common::Get_indx_following(int i)//This function return index(following)
+{
+     return vecfollowing[i];
+}
+
+//-------------------------------------------------------------------------------------------------------------

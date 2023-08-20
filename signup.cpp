@@ -32,7 +32,6 @@ void signup::on_btn_done_signup_clicked()
     app.in_user();
     app.in_tweet();
     app.in_follow();
-    app.in_hashtag();
 
     string username , password , name , phone , country , link , bio , age ,manager_user , pic ,header;
     username = ui->ln_username_s->text().toStdString();
@@ -77,18 +76,14 @@ void signup::on_btn_done_signup_clicked()
 
 }
 
-
-
-
-
-
-
+//-----------------------------------------------------------
 
 void signup::on_dateEdit_age_s_userDateChanged(const QDate &date)
 {
 
 }
 
+//-----------------------------------------------------------
 
 void signup::on_rbtn_organ_s_clicked()
 {
@@ -108,6 +103,7 @@ void signup::on_rbtn_organ_s_clicked()
 
 }
 
+//-----------------------------------------------------------
 
 void signup::on_rbtn_personal_s_clicked()
 {
@@ -126,7 +122,7 @@ void signup::on_rbtn_personal_s_clicked()
 
 }
 
-
+//-----------------------------------------------------------
 
 void signup::on_rbtn_ano_s_clicked()
 {
@@ -146,6 +142,7 @@ void signup::on_rbtn_ano_s_clicked()
 
 }
 
+//-----------------------------------------------------------
 
 void signup::on_total_exit_clicked()
 {

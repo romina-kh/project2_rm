@@ -16,158 +16,77 @@ profile::profile(map <string , vector<Tweet>>& hashtag,unordered_map<string , Co
 {
     ui->setupUi(this);
 
-
     User = cuser;
     set_pro(User);
     musers = users;
     mhashtag = hashtag;
 
+    //this is for adding picture on the profile.
     QPixmap pixmap(QString::fromStdString(User->Get_Pic()));
     ui->lbl_picture->setPixmap(pixmap);
     ui->lbl_picture->setSizePolicy(QSizePolicy::Fixed , QSizePolicy::Fixed);
     ui->lbl_picture->setFixedSize(100,100);
+
     QRegion *region = new QRegion(0 , 0 , ui->lbl_picture->width(), ui->lbl_picture->height(),QRegion::Ellipse);
     ui->lbl_picture->setScaledContents(true);
     ui->lbl_picture->setMask(*region);
+
+    //this is for adding header on the top of the profile.
     QString style = "background-color: " +QString::fromStdString(User->Get_Header()) + ';' ;
     ui->groupBox_pic->setStyleSheet(style);
 
+  {
+
+    string following ;// showing the name of the people on the following part.
+    QString qstr = QString::fromStdString(following);
+
+    for (int i = 0 ; i < User->Get_following() ; i++)
+      {
+         following = User->Get_indx_following(i);
+         qstr = QString::fromStdString(following);
+         ui->listWidget_following->addItem(qstr);
+
+      }
+
+    ui->lbl_follower_pro->setText(QString ::number(User->Get_followers()));
+
+  }
 
 
-
-//-----------------------------------------------------------
-    {
-        string following ;
-        QString qstr = QString::fromStdString(following);
-
-        for (int i = 0 ; i < User->Get_following() ; i++)
-        {
-            following = User->Get_indx_following(i);
-            qstr = QString::fromStdString(following);
-            ui->listWidget_following->addItem(qstr);
-
-        }
-        ui->lbl_follower_pro->setText(QString ::number(User->Get_followers()));
-    }
-//-----------------------------------------------------------
-show_tweet();
-
+ show_tweet();
 
 }
+
+//-----------------------------------------------------------
 
 profile::~profile()
 {
     delete ui;
 }
 
+//-----------------------------------------------------------
 
-void profile :: pfollow()
+void profile :: pfollow()//for putting following in file
 {
-    remove("follow.txt");
+    ofstream myfollow;
+    myfollow.open("follow.txt" , ios::out);
+
     for ( auto i : musers)
     {
-        i.second->put_follow();
-    }
-}
-
-
-void profile :: put_hashtag()
-{
-    ofstream myhashtag;
-    myhashtag.open("hashtag.txt", ios::out);
-
-    for (auto i : mhashtag)
+        myfollow << i.second->Get_User() << ":" << endl;
+        for(int j = 0 ; j < i.second->Get_following(); j++)
         {
-            if(i.second.size() != 0)
-            {
-                myhashtag << i.first <<endl;
-
-
-                for (auto j : i.second)
-                {
-                    myhashtag << j.get_number() << ": " << j.get_classtweet() << endl << j.get_Date();
-                    myhashtag << "----------------------------------------\n";
-                }
-                myhashtag << "****************************************\n";
-
-            }
+            myfollow << i.second->Get_indx_following(j) << endl;
         }
-    myhashtag.close();
-}
-
-
-void profile :: in_hashtag()
-{
-    ifstream in_hash;
-    in_hash.open("hashtag.txt" , ios::in);
-
-    if (!in_hash)
-    {
-        cout << "Error hash !\n";
-    }
-    else
-    {
-        while(!in_hash.eof())
-        {
-            string hashtag;
-
-            in_hash >> hashtag;
-
-            if(hashtag == "")
-            {
-                break;
-            }
-
-            while(1)
-            {
-                Tweet tt;
-                string num;
-                string twt;
-                string date;
-
-                in_hash >> num;
-                if (num == "****************************************")
-                {
-                    in_hash.ignore(1);
-                    break;
-                }
-
-                num.pop_back();
-                int index = stoi(num);
-                tt.set_number(index);
-
-                getline(in_hash , twt);
-                twt = twt.substr(1 , twt.size()) ;
-                tt.Set_Tweet(twt);
-
-
-                mhashtag[hashtag].push_back(tt);
-
-                while(1)
-                {
-                    in_hash >> date;
-
-                    if (date == "----------------------------------------")
-                    {
-                        break;
-                    }
-
-
-                }
-            }
-
-        }
-
+        myfollow << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n";
     }
 
-    in_hash.close();
-
-
-
+    myfollow.close();
 }
 
+//-----------------------------------------------------------
 
-void profile :: ptweet()
+void profile :: ptweet()//putt tweets in file
 {
     remove("tweet.txt");
     for ( auto i : musers)
@@ -175,6 +94,9 @@ void profile :: ptweet()
         i.second->put_tweet();
     }
 }
+
+//-----------------------------------------------------------
+
 void profile :: set_pro(Common* user)
 {
     ui->lbl_name_pro->setText(QString ::fromStdString(user->Get_Name()));
@@ -187,12 +109,11 @@ void profile :: set_pro(Common* user)
 }
 
 
-void profile :: findhash(string str, Tweet tobj)
+void profile :: findhash(string str, Tweet tobj)//find # in tweets
 {
     string key;
 
     size_t found = str.find('#');
-   // int index = User->get_index();
     if (found != string::npos)
     {
        for (int i = 0; i < str.size() ; i++)
@@ -225,6 +146,8 @@ void profile :: findhash(string str, Tweet tobj)
    }
 }
 
+//-----------------------------------------------------------
+
 void profile::on_btn_tweet_pro_clicked()
 {
 
@@ -249,17 +172,14 @@ void profile::on_btn_tweet_pro_clicked()
 
         string str = t.get_classtweet();
         findhash(str,t);
-        put_hashtag();
-        //=========
-                ui->list_tweet->clear();
-                show_tweet();
-        //==========
+        ui->list_tweet->clear();
+        show_tweet();
         ptweet();
 
-
      }
-
 }
+
+//-----------------------------------------------------------
 
 void profile::on_btn_setting_clicked()
 {
@@ -270,9 +190,9 @@ void profile::on_btn_setting_clicked()
    set_pro(User);
    this->close();
 
-
 }
 
+//-----------------------------------------------------------
 
 void profile::on_btn_like_pro_clicked()
 {
@@ -283,41 +203,50 @@ void profile::on_btn_like_pro_clicked()
     int index;
     username = ui->ln_like_pro->text().toStdString();
     index = ui->ln_likenum_pro->text().toInt();
-
-    if (User->Get_Name() == "Anonymous User")
+    if(musers.count(username) == 1)
     {
-
-        for (int i = 0 ; i<User->Get_following() ; i++)
+        if (User->Get_Name() == "Anonymous User")
         {
-            if (musers[username]->Get_User() == User->Get_indx_following(i))
+
+            for (int i = 0 ; i<User->Get_following() ; i++)
             {
-                musers[username]->indx(index).likes(User , musers[username] , index);
-                ui->list_tweet->clear();
-                show_tweet();
-                flag = true;
+                if (musers[username]->Get_User() == User->Get_indx_following(i))
+                {
+                    musers[username]->indx(index).likes(User , musers[username] , index);
+                    ui->list_tweet->clear();
+                    show_tweet();
+                     ptweet();
+                    flag = true;
+                }
+            }
+            if (!flag)
+            {
+                QMessageBox::warning(this,"","You must follow this account to like this tweet.");
             }
         }
-        if (!flag)
+        else
         {
-            QMessageBox::warning(this,"","You must follow this account to like this tweet.");
+
+        musers[username]->indx(index).likes(User , musers[username] , index);
+
+        ui->list_tweet->clear();
+        show_tweet();
+         ptweet();
+
         }
     }
     else
     {
-
-    musers[username]->indx(index).likes(User , musers[username] , index);
-
-    ui->list_tweet->clear();
-    show_tweet();
-
+         QMessageBox::warning(this,"","! This member does not exist.");
     }
 
-    ptweet();
+
     ui->ln_like_pro->clear();
     ui->ln_likenum_pro->clear();
 
 }
 
+//-----------------------------------------------------------
 
 void profile::on_btn_follow_pro_clicked()
 {
@@ -327,7 +256,7 @@ void profile::on_btn_follow_pro_clicked()
     string username ;
     username = ui->ln_follow_pro->text().toStdString();
 
-    if(musers.count(username) == 1 )//=========================================
+    if(musers.count(username) == 1 )
     {
         if (User == musers[username])
         {
@@ -364,6 +293,7 @@ void profile::on_btn_follow_pro_clicked()
 
 }
 
+//-----------------------------------------------------------
 
 void profile::on_btn_dislike_pro_clicked()
 {
@@ -385,6 +315,10 @@ void profile::on_btn_dislike_pro_clicked()
                 musers[username]->indx(index).dislike(User , musers[username] , index);
                  QMessageBox::information(this,tr(""), tr("Disliked."));
                 flag = true;
+            }
+            else
+            {
+                 QMessageBox::warning(this,"","you can not dislike before like.");
             }
         }
         if (!flag)
@@ -408,13 +342,12 @@ void profile::on_btn_dislike_pro_clicked()
     ui->ln_likenum_pro->clear();
 }
 
-
-
+//-----------------------------------------------------------
 
 void profile::on_btn_search_clicked()
 {
 
-    string str , key , tweet;
+    string str , key , tweet , date;
     QString qtweet;
     str = ui->ln_search_pro->text().toStdString();
     if (str[0] == '#')
@@ -430,10 +363,7 @@ void profile::on_btn_search_clicked()
             QString qstr = QString::fromStdString(tweet);
             ui->list_pro->addItem(qstr);
         }
-     }
-
-
-
+    }
     else
     {
         if( musers.count(str)== 1 )
@@ -443,69 +373,78 @@ void profile::on_btn_search_clicked()
             ui->list_pro->addItem(q);
         }
     }
-
+    ui->list_pro->clear();
 }
 
+
+
+//-----------------------------------------------------------
 
 void profile::on_btn_deletetw_pro_clicked()
 {
     int index;
     index = ui->ln_delete_pro->text().toInt();
+
     if (User->Get_Name() == "Anonymous User")
     {
-    QMessageBox::warning(this,"","This account is not allowed to delete tweet.");
+        QMessageBox::warning(this,"","This account is not allowed to delete tweet.");
     }
     else
     {
-    User->delete_tweet(index) ;
-    ptweet();
-    ui->ln_delete_pro->clear();
+        User->delete_tweet(index) ;
+        ptweet();
+        ui->ln_delete_pro->clear();
     }
+     ui->list_tweet->clear();
+    show_tweet();
 
 }
 
-
-
+//-----------------------------------------------------------
 
 void profile::on_btn_mention_pro_2_clicked()
 {
 
-    //Tweet t;
     Twitterak obj;
     string person , mention ;
     int number;
     int check1 ;
     person = ui->ln_mention_pro_3->text().toStdString();
-    //cout << person ;
     check1=User->get_follow_person(person) ;
-
-    if ( check1== 0  && User->Get_Name() == "Anonymous User")
+    if(musers.count(person) == 1 )
     {
-      QMessageBox::warning(this,"","This account can not mention before follow.");
+        if ( check1== 0  && User->Get_Name() == "Anonymous User" )
+        {
+            QMessageBox::warning(this,"","This account can not mention before follow.");
+        }
+        else
+        {
+            person = ui->ln_mention_pro_3->text().toStdString();
+            number = ui->ln_mention_num_pro->text().toInt();
+            mention = ui->ln_mention_final->text().toStdString();
+            musers[person]->create_mention(mention ,number ,User->Get_User()) ;
+            ptweet();
+            ui->ln_mention_pro_3->clear();
+            ui->ln_mention_num_pro->clear();
+            ui->ln_mention_final->clear();
+
+        }
     }
     else
     {
-        person = ui->ln_mention_pro_3->text().toStdString();
-        number = ui->ln_mention_num_pro->text().toInt();
-        mention = ui->ln_mention_final->text().toStdString();
-        musers[person]->create_mention(mention ,number ,User->Get_User()) ;
-        ptweet();
-
-
-        ui->ln_mention_pro_3->clear();
-        ui->ln_mention_num_pro->clear();
-        ui->ln_mention_final->clear();
-
+        QMessageBox::warning(this,"", "This user does not exist.");
     }
 }
 
+//-----------------------------------------------------------
 
 void profile::show_tweet()
 {
     QString qtweet;
     QString total;
     string tweet;
-    Tweet t;
+    Tweet t
+            ;
     for(int i = 1 ; i <= User->get_size_mtweet(); i++)
     {
        tweet = User->indx(i).get_classtweet()  ;
@@ -517,7 +456,7 @@ void profile::show_tweet()
     }
 }
 
-
+//-----------------------------------------------------------
 
 void profile::on_btn_mentionlike_pro_3_clicked()
 {
@@ -532,9 +471,13 @@ void profile::on_btn_mentionlike_pro_3_clicked()
     {
         musers[username]->like_mention(musers[User->Get_User()] , indextweet , indexmention) ;
     }
+    else if(musers.count(username) != 1)
+    {
+        QMessageBox::warning(this,"","! This member does not exist.");
+    }
     else
     {
-        QMessageBox::warning(this,"","! this member does not exist.");
+        QMessageBox::warning(this,"","! This mention does not exist.");
     }
 
     ptweet();
@@ -542,8 +485,7 @@ void profile::on_btn_mentionlike_pro_3_clicked()
     ui->ln_likenum_pro->clear();
 }
 
-
-
+//-----------------------------------------------------------
 
 void profile::on_list_pro_itemClicked(QListWidgetItem *item)
 {
@@ -552,26 +494,29 @@ void profile::on_list_pro_itemClicked(QListWidgetItem *item)
 
     sh_p->set_pro2(musers[str]) ;
     sh_p->show();
-
-
 }
 
+//-----------------------------------------------------------
 
 void profile::show_mention()
 {
+    QMessageBox q;
     QString total;
-    string men;
-    int numtwt;
+    string men , date;
+    int numtwt , like;
     string username;
+
     username = ui->ln_mention_list_pro->text().toStdString();
     numtwt = ui->ln_men_twt_num_list_pro->text().toInt();
 
-
-    for(int i = 0 ; i < User->size_mention(numtwt); i++)
+    for(int i = 0 ; i < musers[username]->size_mention(numtwt); i++)
     {
-        men = User->get_mention(numtwt , i)  ;
-        total = QString::fromStdString(men) + '\n' +  QString::fromStdString(User->getdate_mention(numtwt,i)) + "like : "
-                +QString::number(User->get_mention_likes(User, numtwt , i));
+        men = musers[username]->get_mention(numtwt , i)  ;
+        date = musers[username]->getdate_mention(numtwt,i);
+
+        total = QString::fromStdString(men) + '\n' +  QString::fromStdString(date) + "like : "
+                +QString::number(musers[username]->get_mention_likes(musers[username], numtwt , i));
+
         ui->list_mention->addItem(total);
     }
 
@@ -579,6 +524,7 @@ void profile::show_mention()
     ui->ln_men_twt_num_list_pro->clear();
 }
 
+//-----------------------------------------------------------
 
 void profile::on_btn_showmention_clicked()
 {
@@ -587,14 +533,14 @@ void profile::on_btn_showmention_clicked()
 
 }
 
-
+//-----------------------------------------------------------
 
 void profile::on_btn_retweet_pro_2_clicked()
 {
    string username = ui->ln_retweetname_pro_2->text().toStdString();
    int numtw = ui->ln_retweetnum_pro_3->text().toInt();
 
-   if(musers.count(username) == 1)
+    if(musers.count(username) == 1)
     {
         string temp2 = musers[username]->backstring(numtw) ;
         Tweet new2;
@@ -606,9 +552,8 @@ void profile::on_btn_retweet_pro_2_clicked()
         QMessageBox::information(this,tr(""), tr("retweeted."));
         ui->list_tweet->clear();
         show_tweet();
-
     }
-  else
+    else
     {
         QMessageBox::warning(this,"","! this tweet does not exist.");
     }

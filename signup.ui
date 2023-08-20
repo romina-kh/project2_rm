@@ -40,12 +40,12 @@ border-style: outset;</string>
      <rect>
       <x>530</x>
       <y>140</y>
-      <width>91</width>
+      <width>111</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>username</string>
+     <string>username*</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -53,12 +53,12 @@ border-style: outset;</string>
      <rect>
       <x>530</x>
       <y>210</y>
-      <width>91</width>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>password</string>
+     <string>password*</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="ln_username_s">
@@ -209,12 +209,12 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ffdde2
      <rect>
       <x>30</x>
       <y>180</y>
-      <width>81</width>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Birthday</string>
+     <string>Birthday*</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_name_s">
@@ -227,7 +227,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ffdde2
      </rect>
     </property>
     <property name="text">
-     <string>name</string>
+     <string>name*</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="ln_name_s">
@@ -249,12 +249,12 @@ color: rgb(0, 72, 106) ;</string>
      <rect>
       <x>30</x>
       <y>280</y>
-      <width>131</width>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Phone Number</string>
+     <string>Phone Number*</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="ln_phone_s">
@@ -398,7 +398,7 @@ color: rgb(0, 72, 106) ;</string>
      </rect>
     </property>
     <property name="text">
-     <string>username (company manager)</string>
+     <string>username (company manager)*</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="ln_username_manager">
@@ -471,7 +471,7 @@ border-style: outset;</string>
       <x>650</x>
       <y>300</y>
       <width>181</width>
-      <height>24</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -480,6 +480,31 @@ border-style: outset;</string>
     <item>
      <property name="text">
       <string>choose color</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>brown</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>orange</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>pink</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lightblue</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lightgreen</string>
      </property>
     </item>
     <item>

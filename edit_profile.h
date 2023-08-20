@@ -42,6 +42,10 @@ private slots:
 
     void on_btn_edit_bio_clicked();
 
+    void on_btn_edit_headr_clicked();
+
+    void on_btn_edit_img_clicked();
+
 private:
     Ui::edit_profile *ui;
     Common* User;

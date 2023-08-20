@@ -7,20 +7,21 @@
 
 using namespace std;
 
-int Company::Set_Pic(string Picture)//This function set the name
+int Company::Set_Pic(string Picture)//This function set address of picture
 {
     this-> Picture = Picture;
 }
 
-
+//------------------------------------------------------------------------------------------
 
 string Company::Get_Pic()
 {
     return Picture;
 }
 
+//------------------------------------------------------------------------------------------
 
-bool Company::Bio_val(string Bio)
+bool Company::Bio_val(string Bio)//bio validation
 {
     QMessageBox q;
 
@@ -40,6 +41,7 @@ bool Company::Bio_val(string Bio)
     }
 }
 
+//------------------------------------------------------------------------------------------
 
 int Company::Set_Bio(string Bio)
 {
@@ -47,11 +49,14 @@ int Company::Set_Bio(string Bio)
     return 0;
 }
 
+//------------------------------------------------------------------------------------------
 
 string Company::Get_Bio()
 {
     return Bio;
 }
+
+//------------------------------------------------------------------------------------------
 
 int Company::Set_Country(string Country)
 {
@@ -71,11 +76,14 @@ int Company::Set_Country(string Country)
     }
 }
 
+//------------------------------------------------------------------------------------------
 
 string Company::Get_Country()
 {
     return Country;
 }
+
+//------------------------------------------------------------------------------------------
 
 int Company::Set_Link(string Link)
 {
@@ -97,14 +105,16 @@ int Company::Set_Link(string Link)
 
 }
 
+//------------------------------------------------------------------------------------------
 
 string Company::Get_Link()
 {
     return Link;
 }
 
+//------------------------------------------------------------------------------------------
 
-bool Company::Phone_val(string Phone_Number)
+bool Company::Phone_val(string Phone_Number)//phone number validation
 {
     QMessageBox q;
     int counter = 0;
@@ -136,88 +146,12 @@ bool Company::Phone_val(string Phone_Number)
        return false ;
     }
 
-
 }
 
-
-
+//------------------------------------------------------------------------------------------
 
 string Company::Get_Phone()
 {
     return Phone_Number;
 }
 
-
-void Company:: profile_me()
-{
-            cout << "$ Name : ";
-            cout << Get_Name()<< endl ;
-            cout << "$ Username : ";
-            cout << Get_User() << endl ;
-            cout << "$ Phone number : ";
-            cout << Get_Phone() << endl ;
-            cout << "$ Bio : ";
-            cout << Get_Bio() << endl ;
-            cout << "$ Country : ";
-            cout << Get_Country() << endl ;
-            cout << "$ Link : ";
-            cout << Get_Link() << endl ;
-            cout << "$ follower : " ;
-            cout << Get_followers() << endl ;
-}
-
-void Company:: profile_other()
-{
-            cout << "$ Name : ";
-            cout << Get_Name()<< endl ;
-            cout << "$ Username : ";
-            cout << Get_User() << endl ;
-            cout << "$ Bio : ";
-            cout << Get_Bio() << endl ;
-            cout << "$ Country : ";
-            cout << Get_Country() << endl ;
-            cout << "$ Link : ";
-            cout << Get_Link() << endl ;
-            cout << "$ follower : " ;
-            cout << Get_followers() << endl ;
-
-}
-
-void Company :: edit_pro(string edit ,string changable)
-{
-        if(edit == "age")
-            {
-
-            }
-
-            else if(edit == "phone number")
-            {
-                Set_Phone(changable) ;
-                cout << "* Your phone number has been successfully changed.\n" ;
-            }
-
-            else if(edit == "country")
-            {
-                changable.erase(0, 1);
-                changable.erase(changable.size()-1, 1);
-                Set_Country(changable) ;
-                cout << "* Your country has been successfully changed.\n" ;
-            }
-
-            else if(edit == "link")
-            {
-                changable.erase(0, 1);
-                changable.erase(changable.size()-1, 1);
-                Set_Link(changable) ;
-                cout << "* Your link has been successfully changed.\n" ;
-            }
-            else if(edit == "bio")
-            {
-                changable.erase(0, 1);
-                changable.erase(changable.size()-1, 1);
-                Set_Bio(changable) ;
-                cout << "* Your bio has been successfully changed.\n" ;
-
-            }
-
-}

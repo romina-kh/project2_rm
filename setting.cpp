@@ -21,8 +21,9 @@ setting::setting(map <string , vector<Tweet>>& hashtag,unordered_map<string , Co
    mhashtag= hashtag ;
 }
 
+//-----------------------------------------------------------
 
-void setting :: put_user()
+void setting :: put_user()//put user's information in file
 {
     ofstream outuser;
     outuser.open("user.txt", ios::out);
@@ -50,28 +51,30 @@ void setting :: put_user()
             outuser << i.second->Get_User() << "o" ;
         }
         outuser << endl << i.second->Get_Name() << endl << i.second->Get_Age() << endl
-        << i.second->Get_Phone() << endl << i.second->Get_Country() << endl << i.second->Get_Link() << endl <<
-        i.second->Get_Bio() << endl << i.second->Get_Password() << endl
+               << i.second->Get_Phone() << endl << i.second->Get_Country() << endl << i.second->Get_Link() << endl <<
+               i.second->Get_Bio() << endl << i.second->Get_Password() << endl << i.second->Get_Pic() <<endl << i.second->Get_Header() << endl
         << "************************************************\n";
-        //header
+
     }
 
     outuser.close();
 }
 
-
-
+//-----------------------------------------------------------
 
 setting::~setting()
 {
     delete ui;
 }
 
+//-----------------------------------------------------------
+
 void setting::on_btn_exit_setting_clicked()
 {
     exit(0) ;
 }
 
+//-----------------------------------------------------------
 
 void setting::on_btn_logout_setting_clicked()
 {
@@ -82,6 +85,7 @@ void setting::on_btn_logout_setting_clicked()
 
 }
 
+//-----------------------------------------------------------
 
 void setting::on_btn_delete_setting_clicked()
 {
@@ -94,6 +98,7 @@ void setting::on_btn_delete_setting_clicked()
 
 }
 
+//-----------------------------------------------------------
 
 void setting::on_btn_edit_setting_clicked()
 {
@@ -103,18 +108,13 @@ void setting::on_btn_edit_setting_clicked()
 
 }
 
+//-----------------------------------------------------------
 
 void setting::on_btn_back_clicked()
 {
 
     profile* profile_obj = new profile(mhashtag, musers,User);
-    // put_user();
-    //Twitterak * tw= new Twitterak ;
-    //tw = new Twitterak ;
-    //cout << User->Get_User() ;
-    //tw->login(User->Get_User(), User->Get_Password());
     profile_obj->show();
-    //tw->show(User->Get_User()) ;
     this->close() ;
 
 

@@ -1,6 +1,5 @@
 #ifndef TWITTERAK_H
 #define TWITTERAK_H
-
 #include <iostream>
 #include <unordered_map>
 #include <map>
@@ -13,42 +12,26 @@ using namespace std;
 class Twitterak
 {
     private:
-        unordered_map<string , Common*> musers;
-        map <string , vector<Tweet> > mhashtag;
-        //save
+        unordered_map<string , Common*> musers;// map users
+        map <string , vector<Tweet> > mhashtag;// map hashtag
+
     public:
-    bool checkin = 0;
-    string color ;
     string temp = "";
-    string save = ""; //for checkig our account (personal, company , ....)
+
     bool signup(string , string , string , string , string , string , string , string , string ,string);
     bool signup_ano(string , string ,string);
     bool signup_org(string , string , string , string , string , string , string , string, string ,string);
     bool login(string , string);
-    void ckeck_id(string &id);
-    void logout();
-    void choice_login();
-    //void menu();
-    void show(string);
-    //void help();
-    void edit_profile(string , string);
-    void delete_account();
-    void men_check(string , int , string , string);
-    void check_space(string&) ;
-    void findhash(string, Tweet);
-    void showhash(string);
-    void put_user();
-    void put_hashtag();
-    void ptweet();
-    void pfollow();
-    void in_user();
-    void in_tweet();
-    void in_follow();
-    void in_hashtag();
-    void qttweet(string);
-
+    void show(string);//show profile
+    void findhash(string, Tweet);//finding hashtag
+    //-----------------------------------
+    void put_user();//writing in file(user)
+    void ptweet();//writing in file(tweet)
+    //-----------------------------------
+    void in_user();//reading (user) from file
+    void in_tweet();//reading (tweet) from file
+    void in_follow();//reading (follow) from file
 
 };
-
-
 #endif
+

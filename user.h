@@ -56,7 +56,7 @@ protected:
 
         //based on anonymous
         virtual int Set_Pic(string ){};
-        virtual string Get_Pic(){return "______";};
+        virtual string Get_Pic(){return ":/a.jpg";}
         //---------------------------
         virtual bool Bio_val(string Bio){};
         virtual int Set_Bio(string Bio){};
@@ -106,6 +106,7 @@ protected:
         virtual void flike(Common* , int);//for liking tweets in file
         virtual Tweet &indx(int x);//check if we have one specific tweet or not
         virtual int get_size_mtweet();
+        virtual void change_username(string);//change the username on the map.
 
 
 

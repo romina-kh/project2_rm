@@ -105,7 +105,7 @@ bool Common::User_val(string User_name)//This function check the username (valid
         else
         {
 
-            q.setText("!Your Username should be more than 5 characters.");
+            q.setText("! Your Username should be more than 5 characters.");
             q.exec();
             return false;
 
@@ -283,15 +283,14 @@ void Common::delete_tweet(int Number)
 
 string Common::backstring(int number)//This function checks that there is a tweet or not (in mtweet)
 {
-    if(mtweet.count(number)==1)
+    string check = "null" ;
+    if( mtweet.count(number)== 1)
     {
         return mtweet[number].get_classtweet();
     }
     else
     {
-        QMessageBox q ;
-        q.setText(" this tweet does not exist.") ;
-        q.exec() ;
+        return check ;
     }
 }
 
@@ -567,14 +566,22 @@ void Common :: set_mention(Tweet t ,int index)
 
 int Common::Get_following()//This function return size of vector(following)
 {
-    return vecfollowing.size();
+   return vecfollowing.size();
 }
 
 //-------------------------------------------------------------------------------------------------------------
 
 string Common::Get_indx_following(int i)//This function return index(following)
 {
-     return vecfollowing[i];
+    return vecfollowing[i];
 }
 
 //-------------------------------------------------------------------------------------------------------------
+
+void Common:: change_username(string str)//chenge the username.
+{
+    for(auto &i : mtweet)
+    {
+        i.second.Set_User(str) ;
+    }
+}

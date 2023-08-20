@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="recorse.qrc">
+    <normaloff>:/twitterak.jpg</normaloff>:/twitterak.jpg</iconset>
+  </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
@@ -500,6 +504,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ffffff
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="recorse.qrc"/>
+ </resources>
  <connections/>
 </ui>

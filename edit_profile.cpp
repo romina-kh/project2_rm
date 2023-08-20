@@ -121,9 +121,34 @@ void edit_profile::on_btn_back_editpro_clicked()
 void edit_profile::on_btn_save_edit_clicked()
 {
     QMessageBox q;
-
     put_user();
     q.setText("!save succsessfully.") ;
+     //************************************************************************
+
+    remove("tweet.txt");
+    for ( auto i : musers)
+    {
+        i.second->put_tweet();
+    }
+
+    //************************************************************************
+
+    ofstream myfollow;
+    myfollow.open("follow.txt" , ios::out);
+
+    for ( auto i : musers)
+    {
+        myfollow << i.second->Get_User() << ":" << endl;
+        for(int j = 0 ; j < i.second->Get_following(); j++)
+        {
+            myfollow << i.second->Get_indx_following(j) << endl;
+        }
+        myfollow << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n";
+    }
+
+    //************************************************************************
+
+    myfollow.close();
     q.exec();
     this->close();
 
@@ -160,6 +185,7 @@ void edit_profile::on_btn_edit_user_clicked()
     if(User -> User_val(username)== true)
     {
         User->Set_User(username) ;
+        User->change_username(username);
         qu.setText("*editted.") ;
         qu.exec();
     }

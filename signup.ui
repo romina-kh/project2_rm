@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resorce.qrc">
+    <normaloff>:/twitterak.jpg</normaloff>:/twitterak.jpg</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: qradialgradient(spread:repeat, cx:0.192, cy:0.801, radius:0.5, fx:0.41, fy:0.596, stop:0.0696517 rgba(190, 217, 225, 255), stop:1 rgba(255, 255, 255, 255));</string>
   </property>
@@ -479,12 +483,7 @@ border-style: outset;</string>
     </property>
     <item>
      <property name="text">
-      <string>choose color</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>brown</string>
+      <string>white</string>
      </property>
     </item>
     <item>
@@ -509,7 +508,7 @@ border-style: outset;</string>
     </item>
     <item>
      <property name="text">
-      <string>white</string>
+      <string>brown</string>
      </property>
     </item>
     <item>
@@ -593,7 +592,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #939393
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resorce.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>rbtn_organ_s</sender>

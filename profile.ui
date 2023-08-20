@@ -18,6 +18,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="recorse.qrc">
+    <normaloff>:/twitterak.jpg</normaloff>:/twitterak.jpg</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0.0696517 rgba(220, 215, 255, 255), stop:1 rgba(255, 255, 255, 255));</string>
   </property>
@@ -468,24 +472,6 @@ border-style: outset;</string>
     <string notr="true">background-color: #ffffff ;
 border-radius: 20px;
 border-style: outset;</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_search">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>10</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 20px;
-border-style: outset;
-border: 1px solid #333;</string>
-   </property>
-   <property name="text">
-    <string>search</string>
    </property>
   </widget>
   <widget class="QListWidget" name="list_pro">
@@ -1216,7 +1202,22 @@ radius: 1.35, stop: 0 #fff, stop: 1 #eac1ee
     <string>Setting</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="btn_search_p">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>10</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>search</string>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="recorse.qrc"/>
+ </resources>
  <connections/>
 </ui>

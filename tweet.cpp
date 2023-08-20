@@ -206,3 +206,17 @@ int Tweet ::size_mention()//it returns the size of vector mention.
 {
     return mentions.size();
 }
+
+//-----------------------------------------------------------------------------------
+
+bool Tweet :: check_like(Common* purpose)//check this tweet is liked or not (for dislike)
+{
+    if(count(this->likers.begin(),this->likers.end() , purpose))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

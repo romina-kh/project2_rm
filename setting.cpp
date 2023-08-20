@@ -89,11 +89,15 @@ void setting::on_btn_logout_setting_clicked()
 
 void setting::on_btn_delete_setting_clicked()
 {
-    MainWindow * delete_btn = nullptr ;
-    delete_btn = new MainWindow ;
-    delete_btn->show() ;
-    musers.erase(User->Get_User());
-    put_user();
+//    MainWindow * delete_btn = nullptr ;
+//    delete_btn = new MainWindow ;
+//    delete_btn->show() ;
+//    musers.erase(User->Get_User());
+//    put_user();
+    MainWindow * log_btn = nullptr ;
+    log_btn = new MainWindow ;
+    log_btn->show() ;
+    this->close();
 
 
 }

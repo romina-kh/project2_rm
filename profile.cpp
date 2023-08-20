@@ -8,6 +8,7 @@
 #include <fstream>
 #include "show_profile.h"
 #include <QPixmap>
+#include <QImage>
 
 
 profile::profile(map <string , vector<Tweet>>& hashtag,unordered_map<string , Common*>& users,Common* cuser,QWidget *parent) :
@@ -305,33 +306,41 @@ void profile::on_btn_dislike_pro_clicked()
     int index;
     username = ui->ln_like_pro->text().toStdString();
     index = ui->ln_likenum_pro->text().toInt();
-    if (User->Get_Name() == "Anonymous User")
+    if(musers[username]->indx(index).check_like(User) == true)
     {
-
-        for (int i = 0 ; i<User->Get_following() ; i++)
+        if (User->Get_Name() == "Anonymous User")
         {
-            if (musers[username]->Get_User() == User->Get_indx_following(i))
+
+            for (int i = 0 ; i<User->Get_following() ; i++)
             {
-                musers[username]->indx(index).dislike(User , musers[username] , index);
-                 QMessageBox::information(this,tr(""), tr("Disliked."));
-                flag = true;
+                if (musers[username]->Get_User() == User->Get_indx_following(i))
+                {
+                    musers[username]->indx(index).dislike(User , musers[username] , index);
+                     QMessageBox::information(this,tr(""), tr("Disliked."));
+                    flag = true;
+                }
+                else
+                {
+                     QMessageBox::warning(this,"","you can not dislike before like.");
+                }
             }
-            else
+            if (!flag)
             {
-                 QMessageBox::warning(this,"","you can not dislike before like.");
+                QMessageBox::warning(this,"","You must follow this account to like this tweet.");
             }
         }
-        if (!flag)
+        else
         {
-            QMessageBox::warning(this,"","You must follow this account to like this tweet.");
+
+            musers[username]->indx(index).dislike(User , musers[username] , index);
+            QMessageBox::information(this,tr(""), tr("Disliked."));
         }
     }
     else
     {
-
-        musers[username]->indx(index).dislike(User , musers[username] , index);
-        QMessageBox::information(this,tr(""), tr("Disliked."));
+         QMessageBox::warning(this,"","You must like this tweet first.");
     }
+
 
     ui->list_tweet->clear();
     show_tweet();
@@ -341,41 +350,6 @@ void profile::on_btn_dislike_pro_clicked()
     ui->ln_like_pro->clear();
     ui->ln_likenum_pro->clear();
 }
-
-//-----------------------------------------------------------
-
-void profile::on_btn_search_clicked()
-{
-
-    string str , key , tweet , date;
-    QString qtweet;
-    str = ui->ln_search_pro->text().toStdString();
-    if (str[0] == '#')
-    {
-        key = str.erase(0,1);
-    }
-
-    if (mhashtag.count(key) == 1)
-    {
-        for (auto i : mhashtag[str])
-        {
-            tweet = i.get_classtweet();
-            QString qstr = QString::fromStdString(tweet);
-            ui->list_pro->addItem(qstr);
-        }
-    }
-    else
-    {
-        if( musers.count(str)== 1 )
-        {
-
-            QString q =QString::fromStdString(str);
-            ui->list_pro->addItem(q);
-        }
-    }
-    ui->list_pro->clear();
-}
-
 
 
 //-----------------------------------------------------------
@@ -396,6 +370,7 @@ void profile::on_btn_deletetw_pro_clicked()
         ui->ln_delete_pro->clear();
     }
      ui->list_tweet->clear();
+    // ui->list_pro->clear();
     show_tweet();
 
 }
@@ -509,16 +484,24 @@ void profile::show_mention()
     username = ui->ln_mention_list_pro->text().toStdString();
     numtwt = ui->ln_men_twt_num_list_pro->text().toInt();
 
-    for(int i = 0 ; i < musers[username]->size_mention(numtwt); i++)
+    if(musers.count(username) == 1)
     {
-        men = musers[username]->get_mention(numtwt , i)  ;
-        date = musers[username]->getdate_mention(numtwt,i);
+        for(int i = 0 ; i < musers[username]->size_mention(numtwt); i++)
+        {
+            men = musers[username]->get_mention(numtwt , i)  ;
+            date = musers[username]->getdate_mention(numtwt,i);
 
-        total = QString::fromStdString(men) + '\n' +  QString::fromStdString(date) + "like : "
-                +QString::number(musers[username]->get_mention_likes(musers[username], numtwt , i));
+            total = QString::fromStdString(men) + '\n' +  QString::fromStdString(date) + "like : "
+                    +QString::number(musers[username]->get_mention_likes(musers[username], numtwt , i));
 
-        ui->list_mention->addItem(total);
+            ui->list_mention->addItem(total);
+        }
     }
+    else
+    {
+        QMessageBox::warning(this,"","! This member does not exist.");
+    }
+
 
     ui->ln_mention_list_pro->clear();
     ui->ln_men_twt_num_list_pro->clear();
@@ -543,22 +526,65 @@ void profile::on_btn_retweet_pro_2_clicked()
     if(musers.count(username) == 1)
     {
         string temp2 = musers[username]->backstring(numtw) ;
-        Tweet new2;
-        new2.Set_date();
-        new2.Set_Tweet(temp2);
-        musers[User->Get_User()]->set_index();
-        new2.set_number(musers[User->Get_User()]->get_index());
-        musers[User->Get_User()]->push_tweet(new2);
-        QMessageBox::information(this,tr(""), tr("retweeted."));
-        ui->list_tweet->clear();
-        show_tweet();
+        if(temp2 == "null")
+        {
+            QMessageBox q ;
+            q.setText(" this tweet does not exist.") ;
+            q.exec() ;
+        }
+        else
+        {
+            Tweet new2;
+            new2.Set_date();
+            new2.Set_Tweet(temp2);
+            musers[User->Get_User()]->set_index();
+            new2.set_number(musers[User->Get_User()]->get_index());
+            musers[User->Get_User()]->push_tweet(new2);
+            QMessageBox::information(this,tr(""), tr("retweeted."));
+            ui->list_tweet->clear();
+            show_tweet();
+        }
+
     }
     else
     {
-        QMessageBox::warning(this,"","! this tweet does not exist.");
+        QMessageBox::warning(this,"","! this member does not exist.");
     }
 
    ui->ln_retweetname_pro_2->clear();
    ui->ln_retweetnum_pro_3->clear();
+}
+
+//-----------------------------------------------------------
+
+void profile::on_btn_search_p_clicked()
+{
+
+    string str , key , tweet , date;
+    QString qtweet;
+    str = ui->ln_search_pro->text().toStdString();
+    if (str[0] == '#')
+    {
+        key = str.erase(0,1);
+    }
+
+    if (mhashtag.count(key) == 1)
+    {
+        for (auto i : mhashtag[str])
+        {
+            tweet = i.get_classtweet();
+            QString qstr = QString::fromStdString(tweet);
+            ui->list_pro->addItem(qstr);
+        }
+    }
+    else
+    {
+        if( musers.count(str)== 1 )
+        {
+            QString q =QString::fromStdString(str);
+            ui->list_pro->addItem(q);
+        }
+    }
+    //ui->list_pro->clear();
 }
 

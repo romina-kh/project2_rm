@@ -99,6 +99,7 @@ void signup::on_rbtn_organ_s_clicked()
     ui->ln_link_s->setEnabled(true);
     ui->ln_phone_s->setEnabled(true);
     ui->plainTxt_bio_s->setEnabled(true);
+    ui->ln_image->setEnabled(true);
 
 
 }
@@ -119,6 +120,7 @@ void signup::on_rbtn_personal_s_clicked()
     ui->ln_phone_s->setEnabled(true);
     ui->dateEdit_age_s->setEnabled(true);
     ui->plainTxt_bio_s->setEnabled(true);
+    ui->ln_image->setEnabled(true);
 
 }
 
@@ -139,6 +141,7 @@ void signup::on_rbtn_ano_s_clicked()
     ui->ln_phone_s->setEnabled(false);
     ui->dateEdit_age_s->setEnabled(false);
     ui->plainTxt_bio_s->setEnabled(false);
+    ui->ln_image->setEnabled(false);
 
 }
 

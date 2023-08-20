@@ -37,8 +37,6 @@ private slots:
 
      void on_btn_dislike_pro_clicked();
 
-     void on_btn_search_clicked();
-
      void on_btn_deletetw_pro_clicked();
 
      void on_btn_mention_pro_2_clicked();
@@ -50,6 +48,8 @@ private slots:
      void on_btn_showmention_clicked();
 
      void on_btn_retweet_pro_2_clicked();
+
+     void on_btn_search_p_clicked();
 
 private:
 

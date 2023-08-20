@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>twitterak.jpg</file>
+        <file>a.jpg</file>
+    </qresource>
+</RCC>

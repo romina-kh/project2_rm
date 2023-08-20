@@ -15,7 +15,6 @@ class Anonymous : public Common
     void push_tweet(Tweet t) override;
     void get_tweet();
     void get_tweet1(int index);
-
 };
 
 #endif
